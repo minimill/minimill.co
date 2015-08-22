@@ -4,7 +4,7 @@
 
 {%- block content -%}
 <h1 class="headline">hey there. we are minimill.</h1>
-<form action="{{ url_for('client.contact') }}">
+<form id="contact-form" action="{{ url_for('client.contact') }}" method="POST">
     {{macros.render_field(form.name, class="field")}}
     {{macros.render_field(form.email, class="field")}}
     {{macros.render_field(form.message, class="field")}}
@@ -13,9 +13,9 @@
         <input type="submit" id="submit" />
     </div>
 </form>
-<div id="submit-button">
+<div id="submit-button" class="submit-button">
     <div class="content">
-        send
+        <span>send</span>
     </div>
 </div>
 {%- endblock -%}
