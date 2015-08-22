@@ -21,6 +21,8 @@ function formSuccess(e) {
 
 function submitForm(e) {
     e.preventDefault();
+    e.stopPropagation();
+    console.log("submitting?");
 
     var xmlhttp= window.XMLHttpRequest ?
         new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
@@ -29,9 +31,9 @@ function submitForm(e) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             formSuccess();
         } else {
-            var response = xmlhttp.responseText;
+            var response = JSON.parse(xmlhttp.responseText);
             body.className = 'error';
-            console.log(response);
+            errorMessage.innerText = response.error.message;
         }
     }
 
@@ -44,6 +46,7 @@ function submitForm(e) {
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("name=" + name + "&email=" + email +
                  "&message=" + message + "&csrf_token=" + csrf_token);
+    return false;
 }
 
 window.onload = function() {
@@ -57,7 +60,8 @@ window.onload = function() {
     }
     submitButton = document.getElementById('submit-button');
     submitInput = document.getElementById('submit');
+    errorMessage = document.getElementById('error-message');
     body = document.getElementsByTagName('body')[0];
     submitButton.addEventListener('click', submitForm);
-    form.addEventListener('submit', submitForm);
+    form.onsubmit = submitForm;
 }

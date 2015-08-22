@@ -34,8 +34,8 @@ def email_us():
     form = ContactForm()
     if form.validate_on_submit():
         return json_success({})
-    print form.errors
-    return json_error_message('error', error_data=form.errors)
+    error_message = form.errors.items()[0][1][0]
+    return json_error_message(error_message, error_data=form.errors)
 
 
 @client.route('/team', methods=['GET'])

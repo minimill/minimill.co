@@ -69,6 +69,10 @@ textarea {
         vertical-align: middle;
         line-height: $footer-height !important;
     }
+
+    #error-message {
+        display: none;
+    }
 }
 
 body.active #submit-button {
@@ -79,11 +83,19 @@ body.active #submit-button {
 body.disabled #submit-button {
     @include transform(translateY(0));
     background-color: $light-gray;
+    color: $white;
 }
 
 body.error #submit-button {
     @include transform(translateY(0));
     background-color: $red;
+
+    #error-message {
+        display: block;
+    }
+    .submit-button-label {
+        display: none;
+    }
 }
 
 body.success #submit-button {

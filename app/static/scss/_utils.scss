@@ -43,7 +43,7 @@
             transform: $rule;
 }
 
-@mixin transition($props: all, $speed: .15s, $delay: 0s, $function: ease) {
+@mixin transition($props: all, $speed: .2s, $delay: 0s, $function: ease) {
     -webkit-transition: $speed $delay $function $props;
        -moz-transition: $speed $delay $function $props;
          -o-transition: $speed $delay $function $props;

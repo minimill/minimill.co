@@ -25,7 +25,7 @@ $footer-height: 44px;
 
 footer {
 
-    height: 2.25rem;
+    height: $footer-height;
     padding: 5rem 0;
     position: absolute;
     bottom: 0;
@@ -47,6 +47,7 @@ footer {
         float: right;
         display: inline-block;
         color: $gray;
+        margin-right: -1.25rem;
         li {
             padding: 0 1.25rem;
             display: inline-block;
