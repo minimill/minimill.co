@@ -44,7 +44,7 @@ Flask-Seed runs natively on Linux and OSX in a virtual environment, using [Virtu
 
 ```bash
 ./develop.sh                    # MongoDB, virtualenv, and Pip
-source bin/activate             # Enter the virtual environment
+source /tmp/venv/bin/activate   # Enter the virtual environment
 python run.py                   # Run the application
 ```
 
