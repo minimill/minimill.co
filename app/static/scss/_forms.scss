@@ -48,7 +48,9 @@ textarea {
     &:focus {
         min-height: 8rem;
     }
-
+    &:invalid {
+        max-height: 4.25rem;
+    }
 }
 
 #submit-button {
@@ -84,7 +86,6 @@ body.disabled #submit-button {
     @include transform(translateY(0));
     background-color: $light-gray;
     color: $white;
-
 }
 
 .hidden-fields {

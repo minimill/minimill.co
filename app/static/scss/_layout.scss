@@ -1,5 +1,6 @@
 // Application Styles go here
 $content-width: 58.75rem;
+$footer-height: 44px;
 
 body {
   background-color: $blue;
@@ -13,7 +14,7 @@ body {
 }
 
 section {
-  padding: 5rem 0 2rem;
+  padding: 5rem 0 15rem;
 }
 
 .headline {
@@ -21,13 +22,11 @@ section {
     text-transform: lowercase;
 }
 
-$footer-height: 44px;
-
 footer {
 
     height: $footer-height;
     padding: 5rem 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;

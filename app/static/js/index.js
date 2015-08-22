@@ -12,6 +12,7 @@ function onInputChanged(e) {
     } else {
         body.className = '';
     }
+    window.scrollTo(0,document.body.scrollHeight);
 }
 
 function submitForm(e) {
@@ -48,6 +49,8 @@ function submitForm(e) {
 window.onload = function() {
     toName = document.getElementById('to-name');
     form = document.getElementById('contact-form');
+    var message = document.getElementById('message');
+    new Autogrow(message);
     var inputsNl = document.querySelectorAll('.field input, .field textarea');
     inputs = [];
     for (var i = 0; i < inputsNl.length; i++) {
