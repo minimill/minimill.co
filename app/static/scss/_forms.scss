@@ -58,3 +58,19 @@ input[type="submit"], button, .button {
     }
 }
 
+#submit-button {
+    background-color: $green;
+    height: $footer-height;
+    padding: 5rem 0;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    @include transition(0.15s);
+    @include transform(translateY(100%));
+    &.active {
+        @include transform(translateY(0));
+    }
+}
+
