@@ -101,3 +101,9 @@ body.error #submit-button {
     background-color: $red;
 }
 
+body.success #submit-button {
+    @include transition(all, 10s);
+    bottom: 100%;
+    background-color: $green;
+}
+

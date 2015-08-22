@@ -22,6 +22,7 @@ def contact():
     form = ContactForm()
     return render_template('contact.html', form=form)
 
+
 @client.route('/', methods=['POST'])
 def email_us():
     """Email the team.
@@ -33,7 +34,9 @@ def email_us():
     form = ContactForm()
     if form.validate_on_submit():
         return json_success({})
+    print form.errors
     return json_error_message('error', error_data=form.errors)
+
 
 @client.route('/team', methods=['GET'])
 def team():

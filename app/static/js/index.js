@@ -31,6 +31,7 @@ function submitForm(e) {
         } else {
             var response = xmlhttp.responseText;
             body.className = 'error';
+            console.log(response);
         }
     }
 
