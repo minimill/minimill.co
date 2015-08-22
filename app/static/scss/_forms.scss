@@ -1,0 +1,60 @@
+/*********
+ * Forms *
+ *********/
+
+form {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.form-control {
+    display: block;
+    margin: 0 0 3rem;
+    input, textarea {
+        display: block;
+        width: 100%;
+    }
+}
+
+input:not([type="submit"]), textarea, {
+    display: block;
+    background-color: $transparent;
+    padding: .25rem 0;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $white;
+    color: $white;
+    @include border-box;
+    @include placeholder {
+        color: $white;
+    }
+    @extend .h1;
+}
+
+textarea {
+    resize: vertical;
+    height: 4.25rem;
+    
+    &:focus {
+        height: auto;
+    }
+
+}
+
+input[type="submit"], button, .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border: 1px solid $blue;
+    background-color: $blue;
+    @include border-box;
+    vertical-align: top;
+    color: $white;
+    margin: 0;
+
+    &:hover {
+        cursor: pointer;
+        color: $light-gray;
+    }
+}
+

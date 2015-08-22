@@ -16,7 +16,7 @@ section {
   padding: 5rem 0 2rem;
 }
 
-$footer-height: 2.25rem;
+$footer-height: 44px;
 
 footer {
 
@@ -55,7 +55,8 @@ footer {
     float: left;
     display: inline-block;
     & > svg {
-        height: 2.25rem;
+        display: block;
+        height: 44px;
     }
     margin-right: 4.5rem;
 
