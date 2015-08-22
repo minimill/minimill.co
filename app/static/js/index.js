@@ -1,24 +1,22 @@
-var inputs, submitButton, submitInput;
+var inputs, submitButton, submitInput, form, body, errorMessage;
 
-function shouldShowSubmitButton() {
-    var i;
-    for (i = 0; i < inputs.length; i++) {
-        if (inputs[i].value) {
-            return true;
-        }
-    }
-    return false;
+function testInput(input) {
+    return Boolean(input.value);
 }
 
 function onInputChanged(e) {
-    if (shouldShowSubmitButton()) {
-        console.log('yes');
-        submitButton.classList.add('active');
+    console.log(inputs);
+    if (inputs.every(testInput)) {
+        body.className = 'active';
+    } else if (inputs.some(testInput)) {
+        body.className = 'disabled';
     } else {
-        console.log('no');
-        submitButton.classList.remove('active')
-        console.log(submitButton.className);
+        body.className = '';
     }
+}
+
+function formSuccess(e) {
+    body.className = 'success';
 }
 
 function submitForm(e) {
@@ -29,33 +27,36 @@ function submitForm(e) {
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var response = JSON.parse(xmlhttp.responseText);
-            console.log(response);
+            formSuccess();
         } else {
-            var response = JSON.parse(xmlhttp.responseText);
-            console.log('error: ', response);
+            var response = xmlhttp.responseText;
+            body.className = 'error';
         }
     }
 
-    var name = document.getElementById('name').innerHTML;
-    var email = document.getElementById('email').innerHTML;
-    var message = document.getElementById('message').innerHTML;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    var csrf_token = document.getElementById('csrf_token').value;
 
-    // xmlhttp.open("GET","your_url.php?name=" + name + "&email=" + email, true);
-    // xmlhttp.open("POST","your_url.php",true);
-    // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    // xmlhttp.send("name=" + name + "&email=" + email);
+    xmlhttp.open("POST", "", true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send("name=" + name + "&email=" + email +
+                 "&message=" + message + "&csrf_token=" + csrf_token);
 }
 
 window.onload = function() {
-    var form = document.getElementById('contact-form')[0];
-    inputs = document.querySelectorAll('.field input, .field textarea');
-    for (var i = 0; i < inputs.length; i++) {
-        var input = inputs[i];
+    form = document.getElementById('contact-form')[0];
+    var inputsNl = document.querySelectorAll('.field input, .field textarea');
+    inputs = [];
+    for (var i = 0; i < inputsNl.length; i++) {
+        var input = inputsNl[i];
+        inputs.push(input);
         input.addEventListener('input', onInputChanged);
     }
     submitButton = document.getElementById('submit-button');
     submitInput = document.getElementById('submit');
+    body = document.getElementsByTagName('body')[0];
     submitButton.addEventListener('click', submitForm);
     form.addEventListener('submit', submitForm);
 }
