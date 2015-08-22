@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{%- block css -%}
+{{ super() }}
+{%- assets "scss_all" -%}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+{%- endassets -%}
+{%- endblock -%}
+
+{%- block js -%}
+{{ super() }}
+<script type="text/javascript" src="{{ static('js/index.js') }}"></script>
+{%- endblock -%}
+
+{% block body %}
+<section>
+    <div class="content">
+        {% block content %}
+        {% endblock%}
+    </div>
+</section>
+<footer>
+    <div class="content">
+        <div class="logo red">
+            {% include "minimill-logo.svg.html" %}
+        </div>
+        <p>design and dev and brand and people</p>
+        <ul>
+            <li><a href="{{ url_for('client.contact') }}">contact</a></li>
+            <li><a href="{{ url_for('client.team') }}">team</a></li>
+        </ul>
+    </div>
+</footer>
+{% endblock %}

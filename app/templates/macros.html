@@ -1,0 +1,15 @@
+{%- macro render_field(field, label=True, hidden=False) -%}
+{%- set class = kwargs.get('class', '') + ' form-control' -%}
+{%- if field.errors -%}{%- set class = class + ' invalid' -%}{%- endif -%}
+{%- if hidden -%}{%- set class = class + ' hidden' -%}{%- endif -%}
+<div class="{{class}}">
+	{{ field(class=class, placeholder=field.label.text, **kwargs) | safe }}
+	{%- if field.errors -%}
+	<ul class="errors">
+		{%- for error in field.errors -%}
+	  	<li>{{ error }}</li>
+		{%- endfor -%}
+	</ul>
+	{%- endif -%}
+</div>
+{%- endmacro -%}

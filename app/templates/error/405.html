@@ -1,0 +1,7 @@
+{% extends "error/error.html" %}
+
+{%- block error -%}Method Not Allowed{%- endblock -%}
+
+{%- block code -%}405{%- endblock -%}
+
+{%- block message -%}{{ method }} requests are forbidden at this URL.{%- endblock -%}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{%- block error -%}{%- endblock -%} | {{ super() }}{% endblock %}
+
+{% block body %}
+    <div class="content error">
+        <h1>{{ self.error() }} ({%- block code -%}{%- endblock -%}).</h1>
+        <p>{%- block message -%}{%- endblock %} Try clicking <a href="{{ url_for('client.index') }}">here</a>.</p>
+    </div>
+</section>
+{% endblock body %}
