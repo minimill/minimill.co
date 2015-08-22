@@ -19,7 +19,7 @@ def contact():
     **Methods:** ``GET``
     """
     form = ContactForm()
-    return render_template('index.html', form=form)
+    return render_template('contact.html', form=form)
 
 
 @client.route('/team', methods=['GET'])
