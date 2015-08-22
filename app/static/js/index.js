@@ -1,11 +1,10 @@
-var inputs, submitButton, submitInput, form, body, errorMessage;
+var inputs, submitButton, submitInput, form, body, errorMessage, toName;
 
 function testInput(input) {
     return Boolean(input.value);
 }
 
 function onInputChanged(e) {
-    console.log(inputs);
     if (inputs.every(testInput)) {
         body.className = 'active';
     } else if (inputs.some(testInput)) {
@@ -15,32 +14,29 @@ function onInputChanged(e) {
     }
 }
 
-function formSuccess(e) {
-    body.className = 'success';
-}
-
 function submitForm(e) {
     e.preventDefault();
-    e.stopPropagation();
-    console.log("submitting?");
 
     var xmlhttp= window.XMLHttpRequest ?
         new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            formSuccess();
-        } else {
-            var response = JSON.parse(xmlhttp.responseText);
-            body.className = 'error';
-            errorMessage.innerText = response.error.message;
-        }
-    }
 
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
     var csrf_token = document.getElementById('csrf_token').value;
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 200) {
+                toName.innerText = name;
+                body.className = 'success';
+            } else {
+                var response = JSON.parse(xmlhttp.responseText);
+                body.className = 'error';
+                errorMessage.innerText = response.error.message;
+            }
+        }
+    }
 
     xmlhttp.open("POST", "", true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -50,7 +46,8 @@ function submitForm(e) {
 }
 
 window.onload = function() {
-    form = document.getElementById('contact-form')[0];
+    toName = document.getElementById('to-name');
+    form = document.getElementById('contact-form');
     var inputsNl = document.querySelectorAll('.field input, .field textarea');
     inputs = [];
     for (var i = 0; i < inputsNl.length; i++) {
@@ -62,6 +59,7 @@ window.onload = function() {
     submitInput = document.getElementById('submit');
     errorMessage = document.getElementById('error-message');
     body = document.getElementsByTagName('body')[0];
-    submitButton.addEventListener('click', submitForm);
-    form.onsubmit = submitForm;
+    submitButton.addEventListener('click', submitForm, false);
+    submitInput.addEventListener('click', submitForm, false);
+    form.addEventListener('submit', submitForm, false);
 }

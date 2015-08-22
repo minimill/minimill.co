@@ -84,6 +84,13 @@ body.disabled #submit-button {
     @include transform(translateY(0));
     background-color: $light-gray;
     color: $white;
+
+}
+
+.hidden-fields {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
 }
 
 body.error #submit-button {

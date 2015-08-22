@@ -8,9 +8,9 @@
     {{macros.render_field(form.name, class="field")}}
     {{macros.render_field(form.email, class="field")}}
     {{macros.render_field(form.message, class="field")}}
-    <div class="hidden">
+    <div class="hidden-fields">
         {{macros.render_field(form.csrf_token)}}
-        <input type="submit" id="submit" />
+        <input type="submit" id="submit" value="submit" />
     </div>
 </form>
 <div id="submit-button" class="submit-button">
@@ -21,7 +21,7 @@
 </div>
 <div id="success-sheet">
     <div class="content">
-        <p class="to"><span class="name">gerald</span>,</p>
+        <p class="to"><span id="to-name">gerald</span>,</p>
         <p>thanks for reaching out.</p>
         <p>we’ll get back to you really soon.</p>
         <p class="from">- jeff and dan</p>
