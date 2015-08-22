@@ -3,7 +3,7 @@
 {%- block title -%}Home | {{ super() }}{%- endblock -%}
 
 {%- block content -%}
-<h1 class="headline">hey there. we are minimill.</h1>
+<h1 class="headline">Hey there. We are Minimill, a new design agency. Let's work together.</h1>
 <form id="contact-form" action="{{ url_for('client.contact') }}" method="POST">
     {{macros.render_field(form.name, class="field")}}
     {{macros.render_field(form.email, class="field")}}

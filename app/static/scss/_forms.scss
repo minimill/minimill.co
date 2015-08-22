@@ -2,7 +2,7 @@
  * Forms *
  *********/
 
-form {
+ form {
     margin-bottom: 1rem;
     display: block;
 }
@@ -27,8 +27,16 @@ input:not([type="submit"]), textarea, {
     @include border-box;
     @include placeholder {
         color: $white;
+        opacity: .65;
+        text-transform: lowercase;
+        @include transition(opacity);
     }
     @extend .h1;
+    &:focus {
+        @include placeholder {
+            opacity: .5;
+        }
+    }
 }
 
 textarea {
@@ -36,7 +44,7 @@ textarea {
     box-sizing: content-box;
     min-height: 4.25rem;
     height: 4.25rem;
-    @include transition($props: min-height);
+    @include transition(min-height);
     &:focus {
         min-height: 8rem;
     }
@@ -68,7 +76,7 @@ textarea {
     right: 0;
     z-index: 2;
     cursor: pointer;
-    @include transition(0.15s);
+    @include transition;
     @include transform(translateY(100%));
     &.active {
         @include transform(translateY(0));
