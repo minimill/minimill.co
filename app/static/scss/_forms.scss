@@ -67,7 +67,7 @@ textarea {
 // }
 
 #submit-button {
-    background-color: $green;
+    background-color: $light-gray;
     height: $footer-height;
     padding: 5rem 0;
     bottom: 0;
@@ -88,11 +88,12 @@ textarea {
 
 body.active #submit-button {
     @include transform(translateY(0));
+    background-color: $green;
 }
 
 body.disabled #submit-button {
     @include transform(translateY(0));
-    background-color: $ultra-light-gray;
+    background-color: $light-gray;
 }
 
 body.error #submit-button {
