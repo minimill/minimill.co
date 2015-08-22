@@ -65,9 +65,9 @@ footer {
     }
     margin-right: 4.5rem;
 
-    &.red > svg g {
+    & > svg g {
         rect, polygon {
-            fill: $red !important;
+            fill: $red;
         }
     }
 }

@@ -1,0 +1,61 @@
+$slideUp: 1;
+$fadeIn: 0.5;
+
+$successDuration: percentage($slideUp / ($fadeIn + $slideUp));
+@mixin --fade-in() {
+    0% {
+        opacity: 0;
+    }
+    #{$successDuration} {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    @include --fade-in();
+}
+@-webkit-keyframes fade-in {
+    @include --fade-in();
+}
+
+body.success #success-sheet {
+    top: 0;
+}
+
+body.success .logo {
+    z-index: 4;
+    position: relative;
+    animation: fade-in #{$slideUp + $fadeIn}s;
+}
+
+body.success .logo > svg > g {
+    rect, polygon {
+        fill: $blue;
+    }
+}
+
+#success-sheet {
+    background-color: $green;
+    position: fixed;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 5rem 0;
+    @include transition(all, #{$slideUp}s);
+
+    p {
+        @extend .h1;
+        line-height: 2.5rem;
+    }
+}
+
+.to {
+    margin-bottom: 2.5rem;
+}
+.from {
+    margin-top: 2.5rem;
+}

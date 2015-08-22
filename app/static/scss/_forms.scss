@@ -51,21 +51,6 @@ textarea {
 
 }
 
-// input[type="submit"], button, .button {
-//     display: inline-block;
-//     padding: 0.5rem 1rem;
-//     border: none;
-//     @include border-box;
-//     vertical-align: top;
-//     color: $white;
-//     margin: 0;
-
-//     &:hover {
-//         cursor: pointer;
-//         color: $light-gray;
-//     }
-// }
-
 #submit-button {
     background-color: $light-gray;
     height: $footer-height;
@@ -102,7 +87,8 @@ body.error #submit-button {
 }
 
 body.success #submit-button {
-    @include transition(all, 10s);
+    @include transition(bottom, 1s);
+    @include transform(translateY(0));
     bottom: 100%;
     background-color: $green;
 }
