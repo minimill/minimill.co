@@ -27,7 +27,7 @@ input:not([type="submit"]), textarea, {
     @include border-box;
     @include placeholder {
         color: $white;
-        opacity: .65;
+        opacity: .7;
         text-transform: lowercase;
         @include transition(opacity);
     }
