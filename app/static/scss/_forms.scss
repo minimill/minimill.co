@@ -34,9 +34,9 @@ input:not([type="submit"]), textarea, {
 textarea {
     resize: vertical;
     height: 4.25rem;
-    
+    @include transition;
     &:focus {
-        height: auto;
+        height: 8rem;
     }
 
 }
