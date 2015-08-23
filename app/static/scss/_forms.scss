@@ -28,7 +28,6 @@ input:not([type="submit"]), textarea, {
     @include placeholder {
         color: $white;
         opacity: .7;
-        text-transform: lowercase;
         @include transition(opacity);
     }
     @extend .h1;

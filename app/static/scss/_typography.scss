@@ -1,8 +1,12 @@
+body {
+  text-transform: lowercase;
+}
+
 p, .p {
     margin-bottom: 1.5rem;
     font-family: $sans;
     font-weight: $regular;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
 }
 
 h1, .h1 {

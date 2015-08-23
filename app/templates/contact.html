@@ -9,7 +9,7 @@
 {%- endblock -%}
 
 {%- block content -%}
-<h1 class="headline">Hey there. We are Minimill, a new design agency. Let's work together.</h1>
+<h1 class="headline">We are Minimill, a new design agency.<br>Let's work together.</h1>
 <form id="contact-form" action="{{ url_for('client.contact') }}" method="POST">
     {{macros.render_field(form.name, class="field", required="true  ")}}
     {{macros.render_field(form.email, class="field", required="true ")}}
@@ -21,16 +21,16 @@
 </form>
 <div id="submit-button" class="submit-button">
     <div class="content">
-        <span class="submit-button-label">send</span>
-        <span id="error-message">Whoops! Something went awry.</span>
+        <span class="submit-button-label">Send</span>
+        <span id="error-message">Yikes, something went awry.</span>
     </div>
 </div>
 <div id="success-sheet">
     <div class="content">
-        <p class="to"><span id="to-name">gerald</span>,</p>
-        <p>thanks for reaching out.</p>
-        <p>we’ll get back to you really soon.</p>
-        <p class="from">- jeff and dan</p>
+        <p class="to"><span id="to-name">Gerald</span>,</p>
+        <p>Thanks for reaching out.</p>
+        <p>We’ll get back to you really soon.</p>
+        <p class="from">- Jeff and Dan</p>
     </div>
 </div>
 {%- endblock -%}

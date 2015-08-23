@@ -9,7 +9,7 @@ from flask.ext.wtf import Form
 from wtforms import StringField, TextAreaField
 from wtforms.validators import Required, Email
 
-EMAIL_ERROR = 'Please provide a valid email address'
+EMAIL_ERROR = 'Please pass a working email address.'
 
 
 class ContactForm(Form):
@@ -18,9 +18,9 @@ class ContactForm(Form):
     :ivar name: :class:`wtforms.fields.StringField` - The user's name
     :ivar email: :class:`wtforms.fields.StringField` - The user's email address
     """
-    name = StringField('who are you?', [Required('Please type a name')])
+    name = StringField('who are you?', [Required('Please type a name.')])
     email = StringField('what is your email?',
                         [Email(message=EMAIL_ERROR),
                          Required(message=EMAIL_ERROR)])
     message = TextAreaField('how can we help?',
-                            [Required('Please type a message')])
+                            [Required('Please type a message.')])
