@@ -21,10 +21,10 @@ function submitForm(e) {
     var xmlhttp= window.XMLHttpRequest ?
         new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-    var csrf_token = document.getElementById('csrf_token').value;
+    var name = document.getElementById('minimill-name').value;
+    var email = document.getElementById('minimill-email').value;
+    var message = document.getElementById('minimill-message').value;
+    var csrf_token = document.getElementById('minimill-csrf_token').value;
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
@@ -49,7 +49,7 @@ function submitForm(e) {
 window.onload = function() {
     toName = document.getElementById('to-name');
     form = document.getElementById('contact-form');
-    var message = document.getElementById('message');
+    var message = document.getElementById('minimill-message');
     new Autogrow(message);
     var inputsNl = document.querySelectorAll('.field input, .field textarea');
     inputs = [];
