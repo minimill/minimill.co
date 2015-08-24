@@ -19,7 +19,7 @@ def contact():
 
     **Methods:** ``GET``
     """
-    form = ContactForm()
+    form = ContactForm(prefix="minimill-")
     return render_template('contact.html', form=form)
 
 
