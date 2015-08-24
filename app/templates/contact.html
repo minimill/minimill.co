@@ -10,10 +10,10 @@
 
 {%- block content -%}
 <h1 class="headline">We are Minimill, a new design agency.<br>Let's work together.</h1>
-<form id="contact-form" action="{{ url_for('client.contact') }}" method="POST">
-    {{macros.render_field(form.name, class="field", required="true  ")}}
-    {{macros.render_field(form.email, class="field", required="true ")}}
-    {{macros.render_field(form.message, class="field", required="true   ")}}
+<form id="contact-form" action="{{ url_for('client.contact') }}" method="POST" autocomplete="off">
+    {{macros.render_field(form.name, class="field", required="true", spellcheck="false", autocomplete="off")}}
+    {{macros.render_field(form.email, class="field", required="true", spellcheck="false", autocomplete="off")}}
+    {{macros.render_field(form.message, class="field", required="true", spellcheck="false", autocomplete="off")}}
     <div class="hidden-fields">
         {{macros.render_field(form.csrf_token)}}
         <input type="submit" id="submit" value="submit" />
