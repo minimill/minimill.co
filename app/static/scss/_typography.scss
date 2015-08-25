@@ -9,8 +9,10 @@ p, .p {
     font-size: 1.375rem;
 }
 
+$h1-font-size: 2rem;
+$h1-line-height: 1.25;
 h1, .h1 {
     font-family: $sans;
-    font-size: 3rem;
-    line-height: 1.25;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
 }

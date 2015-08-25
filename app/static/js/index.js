@@ -12,7 +12,6 @@ function onInputChanged(e) {
     } else {
         body.className = '';
     }
-    window.scrollTo(0,document.body.scrollHeight);
 }
 
 function submitForm(e) {
@@ -49,8 +48,10 @@ function submitForm(e) {
 window.onload = function() {
     toName = document.getElementById('to-name');
     form = document.getElementById('contact-form');
-    var message = document.getElementById('minimill-message');
-    new Autogrow(message);
+    submitButton = document.getElementById('submit-button');
+    submitInput = document.getElementById('submit');
+    errorMessage = document.getElementById('error-message');
+    body = document.getElementsByTagName('body')[0];
     var inputsNl = document.querySelectorAll('.field input, .field textarea');
     inputs = [];
     for (var i = 0; i < inputsNl.length; i++) {
@@ -58,10 +59,6 @@ window.onload = function() {
         inputs.push(input);
         input.addEventListener('input', onInputChanged);
     }
-    submitButton = document.getElementById('submit-button');
-    submitInput = document.getElementById('submit');
-    errorMessage = document.getElementById('error-message');
-    body = document.getElementsByTagName('body')[0];
     submitButton.addEventListener('click', submitForm, false);
     submitInput.addEventListener('click', submitForm, false);
     form.addEventListener('submit', submitForm, false);

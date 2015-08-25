@@ -8,20 +8,20 @@
 {%- endblock -%}
 
 {% block body %}
-<section>
+<section id="main">
     <div class="content">
         {% block content %}
         {% endblock%}
     </div>
+    <footer>
+        <div class="content">
+            <a href="/">
+                <div class="logo">
+                    {% include "minimill-logo.svg.html" %}
+                </div>
+            </a>
+            <p>design and dev and brand and people</p>
+        </div>
+    </footer>
 </section>
-<footer>
-    <div class="content">
-        <a href="/">
-            <div class="logo">
-                {% include "minimill-logo.svg.html" %}
-            </div>
-        </a>
-        <p>design and dev and brand and people</p>
-    </div>
-</footer>
 {% endblock %}

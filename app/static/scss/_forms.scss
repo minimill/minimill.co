@@ -9,10 +9,14 @@
 
 .form-control {
     display: block;
-    margin: 0 0 3rem;
+    margin: 3rem 0 0;
     input, textarea {
         display: block;
         width: 100%;
+    }
+
+    &:first-child {
+        margin-top: 0;
     }
 }
 
@@ -24,6 +28,7 @@ input:not([type="submit"]), textarea, {
     outline: none;
     border-bottom: 2px solid $white;
     color: $white;
+    border-radius: 0;
     @include border-box;
     @include placeholder {
         color: $white;
@@ -38,24 +43,21 @@ input:not([type="submit"]), textarea, {
     }
 }
 
+$textarea-height: ($h1-font-size * $h1-line-height);
 textarea {
     resize: none;
     box-sizing: content-box;
-    min-height: 4.25rem;
-    height: 4.25rem;
-    @include transition(min-height);
+    height: $textarea-height;
+    @include transition(height);
     &:focus {
-        min-height: 8rem;
-    }
-    &:invalid {
-        max-height: 4.25rem;
+        height: $textarea-height * 4;
     }
 }
 
 #submit-button {
     background-color: $light-gray;
     height: $footer-height;
-    padding: 5rem 0;
+    padding: $footer-padding 0;
     bottom: 0;
     position: fixed;
     left: 0;
@@ -111,4 +113,14 @@ body.success #submit-button {
     bottom: 100%;
     background-color: $green;
 }
+
+@media screen and (max-width: $tablet-landscape-max) {
+    textarea {
+        height: $textarea-height * 4;
+    }
+    #submit-button {
+        padding: 3rem 0;
+    }
+}
+
 
