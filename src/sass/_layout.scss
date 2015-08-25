@@ -1,0 +1,24 @@
+.content {
+    max-width: 40rem;
+    margin: 0 auto;
+    width: 80%;
+    padding: 8rem 0 0;
+
+    .logo, p {
+        margin: 0 0 2rem;
+    }
+}
+
+.logo {
+    max-width: 100%;
+    height: 44px;
+
+    & > svg {
+        height: 44px;
+        g {
+            rect, polygon {
+                fill: $white;
+            }
+        }
+    }
+}

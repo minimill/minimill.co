@@ -1,0 +1,36 @@
+/**********************
+ * media_queries.scss *
+ **********************/
+
+$phone-max: 640px;
+$tablet-portrait-min: 641px;
+$tablet-portrait-max: 768px;
+$tablet-landscape-min: 769px;
+$tablet-landscape-max: 1024px;
+$desktop-min: 1025px;
+$desktop-max: 1440px;
+$xl-desktop-min: 1441px;
+$xl-desktop-max: 1920px;
+$xxl-desktop-min: 1921px;
+
+/**********************
+ * Responsive Scaling *
+ **********************/
+
+@media screen and (max-width: $xl-desktop-max) {
+    html, body {
+        font-size: 22px !important;
+    }
+}
+
+@media screen and (max-width: $desktop-max) {
+    html, body {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width: $phone-max) {
+    html, body {
+        font-size: 10px !important;
+    }
+}

@@ -1,0 +1,11 @@
+{{#extend "base" foo="bar"}}
+{{#content "main" mode="prepend"}}
+<div class="content">
+    <div class="logo">
+        {{> "minimill-logo.svg" }}
+    </div>
+    <p>We are Minimill,<br> a new design agency <br> for brand and web.</p>
+    <p><a href="mailto:team@minimill.co">Work with us.</a></p>
+</div>
+{{/content}}
+{{/extend}}
