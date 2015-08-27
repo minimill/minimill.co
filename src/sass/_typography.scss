@@ -28,7 +28,7 @@ p, .p {
     line-height: $h1-line-height;
 }
 
-@media screen and (max-width: $phone-max) {
+@media screen and (max-width: $phone-landscape-max) {
   p, .p {
     font-size: 3rem;
   }

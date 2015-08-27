@@ -2,7 +2,10 @@
  * media_queries.scss *
  **********************/
 
-$phone-max: 640px;
+$super-ultra-tiny-flip-phone-max: 240px;
+$flip-phone-max: 319px;
+$phone-portrait-max: 480px;
+$phone-landscape-max: 640px;
 $tablet-portrait-min: 641px;
 $tablet-portrait-max: 768px;
 $tablet-landscape-min: 769px;
@@ -29,8 +32,23 @@ $xxl-desktop-min: 1921px;
     }
 }
 
-@media screen and (max-width: $phone-max) {
+@media screen and (max-width: $phone-landscape-max) {
+    html, body {
+        font-size: 13px !important;
+    }
+}
+@media screen and (max-width: $phone-portrait-max) {
     html, body {
         font-size: 10px !important;
+    }
+}
+@media screen and (max-width: $flip-phone-max) {
+    html, body {
+        font-size: 7px !important;
+    }
+}
+@media screen and (max-width: $super-ultra-tiny-flip-phone-max) {
+    html, body {
+        font-size: 5px !important;
     }
 }

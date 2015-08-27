@@ -12,6 +12,7 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var plumber      = require('gulp-plumber');
+var scp          = require('gulp-scp2');
 var reload       = browserSync.reload;
 
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
@@ -78,8 +79,22 @@ gulp.task('watch', function() {
   gulp.watch('./src/js/**/*.js', ['js'], reload);
 });
 
+gulp.task('build', ['templates', 'sass', 'images', 'fonts', 'js']);
+
+gulp.task('deploy', ['build'], function (cb) {
+  gulp.src('dest/**/*')
+  .pipe(scp({
+    host: 'minimill.co',
+    publicKey: '~/.ssh/id_rsa.pub',
+    dest: '/srv/minimill/public_html/'
+  }))
+  .on('error', function(err) {
+    console.log(err);
+  });
+});
+
 // use default task to launch Browsersync and watch JS files
-gulp.task('serve', ['templates', 'sass', 'images', 'fonts', 'js'], function () {
+gulp.task('serve', ['build'], function () {
 
   // Serve files from the root of this project
   browserSync.init(['./dist/**/*'], {
