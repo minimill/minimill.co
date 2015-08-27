@@ -11,5 +11,9 @@ gem install scss_lint
 gulp serve
 ```
 
+### Deploying
 
+```
+gulp deploy
+```
 

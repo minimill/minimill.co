@@ -12,7 +12,7 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var plumber      = require('gulp-plumber');
-var scp          = require('gulp-scp2');
+var shell        = require('gulp-shell');
 var reload       = browserSync.reload;
 
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
@@ -81,16 +81,12 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['templates', 'sass', 'images', 'fonts', 'js']);
 
-gulp.task('deploy', ['build'], function (cb) {
-  gulp.src('dest/**/*')
-  .pipe(scp({
-    host: 'minimill.co',
-    publicKey: '~/.ssh/id_rsa.pub',
-    dest: '/srv/minimill/public_html/'
-  }))
-  .on('error', function(err) {
-    console.log(err);
-  });
+gulp.task('deploy', ['build'], function () {
+  gulp.src('')
+    .pipe(shell('scp -r dist/* root@minimill.co:/srv/minimill.co/public_html/'))
+    .on('finish', function () {
+      console.log('Deployed to minimill.co');
+    });
 });
 
 // use default task to launch Browsersync and watch JS files
