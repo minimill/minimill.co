@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Calibre';
-  src: url('../../font/CalibreWeb-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../../font/CalibreWeb-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../font/CalibreWeb-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+  src: url('../../font/CalibreWeb-Regular.eot'); // IE9 Compat Modes
+  src: url('../../font/CalibreWeb-Regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+       url('../../font/CalibreWeb-Regular.woff') format('woff'); // Pretty Modern Browsers
 }
 
 // Font weights
@@ -22,10 +22,10 @@ $h1-font-size: 3.5rem;
 $h1-line-height: 1.25;
 
 p, .p {
-    font-family: $sans;
-    font-weight: $regular;
-    font-size: $h1-font-size;
-    line-height: $h1-line-height;
+  font-family: $sans;
+  font-size: $h1-font-size;
+  font-weight: $regular;
+  line-height: $h1-line-height;
 }
 
 @media screen and (max-width: $phone-landscape-max) {
