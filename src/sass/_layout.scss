@@ -21,3 +21,15 @@
     }
   }
 }
+
+$large-logo: 66px;
+@media screen and (min-width: $xl-desktop-min) {
+  .logo {
+    height: $large-logo;
+
+    > svg {
+      height: $large-logo;
+    }
+  }
+}
+
