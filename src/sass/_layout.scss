@@ -33,3 +33,14 @@ $large-logo: 66px;
   }
 }
 
+$xl-logo: 88px;
+@media screen and (min-width: $xxl-desktop-min) {
+  .logo {
+    height: $xl-logo;
+
+    > svg {
+      height: $xl-logo;
+    }
+  }
+}
+
