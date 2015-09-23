@@ -13,10 +13,13 @@ var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var inlinesource = require('gulp-inline-source');
+var minifyCss = require('gulp-minify-css');
 var scsslint = require('gulp-scss-lint');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var minifyHTML = require('gulp-minify-html');
 var yaml = require('js-yaml');
 
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
@@ -28,15 +31,28 @@ gulp.task('sass:lint', function() {
 });
 
 gulp.task('sass:build', function() {
-  gulp.src('./src/sass/**/*.scss')
+  gulp.src('./src/sass/**/style.scss')
+    .pipe(rename({suffix: '.min'}))
     .pipe(plumber())
-      .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
     }))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('sass:optimized', function() {
+  gulp.src('./src/sass/**/style.scss')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'compressed',
+    }))
+    .pipe(autoprefixer())
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/css/'));
 });
 
 gulp.task('sass', ['sass:lint', 'sass:build']);
@@ -91,6 +107,16 @@ gulp.task('templates', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('templates:optimized', ['templates'], function() {
+  gulp.src('./dist/*.html')
+    .pipe(inlinesource())
+    .pipe(minifyHTML({
+      conditionals: true,
+      spare:true,
+    }))
+    .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('watch', function() {
   gulp.watch('./src/templates/**/*.hbs', ['templates'], reload);
   gulp.watch('./src/sass/**/*.scss', ['sass'], reload);
@@ -98,9 +124,10 @@ gulp.task('watch', function() {
   gulp.watch(['./src/js/**/*.js', 'Gulpfile.js'], ['js'], reload);
 });
 
-gulp.task('build', ['templates', 'sass', 'images', 'fonts', 'js']);
+gulp.task('build', ['sass', 'images', 'fonts', 'js', 'templates']);
+gulp.task('build:optimized', ['sass:optimized', 'images', 'fonts', 'js', 'templates:optimized']);
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', ['build:optimized'], function() {
   gulp.src('')
     .pipe(shell('scp -r dist/* root@minimill.co:/srv/minimill.co/public_html/'))
     .on('finish', function() {

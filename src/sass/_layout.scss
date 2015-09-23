@@ -10,11 +10,13 @@
 }
 
 .logo {
+  display: block;
   height: 44px;
   max-width: 100%;
 
   > svg {
     height: 44px;
+    left: 0;
 
     rect, polygon {
       fill: $white;
