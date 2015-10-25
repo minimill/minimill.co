@@ -78,6 +78,10 @@ gulp.task('images', function() {
   gulp.src('src/img/**/*')
     .pipe(plumber())
     .pipe(gulp.dest('./dist/img'));
+
+  gulp.src('src/favicon.ico')
+    .pipe(plumber())
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('fonts', function() {
