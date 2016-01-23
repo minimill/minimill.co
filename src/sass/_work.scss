@@ -1,0 +1,107 @@
+$transition-speed: 0.5s;
+
+.project-preview {
+  padding: 16rem 0 0;
+
+  .project-title {
+    @extend %h1;
+    margin: 2rem 0;
+    transition: $transition-speed ease color;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    transition: $transition-speed ease color;
+  }
+}
+
+.sections {
+  position: relative;
+  z-index: 2;
+}
+
+.section-hero {
+  padding: 24.5rem 0 10rem;
+  text-align: center;
+}
+
+.backgrounds {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  li {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: $transition-speed ease opacity;
+    width: 100%;
+  }
+
+  .background-hero { background-color: $blue; }
+  .background-fin { background-color: $fin-blue; }
+  .background-wac { background-color: $wac-yellow; }
+  .background-redspread { background-color: $redspread-red; }
+  .background-upchannel { background-color: $upchannel-white; }
+  .background-unscan { background-color: $unscan-gold; }
+}
+
+%section-hero {
+  p, .project-title {
+    color: $white;
+  }
+}
+
+%section-fin {
+  p, .project-title {
+    color: $fin-white;
+  }
+}
+
+%section-wac {
+  p, .project-title {
+    color: $wac-black;
+  }
+}
+
+%section-upchannel {
+  p, .project-title {
+    color: $upchannel-black;
+  }
+}
+
+%section-unscan {
+  p, .project-title {
+    color: $unscan-black;
+  }
+}
+
+// List of sections, IN ORDER!
+$sections: 'hero', 'wac', 'fin', 'upchannel', 'unscan';
+
+// If you're in $current-section, that section, and the sections above and
+// below it, should all be styled like %section-#{$current-section}
+@each $current-section in $sections {
+  // Compute the current index
+  $index: index($sections, $current-section);
+
+  .in-section-#{$current-section} {
+    .background-#{$current-section} {
+      opacity: 1;
+    }
+
+    // Section above $current-section, if it exists.
+    .section-#{if($index > 1, nth($sections, $index - 1), $current-section)},
+    // Section below $current-section, if it exists.
+    .section-#{if($index < length($sections), nth($sections, $index + 1), $current-section)},
+    // $current-section
+    .section-#{$current-section} {
+      @extend %section-#{$current-section};
+    }
+  }
+}

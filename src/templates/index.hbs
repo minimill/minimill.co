@@ -1,11 +1,83 @@
 {{#extend "base" foo="bar"}}
 {{#content "main" mode="prepend"}}
-<div class="content">
-    <div class="logo">
-        {{> "minimill-logo.svg" }}
-    </div>
-    <p>We are Minimill,<br> a new design agency <br> for brand, web, and mobile.</p>
-    <p><a href="mailto:team@minimill.co">Let's work together.</a></p>
-</div>
+{{> "navbar" }}
+<ul class="backgrounds">
+    <li class="background-hero"></li>
+    <li class="background-fin"></li>
+    <li class="background-wac"></li>
+    <li class="background-redspread"></li>
+    <li class="background-upchannel"></li>
+    <li class="background-unscan"></li>
+</ul>
+<ul class="sections">
+    <li class="animated-section section-hero" data-section-id="hero">
+        <div class="content">
+            <div class="col-12">
+                <h1>We are Minimill, a design agency for brand, web, and mobile.</h1>
+            </div>
+        </div>
+    </li>
+    <li class="animated-section project-preview section-wac" data-section-id="wac">
+        <div class="content">
+            <div class="col-8">
+                <img src="img/wac-macbook.png" alt="World After Capital">
+            </div>
+            <div class="col-4">
+                <h2 class="project-title">World After Captial</h2>
+                <p>We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+                <p><a href="/world-after-capital" class="view-project-button">View Project</a></p>
+            </div>
+        </div>
+    </li>
+    <li class="animated-section project-preview section-fin" data-section-id="fin">
+        <div class="content">
+            <div class="col-8">
+                <img src="img/fin-macbook.png" alt="Fin">
+            </div>
+            <div class="col-4">
+                <h2 class="project-title">Fin</h2>
+                <p>We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+                <p><a href="/fin" class="view-project-button">View Project</a></p>
+            </div>
+        </div>
+    </li>
+    <li class="animated-section project-preview section-upchannel" data-section-id="upchannel">
+        <div class="content">
+            <div class="col-8">
+                <img src="img/upchannel-macbook.png" alt="Upchannel">
+            </div>
+            <div class="col-4">
+                <h2 class="project-title">Upchannel</h2>
+                <p>We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+                <p><a href="/upchannel" class="view-project-button">View Project</a></p>
+            </div>
+        </div>
+    </li>
+    <li class="animated-section project-preview section-unscan" data-section-id="unscan">
+        <div class="content">
+            <div class="col-8">
+                <img src="img/unscan-macbook.png" alt="Unscan">
+            </div>
+            <div class="col-4">
+                <h2 class="project-title">Unscan</h2>
+                <p>We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+                <p><a href="/unscan" class="view-project-button">View Project</a></p>
+            </div>
+        </div>
+    </li>
+    <li class="animated-section project-preview" data-section-id="logo-work">
+
+    </li>
+    <li class="animated-section project-preview" data-section-id="logo-work">
+
+    </li>
+    <li class="animated-section project-preview" data-section-id="logo-work">
+
+    </li>
+</ul>
+<script src="/js/sections.js"></script>
+<script>
+    var sections = new Sections().enable();
+</script>
 {{/content}}
 {{/extend}}

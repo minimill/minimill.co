@@ -1,0 +1,40 @@
+$logo-height: 44px;
+
+nav {
+  padding: 4rem 0;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  .logo {
+    display: inline-block;
+    height: $logo-height;
+    max-width: 100%;
+
+    svg {
+      height: $logo-height;
+      left: 0;
+    }
+
+    rect, polygon {
+      fill: $white;
+    }
+  }
+
+  .links {
+    display: inline-block;
+    float: right;
+    height: $logo-height;
+
+    li {
+      display: inline-block;
+      line-height: $logo-height;
+      margin-left: 2.5rem;
+      vertical-align: middle;
+    }
+
+    a {
+      @extend %h3;
+    }
+  }
+}

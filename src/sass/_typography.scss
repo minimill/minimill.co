@@ -14,22 +14,22 @@ $thin: 300;
 // Fonts
 $sans: 'Calibre', Helvetica, Arial, sans-serif;
 
-body {
-  text-transform: lowercase;
+h1, %h1 {
+  font-size: 2.5rem;
 }
 
-$h1-font-size: 3.5rem;
-$h1-line-height: 1.25;
-
-p, .p {
-  font-family: $sans;
-  font-size: $h1-font-size;
-  font-weight: $regular;
-  line-height: $h1-line-height;
+h2, %h2 {
+  font-size: 2rem;
 }
 
-@media screen and (max-width: $phone-landscape-max) {
-  p, .p {
-    font-size: 3rem;
-  }
+h3, %h3 {
+  font-size: 1.5rem;
+}
+
+h4, %h4 {
+  font-size: 1rem;
+}
+
+p, %p {
+  font-size: 1rem;
 }

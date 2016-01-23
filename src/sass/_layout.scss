@@ -1,48 +1,27 @@
+$content-width: 66rem;
+
 .content {
+  @include clearfix;
   margin: 0 auto;
-  max-width: 40rem;
-  padding: 8rem 0 0;
-  width: 80%;
+  max-width: $content-width;
+  width: 100%;
 
-  .logo, p {
-    margin: 0 0 2rem;
+  [class^="col-"] {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    padding: 0 1.25rem;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+
+  .col-8 {
+    width: 66.666666%;
+  }
+
+  .col-4 {
+    width: 33.333333%;
   }
 }
-
-.logo {
-  display: block;
-  height: 44px;
-  max-width: 100%;
-
-  > svg {
-    height: 44px;
-    left: 0;
-
-    rect, polygon {
-      fill: $white;
-    }
-  }
-}
-
-$large-logo: 66px;
-@media screen and (min-width: $xl-desktop-min) {
-  .logo {
-    height: $large-logo;
-
-    > svg {
-      height: $large-logo;
-    }
-  }
-}
-
-$xl-logo: 88px;
-@media screen and (min-width: $xxl-desktop-min) {
-  .logo {
-    height: $xl-logo;
-
-    > svg {
-      height: $xl-logo;
-    }
-  }
-}
-

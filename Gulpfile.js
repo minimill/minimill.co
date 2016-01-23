@@ -60,7 +60,8 @@ gulp.task('sass', ['sass:lint', 'sass:build']);
 gulp.task('js:build', function() {
   gulp.src('src/js/**/*.js')
     .pipe(plumber())
-    .pipe(uglify())
+
+    // .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
 
@@ -132,6 +133,14 @@ gulp.task('build', ['sass', 'images', 'fonts', 'js', 'templates']);
 gulp.task('build:optimized', ['sass:optimized', 'images', 'fonts', 'js', 'templates:optimized']);
 
 gulp.task('deploy', ['build:optimized'], function() {
+  gulp.src('')
+    .pipe(shell('scp -r dist/* root@minimill.co:/srv/work/private_html/minimill/'))
+    .on('finish', function() {
+      process.stdout.write('Deployed to work.minimill.co/minimill');
+    });
+});
+
+gulp.task('deploy:prod', ['build:optimized'], function() {
   gulp.src('')
     .pipe(shell('scp -r dist/* root@minimill.co:/srv/minimill.co/public_html/'))
     .on('finish', function() {
