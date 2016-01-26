@@ -1,0 +1,54 @@
+footer {
+  background-color: $dark-gray;
+  padding: 8rem 0;
+
+  p, a {
+    color: $medium-gray;
+    transition: 0.3s ease color;
+  }
+
+  rect, polygon {
+    fill: $medium-gray;
+    transition: 0.3s ease fill;
+  }
+
+  svg {
+    height: $logo-height;
+  }
+
+  .email-button {
+    border: 1px solid $medium-gray;
+    display: block;
+    height: $logo-height;
+    line-height: $logo-height;
+    text-align: center;
+    transition: 0.3s ease color, 0.3s ease border-color;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    p, a {
+      color: $light-gray;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    rect, polygon {
+      fill: $light-gray;
+    }
+
+    svg:hover rect, svg:hover polygon {
+      fill: $white;
+    }
+
+    .email-button {
+      border-color: $light-gray;
+
+      &:hover {
+        border-color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.animating-to-home {
+  .animated-section {
+    opacity: 0;
+  }
+
+  body {
+    background-color: $blue;
+  }
+
+  .backgrounds > li:not(.background-work-hero) {
+    opacity: 0;
+  }
+
+  .background-work-hero {
+    opacity: 1;
+  }
+}
+
+
+@each $project in $projects {
+  .animating-to-#{$project}-case {
+
+    nav {
+      position: fixed;
+      animation: $a-fade-in;
+    }
+
+    .animated-section:not(.section-work-#{$project}) {
+      opacity: 0;
+    }
+
+    .section-work-#{$project} {
+      opacity: 1;
+      .view-project-button {
+        opacity: 0;
+      }
+    }
+
+    .backgrounds li:not([class="background-work-#{$project}"]) {
+      opacity: 0;
+    }
+
+    .background-work-#{$project} {
+      opacity: 1;
+    }
+  }
+}

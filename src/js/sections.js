@@ -79,7 +79,7 @@
   Sections.prototype._onResize = function() {
     this.sectionMap = this._computeSectionMap();
     this._onScroll();
-  }
+  };
 
   Sections.prototype._getOnResize = function() {
     var _this = this;

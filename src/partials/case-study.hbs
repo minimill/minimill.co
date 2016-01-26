@@ -1,0 +1,31 @@
+{{#extend "base" foo="bar"}}
+{{#content "main" mode="prepend"}}
+{{> "navbar" }}
+<ul class="backgrounds">
+    {{#block "backgrounds"}}
+    <li class="background-work-hero"></li>
+    {{/block }}
+</ul>
+<ul class="sections" id="sections">
+    {{#block "sections"}}
+    {{> "footer" }}
+    {{/block}}
+</ul>
+<script src="/js/lib/mobile-detect.min.js"></script>
+<script src="/js/sections.js"></script>
+<script src="/js/lib/pageanimation.min.js"></script>
+<script>
+  var sections = new Sections().enable();
+  var MOBILE_WIDTH = 640;
+  var md = new MobileDetect(window.navigator.userAgent);
+  if (md.mobile() === null) {
+    new PageAnimation({
+      shouldAnimate: function() {
+        return window.innerWidth > MOBILE_WIDTH;
+      },
+    }).register(/^\/$/, 'sections', 'animating-to-home')
+      .enable();
+  }
+</script>
+{{/content}}
+{{/extend}}

@@ -1,0 +1,125 @@
+
+.sections {
+  position: relative;
+  z-index: 2;
+
+  .animated-section {
+    transition: $t-opacity;
+  }
+}
+
+.backgrounds {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  li {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: $t-opacity;
+    width: 100%;
+  }
+
+  .background-work-hero { background-color: $blue; }
+  .background-fin-hero,
+  .background-work-fin { background-color: $fin-blue; }
+  .background-work-wac { background-color: $wac-yellow; }
+  .background-work-redspread { background-color: $redspread-red; }
+  .background-work-unscan { background-color: $unscan-gold; }
+  .background-work-identities { background-color: $light-gray; }
+  .background-work-upchannel {
+    background-color: $upchannel-white;
+
+    &:before {
+      animation: $a-upchannel-shift;
+      background-image: url('../img/pattern-trans.png');
+      background-repeat: repeat;
+      background-size: 12rem 12rem;
+      bottom: 0;
+      content: '';
+      left: -12rem;
+      position: absolute;
+      opacity: 0.1;
+      right: -12rem;
+      top: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.in-section-work-identities {
+  background-color: $dark-gray;
+}
+
+%section-work-hero {
+  p, .h1 {
+    color: $white;
+  }
+}
+
+%section-fin-hero,
+%section-work-fin {
+  p, .h1 {
+    color: $fin-white;
+  }
+}
+
+%section-work-wac {
+  p, .h1 {
+    color: $wac-black;
+  }
+}
+
+%section-work-upchannel {
+  p, .h1 {
+    color: $upchannel-black;
+  }
+}
+
+%section-work-unscan {
+  p, .h1 {
+    color: $unscan-black;
+  }
+}
+
+%section-work-identities {
+  p, .h1 {
+    color: $dark-gray;
+  }
+}
+
+// List of sections, IN ORDER!
+$projects: 'wac', 'fin', 'upchannel', 'unscan';
+$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel', 'work-unscan', 'work-identities';
+$fin-sections: 'fin-hero';
+$sections: $work-sections, $fin-sections;
+
+@each $page in $sections {
+  // If you're in $current-section, that section, and the sections above and
+  // below it, should all be styled like %section-#{$current-section}
+  @each $current-section in $page {
+    // Compute the current index
+    $index: index($page, $current-section);
+
+    .in-section-#{$current-section} {
+      .background-#{$current-section} {
+        opacity: 1;
+      }
+
+      // Section above $current-section, if it exists.
+      .section-#{if($index > 1, nth($page, $index - 1), $current-section)},
+      // Section below $current-section, if it exists.
+      .section-#{if($index < length($page), nth($page, $index + 1), $current-section)},
+      // $current-section
+      .section-#{$current-section} {
+        @extend %section-#{$current-section};
+      }
+    }
+  }
+}

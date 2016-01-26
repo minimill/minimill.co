@@ -1,0 +1,25 @@
+$delay: 0.2s;
+$speed: 0.3s;
+$d1: $speed + $delay;
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes shift {
+  0% {
+    transform: 0;
+  }
+
+  100% {
+    transform: translate3d(12rem, 0, 0);
+  }
+}
+
+$a-fade-in: fade-in $d1 ease;
+$a-upchannel-shift: shift 15s linear infinite;
+
+$t-opacity: $speed ease opacity;
+$t-color: $speed ease color;

@@ -1,5 +1,5 @@
 html, body {
-  background-color: $white;
+  background-color: $blue;
   color: $white;
   font-family: $sans;
   font-size: 16px;
@@ -15,6 +15,22 @@ a, a:hover {
 
 img {
   max-width: 100%;
+}
+
+body {
+  background-color: $blue;
+
+  &.page-fin {
+    background-color: $fin-blue;
+  }
+}
+
+hr {
+  background-color: $medium-gray;
+  border: 0;
+  height: 2px;
+  margin: 8rem 0;
+  outline: 0;
 }
 
 @mixin clearfix {
