@@ -1,20 +1,5 @@
-{{#extend "base" foo="bar"}}
-{{#content "main" mode="prepend"}}
-{{> "navbar" }}
-<ul class="backgrounds">
-    <li class="background-work-hero"></li>
-    {{#block "backgrounds"}}
-    {{/block }}
-    <li class="background-footer"></li>
-</ul>
-<ul class="sections" id="sections">
-    {{#block "sections"}}
-    {{> "footer" }}
-    {{/block}}
-</ul>
-<script src="/js/lib/mobile-detect.min.js"></script>
-<script src="/js/sections.js"></script>
-<script src="/js/lib/pageanimation.min.js"></script>
+{{#extend "page"}}
+{{#content "js"}}
 <script>
   var sections = new Sections().enable();
   var MOBILE_WIDTH = 640;
