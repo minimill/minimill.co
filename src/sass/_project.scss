@@ -1,0 +1,129 @@
+
+.project-preview {
+  padding: 16rem 0 0;
+
+  .h1 {
+    margin: 2rem 0;
+    transition: $t-color;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    transition: $t-color;
+  }
+
+  .view-project-button {
+    transition: $t-opacity;
+  }
+}
+
+.project-hero {
+  padding: 16rem 0 0;
+
+  h1, p {
+    box-sizing: border-box;
+    display: inline-block;
+    float: right;
+    padding: 0 1.25rem;
+    width: 33.333333%;
+  }
+
+  h1 {
+    margin: 2rem 0;
+  }
+
+
+  .img-wrapper {
+    @include column;
+    display: inline-block;
+    float: left;
+    position: relative;
+    width: 66.666666%;
+    z-index: 2;
+  }
+
+  .services {
+    @extend %h3;
+    @include column;
+    animation: $a-fade-in;
+    color: $fin-light-blue;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    width: 37.5%;
+
+    li {
+      &:after {
+        content: '+';
+        display: inline;
+        padding-left: 0.5rem;
+
+      }
+    }
+  }
+
+  blockquote {
+    @extend %h2;
+    @include column;
+    animation: $a-fade-in;
+    border: 1px solid $fin-white;
+    float: right;
+    margin-top: -9rem;
+    padding: 4rem 5.5rem;
+    position: relative;
+    width: 66.666666%;
+    z-index: 1;
+
+    &:before {
+      content: '\201D';
+      display: block;
+      font-size: 6rem;
+      height: 6rem;
+      line-height: 4rem;
+      text-align: right;
+    }
+  }
+
+  cite {
+    @extend %p;
+    display: block;
+    padding-top: 3rem;
+
+    span {
+      display: block;
+    }
+
+    .subtitle {
+      opacity: 0.5;
+    }
+
+    .photo {
+      border-radius: 50%;
+      bottom: 2.5rem;
+      height: 7.5rem;
+      left: -3.75rem;
+      overflow: hidden;
+      position: absolute;
+      width: 7.5rem;
+    }
+  }
+}
+
+.project-goal {
+  padding: 16rem 0 0;
+
+  .h1 {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+.project-related-work {
+  padding: 16rem 0;
+
+  .content > div > p {
+    margin-bottom: 4rem;
+  }
+}

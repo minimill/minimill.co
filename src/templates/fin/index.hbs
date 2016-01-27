@@ -2,19 +2,70 @@
 {{#content "body-class"}}page-fin{{/content}}
 {{#content "backgrounds" mode="append"}}
 <li class="background-fin-hero"></li>
+<li class="background-fin-goal"></li>
+<li class="background-fin-related"></li>
 {{/content}}
 {{#content "sections" mode="prepend"}}
-<li class="animated-section project-preview section-fin-hero" data-section-id="fin-hero">
+<li class="animated-section project-hero section-fin-hero" data-section-id="fin-hero">
     <div class="content">
-        <div class="col-8">
+        <h1>Fin</h1>
+        <div class="img-wrapper">
             <img src="/img/fin-macbook.png" alt="Fin">
+            <ul class="services">
+                <li>UI/UX Design</li>
+                <li>Web Development</li>
+            </ul>
         </div>
-        <div class="col-4">
-            <h2 class="h1">Fin</h2>
-            <p>We teamed up with Andrew Staub, Andrew Kortina, and Sam Lessin to develop an informative web presence for their new forward-thinking mobile application, Fin.</p>
+        <p>We teamed up with Andrew Staub, Andrew Kortina, and Sam Lessin to develop an informative web presence for their new forward-thinking mobile application, Fin.</p>
+        <blockquote>
+            Minimill killed it. We gave our entire web product to them with a crazy schedule and still launched on time.
+            <cite>
+                <span class="name">Sam Lessin</span>
+                <span class="title">Founder, Fin</span>
+                <span class="subtitle">Former VP of Product, Facebook</span>
+                <span class="photo"><img src="/img/sam.jpg" alt=""></span>
+            </cite>
+        </blockquote>
+    </div>
+</li>
+<li class="animated-section project-goal section-fin-goal" data-section-id="fin-goal">
+    <div class="content">
+        <div class="col-8 col-centered">
+            <h2 class="h1">A web presence for a mobile product</h2>
+            <p class="large">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
         </div>
     </div>
-
+    <div class="content">
+        <div class="col-12">
+            <img src="/img/fin-macbook.png" alt="Fin">
+        </div>
+    </div>
+</li>
+<li class="animated-section project-related-work section-fin-related" data-section-id="fin-related">
+    <div class="content">
+        <div class="col-8 col-centered">
+            <div class="related">
+                <div class="icon">
+                    {{> "icons/github.svg" }}
+                </div>
+                <div class="text">
+                    <h3>staple.js</h3>
+                    <p>Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
+                </div>
+            </div>
+            <p class="large">This is an open-source project on GitHub. Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you.</p>
+            <div class="related">
+                <div class="icon">
+                    {{> "icons/github.svg" }}
+                </div>
+                <div class="text">
+                    <h3>staple.js</h3>
+                    <p>Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
+                </div>
+            </div>
+            <p class="large">This is an open-source project on GitHub. Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you.</p>
+        </div>
+    </div>
 </li>
 {{/content}}
 {{/extend}}

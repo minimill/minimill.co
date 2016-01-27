@@ -18,11 +18,11 @@
 
 
 @each $project in $projects {
-  .animating-to-#{$project}-case {
+  .animating-to-#{$project}-project {
 
     nav {
-      position: fixed;
       animation: $a-fade-in;
+      position: fixed;
     }
 
     .animated-section:not(.section-work-#{$project}) {
@@ -31,6 +31,7 @@
 
     .section-work-#{$project} {
       opacity: 1;
+
       .view-project-button {
         opacity: 0;
       }

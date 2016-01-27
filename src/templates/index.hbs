@@ -116,6 +116,7 @@
   if (md.mobile() === null) {
     new PageAnimation({
       animateLinksToSelf: true,
+      scrollTiming: 'during',
 
       shouldAnimate: function() {
         return window.innerWidth > MOBILE_WIDTH;
@@ -136,10 +137,11 @@
         }
       },
     }).register(/^\/$/, 'sections', 'animating-to-home', {
-      scrollTiming: 'before',
-    }).register(/^\/fin+$/, 'sections', 'animating-to-fin-case', {
-      scrollTiming: 'during',
-    })
+      scrollTiming: 'after',
+    }).register(/^\/wac+$/, 'sections', 'animating-to-wac-project')
+      .register(/^\/fin+$/, 'sections', 'animating-to-fin-project')
+      .register(/^\/upchannel+$/, 'sections', 'animating-to-upchannel-project')
+      .register(/^\/unscan+$/, 'sections', 'animating-to-unscan-project')
       .enable();
   }
 </script>

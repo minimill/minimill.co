@@ -1,5 +1,4 @@
 html, body {
-  background-color: $blue;
   color: $white;
   font-family: $sans;
   font-size: 16px;
@@ -17,13 +16,8 @@ img {
   max-width: 100%;
 }
 
-body {
-  background-color: $blue;
-
-  &.page-fin {
-    background-color: $fin-blue;
-  }
-}
+body { background-color: $blue; }
+.page-fin { background-color: $fin-blue; }
 
 hr {
   background-color: $medium-gray;

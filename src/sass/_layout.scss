@@ -1,5 +1,11 @@
 $content-width: 66rem;
 
+@mixin column {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1.25rem;
+}
+
 .content {
   @include clearfix;
   margin: 0 auto;
@@ -7,10 +13,13 @@ $content-width: 66rem;
   width: 100%;
 
   [class^="col-"] {
-    box-sizing: border-box;
-    display: inline-block;
-    float: left;
-    padding: 0 1.25rem;
+    @include column;
+    display: block;
+
+    &.col-centered {
+      float: none;
+      margin: 0 auto;
+    }
   }
 
   .col-12 {
@@ -31,5 +40,9 @@ $content-width: 66rem;
 
   .col-2 {
     width: 16.666666%;
+  }
+
+  + .content {
+    margin-top: 8rem;
   }
 }

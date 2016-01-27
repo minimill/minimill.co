@@ -1,0 +1,27 @@
+.related {
+  border: 1px solid $blue;
+  margin-bottom: 4rem;
+  padding: 4rem 5.5rem;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    left: 5.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  .text {
+    padding-left: 5.5rem;
+  }
+
+  h3 {
+    color: $blue;
+    margin-bottom: 0.5rem;
+  }
+}

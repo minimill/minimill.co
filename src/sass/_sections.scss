@@ -29,9 +29,12 @@
   .background-work-hero { background-color: $blue; }
   .background-fin-hero,
   .background-work-fin { background-color: $fin-blue; }
+  .background-fin-goal { background-color: $fin-black; }
   .background-work-wac { background-color: $wac-yellow; }
   .background-work-redspread { background-color: $redspread-red; }
   .background-work-unscan { background-color: $unscan-gold; }
+  .background-footer,
+  .background-fin-related,
   .background-work-identities { background-color: $light-gray; }
   .background-work-upchannel {
     background-color: $upchannel-white;
@@ -53,7 +56,9 @@
   }
 }
 
-.in-section-work-identities {
+.in-section-fin-related,
+.in-section-work-identities,
+.in-section-footer {
   background-color: $dark-gray;
 }
 
@@ -64,6 +69,7 @@
 }
 
 %section-fin-hero,
+%section-fin-goal,
 %section-work-fin {
   p, .h1 {
     color: $fin-white;
@@ -88,6 +94,8 @@
   }
 }
 
+%section-footer,
+%section-fin-related,
 %section-work-identities {
   p, .h1 {
     color: $dark-gray;
@@ -96,8 +104,8 @@
 
 // List of sections, IN ORDER!
 $projects: 'wac', 'fin', 'upchannel', 'unscan';
-$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel', 'work-unscan', 'work-identities';
-$fin-sections: 'fin-hero';
+$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel', 'work-unscan', 'work-identities', 'footer';
+$fin-sections: 'fin-hero', 'fin-goal', 'fin-related', 'footer';
 $sections: $work-sections, $fin-sections;
 
 @each $page in $sections {

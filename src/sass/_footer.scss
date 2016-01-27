@@ -7,13 +7,23 @@ footer {
     transition: 0.3s ease color;
   }
 
-  rect, polygon {
+  rect, polygon, path {
     fill: $medium-gray;
     transition: 0.3s ease fill;
   }
 
-  svg {
+  .logo > svg {
     height: $logo-height;
+  }
+
+  .icon {
+    vertical-align: middle;
+
+    > svg {
+      height: 1rem;
+      padding-right: 0.5rem;
+      width: 1rem;
+    }
   }
 
   .email-button {
@@ -35,12 +45,14 @@ footer {
       }
     }
 
-    rect, polygon {
+    rect, polygon, path {
       fill: $light-gray;
     }
 
-    svg:hover rect, svg:hover polygon {
-      fill: $white;
+    svg:hover {
+      rect, polygon, path {
+        fill: $white;
+      }
     }
 
     .email-button {

@@ -21,6 +21,7 @@ var sass = require('gulp-sass');
 var scsslint = require('gulp-scss-lint');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
+var svgmin = require('gulp-svgmin');
 var uglify = require('gulp-uglify');
 var yaml = require('js-yaml');
 
@@ -59,12 +60,6 @@ gulp.task('sass:optimized', function() {
 
 gulp.task('sass', ['sass:lint', 'sass:build']);
 
-gulp.task('CNAME', function() {
-  gulp.src('src/CNAME')
-    .pipe(plumber())
-    .pipe(gulp.dest('dist/'));
-});
-
 gulp.task('js:build', function() {
   gulp.src('src/js/**/*.js')
     .pipe(plumber())
@@ -75,10 +70,9 @@ gulp.task('js:optimized', function() {
   gulp.src('src/js/**/*.js')
     .pipe(plumber())
     .pipe(sourcemaps.init())
-      .pipe(concat('app.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write('dist/js'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('js:lint', function() {
@@ -108,6 +102,12 @@ gulp.task('images:optimized', function() {
       multipass: true,
     }))
     .pipe(gulp.dest('./dist/img'));
+});
+
+gulp.task('images:svgmin', function () {
+    return gulp.src('./dist/img/icons/icon-dribble-gray.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('fonts', function() {
@@ -156,7 +156,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['sass', 'images', 'fonts', 'js', 'templates']);
-gulp.task('build:optimized', ['CNAME', 'sass:optimized', 'images:optimized', 'fonts', 'js:optimized', 'templates:optimized']);
+gulp.task('build:optimized', ['sass:optimized', 'images:optimized', 'fonts', 'js:optimized', 'templates:optimized']);
 
 gulp.task('deploy', ['build:optimized'], function() {
   gulp.src('')

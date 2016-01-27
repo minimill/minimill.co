@@ -2,9 +2,10 @@
 {{#content "main" mode="prepend"}}
 {{> "navbar" }}
 <ul class="backgrounds">
-    {{#block "backgrounds"}}
     <li class="background-work-hero"></li>
+    {{#block "backgrounds"}}
     {{/block }}
+    <li class="background-footer"></li>
 </ul>
 <ul class="sections" id="sections">
     {{#block "sections"}}
@@ -23,8 +24,9 @@
       shouldAnimate: function() {
         return window.innerWidth > MOBILE_WIDTH;
       },
-    }).register(/^\/$/, 'sections', 'animating-to-home')
-      .enable();
+    }).register(/^\/$/, 'sections', 'animating-to-home', {
+      scrollTiming: 'after',
+    }).enable();
   }
 </script>
 {{/content}}
