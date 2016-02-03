@@ -77,7 +77,11 @@
     z-index: 1;
 
     &:before {
-      content: '\201D';
+      background-image: url('../img/icon-quote.svg');
+      background-repeat: no-repeat;
+      background-size: 2rem 1.25rem;
+      background-position: top right;
+      content: ' ';
       display: block;
       font-size: 6rem;
       height: 6rem;
@@ -100,13 +104,17 @@
     }
 
     .photo {
-      border-radius: 50%;
       bottom: 2.5rem;
       height: 7.5rem;
       left: -3.75rem;
       overflow: hidden;
       position: absolute;
       width: 7.5rem;
+
+      img {
+        height: 7.5rem;
+        width: 7.5rem;
+      }
     }
   }
 }

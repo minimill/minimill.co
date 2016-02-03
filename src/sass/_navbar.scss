@@ -6,16 +6,7 @@ nav {
   width: 100%;
   z-index: 100;
 
-  .logo {
-    display: inline-block;
-    height: $logo-height;
-    max-width: 100%;
-
-    svg {
-      height: $logo-height;
-      left: 0;
-    }
-
+  .minimill-logo {
     rect, polygon {
       fill: $white;
     }
@@ -36,5 +27,26 @@ nav {
     a {
       @extend %h3;
     }
+  }
+}
+
+.minimill-logo {
+  display: inline-block;
+  height: $logo-height;
+  max-width: 100%;
+
+  svg {
+    height: $logo-height;
+    left: 0;
+  }
+}
+
+$xl-logo-height: 55px;
+@media screen and (min-width: $xl-desktop-min) {
+  .minimill-logo, .minimill-logo svg, nav .links {
+    height: $xl-logo-height;
+  }
+  nav .links li {
+    line-height: $xl-logo-height;
   }
 }
