@@ -18,16 +18,16 @@
     <p class="h1"><a href="mailto:team@minimill.co">team@minimill.co</a></p>
     <ul class="social-links">
       <li>
-        <a href="https://dribbble.com/minimill"><span class="icon">{{> "icons/dribbble.svg" }}</span></a>
+        <a target="_blank" href="https://dribbble.com/minimill"><span class="icon">{{> "icons/dribbble.svg" }}</span></a>
       </li>
       <li>
-        <a href="https://github.com/minimill"><span class="icon">{{> "icons/github.svg" }}</span></a>
+        <a target="_blank" href="https://github.com/minimill"><span class="icon">{{> "icons/github.svg" }}</span></a>
       </li>
       <li>
-        <a href="https://twitter.com/minimill_co"><span class="icon">{{> "icons/twitter.svg" }}</span></a>
+        <a target="_blank" href="https://twitter.com/minimill_co"><span class="icon">{{> "icons/twitter.svg" }}</span></a>
       </li>
       <li>
-        <a href="https://www.facebook.com/minimillco"><span class="icon">{{> "icons/facebook.svg" }}</span></a>
+        <a target="_blank" href="https://www.facebook.com/minimillco"><span class="icon">{{> "icons/facebook.svg" }}</span></a>
       </li>
     </ul>
   </div>
@@ -42,7 +42,8 @@
   var closeContactModalLink = document.getElementById('close-contact-modal-link');
   var body = document.body;
 
-  function closeContactModal() {
+  function closeContactModal(e) {
+    if (e) { e.preventDefault(); }
 
     // Fade out modal
     modal.className = modal.className.replace(' visible', '');
