@@ -68,6 +68,10 @@
   p, .h1 {
     color: $white;
   }
+
+  .arrow-component {
+    background-color: $white;
+  }
 }
 
 %section-fin-hero,
@@ -76,11 +80,19 @@
   p, .h1 {
     color: $fin-white;
   }
+
+  .arrow-component {
+    background-color: $fin-light-blue;
+  }
 }
 
 %section-work-wac {
   p, .h1 {
     color: $wac-black;
+  }
+
+  .arrow-component {
+    background-color: $wac-blue;
   }
 }
 
@@ -88,11 +100,19 @@
   p, .h1 {
     color: $upchannel-black;
   }
+
+  .arrow-component {
+    background-color: $upchannel-blue;
+  }
 }
 
 %section-work-unscan {
   p, .h1 {
     color: $unscan-black;
+  }
+
+  .arrow-component {
+    background-color: $unscan-blue;
   }
 }
 
