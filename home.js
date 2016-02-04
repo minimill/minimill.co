@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){function e(e){var t=e.target.getAttribute("href");if("#"===t[0]){e.preventDefault(),console.log(t.slice(1));var n=document.getElementById(t.slice(1)),o=n.offsetTop;console.log(n),PageAnimation.scrollTo(o,200)}}for(var t=document.getElementsByClassName("scroll-to"),n=0;n<t.length;n++)t[n].addEventListener("click",e)});
+//# sourceMappingURL=dist/js/home.js.map
