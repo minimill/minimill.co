@@ -35,7 +35,9 @@ gulp.task('sass:lint', function() {
 
 gulp.task('sass:build', function() {
   gulp.src('./src/sass/**/style.scss')
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({
+      suffix: '.min',
+    }))
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -48,13 +50,17 @@ gulp.task('sass:build', function() {
 
 gulp.task('sass:optimized', function() {
   gulp.src('./src/sass/**/style.scss')
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({
+      suffix: '.min',
+    }))
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed',
     }))
     .pipe(autoprefixer())
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(minifyCss({
+      compatibility: 'ie8',
+    }))
     .pipe(gulp.dest('dist/css/'));
 });
 
@@ -102,12 +108,6 @@ gulp.task('images:optimized', function() {
       multipass: true,
     }))
     .pipe(gulp.dest('./dist/img'));
-});
-
-gulp.task('images:svgmin', function () {
-    return gulp.src('./dist/img/icons/icon-dribble-gray.svg')
-        .pipe(svgmin())
-        .pipe(gulp.dest('.'));
 });
 
 gulp.task('fonts', function() {

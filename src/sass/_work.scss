@@ -10,21 +10,12 @@
 
 .section-work-identities {
   > .content {
-    padding: 16rem 0;
+    padding: 16rem 0 8rem;
   }
 
   .h1 {
     text-align: center;
     transition: $t-opacity;
-
-    + .h1 {
-      margin-top: 2rem;
-    }
-
-    a {
-      @include nice-underline($blue, 2px, 2.5rem);
-      color: $blue;
-    }
   }
 
   .logos {
