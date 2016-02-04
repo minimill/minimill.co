@@ -4,7 +4,7 @@
 
   h1 {
     animation: $a-fade-in;
-    transition: $t-bg-color;
+    transition: $t-color;
   }
 }
 
@@ -15,7 +15,7 @@
 
   .h1 {
     text-align: center;
-    transition: $t-bg-color;
+    transition: $t-opacity;
 
     + .h1 {
       margin-top: 2rem;

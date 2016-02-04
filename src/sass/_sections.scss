@@ -4,7 +4,7 @@
   z-index: 2;
 
   .animated-section {
-    transition: $t-bg-opacity;
+    transition: $t-opacity;
   }
 }
 
@@ -22,20 +22,22 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: $t-bg-opacity;
+    transition: $t-opacity;
     width: 100%;
   }
 
-  .background-work-hero { background-color: $blue; }
   .background-fin-hero,
   .background-work-fin { background-color: $fin-blue; }
+
+  .background-footer,
+  .background-fin-related,
+  .background-work-identities { background-color: $light-gray; }
+
+  .background-work-hero { background-color: $blue; }
   .background-fin-goal { background-color: $fin-black; }
   .background-work-wac { background-color: $wac-yellow; }
   .background-work-redspread { background-color: $redspread-red; }
   .background-work-unscan { background-color: $unscan-gold; }
-  .background-footer,
-  .background-fin-related,
-  .background-work-identities { background-color: $light-gray; }
   .background-work-upchannel {
     background-color: $upchannel-white;
 
@@ -47,8 +49,8 @@
       bottom: 0;
       content: '';
       left: -12rem;
-      position: absolute;
       opacity: 0.1;
+      position: absolute;
       right: -12rem;
       top: 0;
       z-index: 1;

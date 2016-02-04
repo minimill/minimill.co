@@ -3,6 +3,7 @@ footer {
   padding: 8rem 0;
 
   p, a {
+    @include clearfix;
     color: $medium-gray;
     transition: 0.3s ease color;
   }
@@ -17,13 +18,22 @@ footer {
   }
 
   .icon {
-    vertical-align: middle;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 1.5rem;
+    padding: 0.25rem 0.5rem 0.25rem 0;
 
     > svg {
+      display: block;
       height: 1rem;
-      padding-right: 0.5rem;
       width: 1rem;
     }
+  }
+
+  .icon-label {
+    display: inline-block;
+    float: left;
   }
 
   .email-button {
