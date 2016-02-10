@@ -23,6 +23,31 @@ $white-strip-height: 15rem;
   h2 {
     margin-bottom: 0.25rem;
   }
+
+  &:hover .team-member-social-links .icon path {
+    fill: $dark-gray;
+  }
+
+  &:hover .team-member-social-links .icon:hover path {
+    fill: $blue;
+  }
+}
+
+.team-member-social-links {
+  padding-top: 1rem;
+
+  .icon {
+    margin-right: 0.5rem;
+    padding: 0.25rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    path {
+      fill: $light-gray;
+    }
+  }
 }
 
 .team-photo-wrapper {

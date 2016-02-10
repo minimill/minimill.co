@@ -77,8 +77,7 @@ gulp.task('js:optimized', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
       .pipe(uglify())
-    .pipe(sourcemaps.write('dist/js'))
-    .pipe(gulp.dest('.'));
+    .pipe(sourcemaps.write('dist/js'));
 });
 
 gulp.task('js:lint', function() {

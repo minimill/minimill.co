@@ -25,7 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
     animateLinksToSelf: true,
     scrollTiming: 'during',
 
-    shouldAnimate: function() {
+    shouldAnimate: function(anchor, path) {
+      if (anchor.id === 'work-link') {
+        return false;
+      }
+
       return window.innerWidth > MOBILE_WIDTH;
     },
 
