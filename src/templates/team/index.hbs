@@ -1,0 +1,45 @@
+{{#extend "page"}}
+
+{{#content "body-class" }}team-page{{/content}}
+
+{{#content "main" mode="append"}}
+<section class="team-hero" id="team-hero">
+    <div class="content">
+        <div class="col-4">
+            <div class="team-member">
+                <img src="/img/dan-slice.png" alt="Dan Schlosser">
+                <div class="text">
+                    <h2>Dan Schlosser</h2>
+                    <h4>Dev, NYC</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="team-member">
+                <img src="/img/jeff-slice.png" alt="Dan Schlosser">
+                <div class="text">
+                    <h2>Jeff Hilnbrand</h2>
+                    <h4>Design, DC</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="team-member">
+                <img src="/img/amritha-slice.png" alt="Dan Schlosser">
+                <div class="text">
+                    <h2>Amritha Jayanti</h2>
+                    <h4>Project Management, DC</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team-white-strip">
+{{> "footer" }}
+</section>
+{{/content}}
+
+{{#content "js" mode="append"}}
+<script src="/js/team.js"></script>
+{{/content}}
+{{/extend}}

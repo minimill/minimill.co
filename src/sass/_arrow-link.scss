@@ -4,12 +4,12 @@ $arrow-label-padding: 0 1rem;
 .arrow-link {
   align-items: center;
   display: flex;
-  transition: $t-opacity;
+  transition: $t-scroll-opacity;
 }
 
 .arrow-component {
   background-color: $white;
-  transition: $t-background-color;
+  transition: $t-scroll-background-color;
 }
 
 .arrow-tail {

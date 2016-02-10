@@ -2,23 +2,23 @@
     <div class="content">
         <div class="col-12">
             <div class="minimill-logo">
-                <a href="/">
+                <a href="/" class="close-contact-modal-link">
                     {{> "minimill-logo.svg" }}
                 </a>
             </div>
             <ul class="links">
                 <li>
                     {{#if "on-home-page"}}
-                    <a class="scroll-to" href="#world-after-capital">Work</a>
+                    <a class="scroll-to close-contact-modal-link" href="#world-after-capital">Work</a>
                     {{else}}
-                    <a href="/">Work</a>
+                    <a href="/" class="close-contact-modal-link">Work</a>
                     {{/if}}
                 </li>
                 <li>
-                    <a href="/team/">Team</a>
+                    <a href="/team/" class="close-contact-modal-link">Team</a>
                 </li>
                 <li>
-                    <a href="#contact" id="open-contact-modal-link">Contact</a>
+                    <a href="#contact" class="open-contact-modal-link">Contact</a>
                 </li>
             </ul>
         </div>

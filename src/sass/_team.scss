@@ -1,0 +1,42 @@
+$white-strip-height: 15rem;
+
+.team-hero {
+  animation: $a-slide-up;
+  background-color: $blue;
+  padding-top: 12.5rem;
+  transition: $t-page-opacity;
+}
+
+.team-member {
+  animation: $a-fade-in-delay;
+  margin-bottom: -$white-strip-height;
+
+  img {
+    display: block;
+  }
+
+  .text {
+    box-sizing: border-box;
+    color: $dark-gray;
+    height: $white-strip-height;
+    padding-top: 32px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.team-white-strip {
+  animation: $a-slide-up;
+  background-color: $white;
+  padding-top: $white-strip-height;
+  transition: $t-page-opacity;
+}
+
+.team-page {
+  footer {
+    animation: $a-fade-in-delay;
+  }
+}

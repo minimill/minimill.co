@@ -1,0 +1,19 @@
+{{#extend "page"}}
+
+{{#content "main" mode="append"}}
+<ul class="backgrounds">
+    <li class="background-work-hero"></li>
+    {{#block "backgrounds"}}{{/block }}
+    <li class="background-footer"></li>
+</ul>
+<ul class="sections" id="sections">
+    {{#block "sections"}}{{/block}}
+    {{> "footer" }}
+</ul>
+{{/content}}
+
+{{#content "js" mode="append"}}
+<script src="/js/sections.js"></script>
+{{/content}}
+
+{{/extend}}

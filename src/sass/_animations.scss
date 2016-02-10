@@ -1,26 +1,48 @@
 $delay: 0.2s;
-$speed: 0.5s;
-$d1: $speed + $delay;
+$scroll-speed: 0.5s;
+$gap: 0s;
+$hover-speed: 0.3s;
+$page-speed: 0.3s;
+$t1: $delay;
+$d1: $t1 + $page-speed;
+$t2: $d1 + $gap;
+$d2: $t2 + $page-speed;
 
 @keyframes fade-in {
   0% { opacity: 0; }
-  50% { opacity: 0; }
+  #{$t1/$d1 * 100}% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-in-delay {
+  0% { opacity: 0; }
+  #{$t2/$d2 * 100}% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @keyframes shift {
-  0% {
-    transform: 0;
-  }
+  0% { transform: 0; }
+  100% { transform: translate3d(12rem, 0, 0); }
+}
 
-  100% {
-    transform: translate3d(12rem, 0, 0);
-  }
+@keyframes slide-up {
+  0% { transform: translate3d(0, 20rem, 0); }
+  #{$t1/$d1 * 100}% { transform: translate3d(0, 20rem, 0); }
+  100% { transform: 0; }
 }
 
 $a-fade-in: fade-in $d1 ease;
+$a-slide-up: slide-up $d1 ease;
 $a-upchannel-shift: shift 15s linear infinite;
+$a-fade-in-delay: fade-in-delay $d2 ease;
 
-$t-opacity: $speed ease opacity;
-$t-color: $speed ease color;
-$t-background-color: $speed ease background-color;
+$t-page-opacity: $page-speed ease opacity;
+
+$t-scroll-opacity: $scroll-speed ease opacity;
+$t-scroll-color: $scroll-speed ease color;
+$t-scroll-background-color: $scroll-speed ease background-color;
+
+$t-hover-color: $hover-speed ease color;
+$t-hover-background-color: $hover-speed ease background-color;
+$t-hover-fill: $hover-speed ease fill;
+

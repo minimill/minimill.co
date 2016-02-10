@@ -1,3 +1,4 @@
+.animating-to-team-page,
 .animating-to-home {
   .animated-section {
     opacity: 0;
@@ -13,6 +14,12 @@
 
   .background-work-hero {
     opacity: 1;
+  }
+}
+
+[class*='animating-to'] {
+  .team-hero, .team-white-strip {
+    opacity: 0;
   }
 }
 

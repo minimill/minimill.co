@@ -1,18 +1,5 @@
-{{#extend "page"}}
-{{#content "js"}}
-<script>
-  var sections = new Sections().enable();
-  var MOBILE_WIDTH = 640;
-  var md = new MobileDetect(window.navigator.userAgent);
-  if (md.mobile() === null) {
-    new PageAnimation({
-      shouldAnimate: function() {
-        return window.innerWidth > MOBILE_WIDTH;
-      },
-    }).register(/^\/$/, 'sections', 'animating-to-home', {
-      scrollTiming: 'after',
-    }).enable();
-  }
-</script>
+{{#extend "scrolling-page"}}
+{{#content "js" mode="append"}}
+<script src="/js/case-study.js"></script>
 {{/content}}
 {{/extend}}

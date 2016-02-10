@@ -8,7 +8,7 @@ footer {
   .h1 {
     color: $dark-gray;
     text-align: center;
-    transition: $t-opacity;
+    transition: $t-scroll-opacity;
 
     + .h1 {
       margin-top: 2rem;
@@ -23,12 +23,11 @@ footer {
   p, a {
     @include clearfix;
     color: $medium-gray;
-    transition: 0.3s ease color;
+    transition: $t-hover-color;
   }
 
   rect, polygon, path {
     fill: $medium-gray;
-    transition: 0.3s ease fill;
   }
 
   .logo > svg {

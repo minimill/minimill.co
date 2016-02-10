@@ -1,11 +1,11 @@
 .contact {
-  background-color: rgba($green, 0.98);
+  background-color: $green;
   height: 100%;
   left: 0;
   opacity: 0;
   position: fixed;
   top: 0;
-  transition: $t-opacity;
+  transition: $t-scroll-opacity;
   width: 100%;
   z-index: 0;
 

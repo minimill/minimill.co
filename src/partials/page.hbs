@@ -1,74 +1,18 @@
 {{#extend "base"}}
-{{#content "main" mode="prepend"}}
+
+{{#content "body" mode="append"}}
+{{#block "main"}}
 {{> "navbar" }}
-<ul class="backgrounds">
-    <li class="background-work-hero"></li>
-    {{#block "backgrounds"}}{{/block }}
-    <li class="background-footer"></li>
-</ul>
-<ul class="sections" id="sections">
-    {{#block "sections"}}{{/block}}
-    {{> "footer" }}
-</ul>
 <div class="contact">
-  {{> "navbar"}}
-  <div class="modal-content">
-    <a href="#close" class="close-button" id="close-contact-modal-link"><img src="/img/icon-x.svg"></a>
-    <h2 class="h1">Let's work together.</h2>
-    <p class="h1"><a href="mailto:team@minimill.co">team@minimill.co</a></p>
-    <ul class="social-links">
-      <li>
-        <a target="_blank" href="https://dribbble.com/minimill"><span class="icon">{{> "icons/dribbble.svg" }}</span></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://github.com/minimill"><span class="icon">{{> "icons/github.svg" }}</span></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://twitter.com/minimill_co"><span class="icon">{{> "icons/twitter.svg" }}</span></a>
-      </li>
-      <li>
-        <a target="_blank" href="https://www.facebook.com/minimillco"><span class="icon">{{> "icons/facebook.svg" }}</span></a>
-      </li>
-    </ul>
-  </div>
+  {{> "navbar" }}
+  {{> "contact-modal" }}
 </div>
+{{/block}}
+{{#block "js"}}
 <script src="/js/lib/mobile-detect.min.js"></script>
-<script src="/js/sections.js"></script>
 <script src="/js/lib/pageanimation.min.js"></script>
-<script>
-
-  var modal = document.getElementsByClassName('contact')[0];
-  var openContactModalLink = document.getElementById('open-contact-modal-link');
-  var closeContactModalLink = document.getElementById('close-contact-modal-link');
-  var body = document.body;
-
-  function closeContactModal(e) {
-    if (e) { e.preventDefault(); }
-
-    // Fade out modal
-    modal.className = modal.className.replace(' visible', '');
-    body.className = body.className.replace(' contact-modal-open', '');
-
-    // Close modal
-    setTimeout(function() {
-      modal.className = modal.className.replace(' active', '');
-    }, 200);
-  }
-
-  function openContactModal(e) {
-    e.preventDefault();
-    modal.className += ' active visible';
-    body.className += ' contact-modal-open';
-  }
-
-  closeContactModalLink.addEventListener('click', closeContactModal);
-  openContactModalLink.addEventListener('click', openContactModal);
-  document.documentElement.addEventListener('keyup', function(e) {
-    if (e.keyCode == 27) { // escape key
-      closeContactModal();
-    }
-  });
-</script>
-{{#block "js"}}{{/block}}
+<script src="/js/contact-modal.js"></script>
+{{/block}}
 {{/content}}
+
 {{/extend}}

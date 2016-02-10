@@ -3,6 +3,7 @@
   margin-bottom: 4rem;
   padding: 4rem 5.5rem;
   position: relative;
+  transition: $t-hover-background-color;
 
   .icon {
     left: 5.5rem;
@@ -18,10 +19,27 @@
 
   .text {
     padding-left: 5.5rem;
+
+    p {
+      transition: $t-hover-color;
+    }
   }
 
   h3 {
     color: $blue;
     margin-bottom: 0.5rem;
+    transition: $t-hover-color;
+  }
+
+  &:hover {
+    background-color: $blue;
+
+    path {
+      fill: $white;
+    }
+
+    h3, .text p {
+      color: $white;
+    }
   }
 }
