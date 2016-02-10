@@ -26,8 +26,8 @@ $d2: $t2 + $page-speed;
 }
 
 @keyframes slide-up {
-  0% { transform: translate3d(0, 20rem, 0); }
-  #{$t1/$d1 * 100}% { transform: translate3d(0, 20rem, 0); }
+  0% { transform: translate3d(0, 30rem, 0); }
+  #{$t1/$d1 * 100}% { transform: translate3d(0, 30rem, 0); }
   100% { transform: 0; }
 }
 

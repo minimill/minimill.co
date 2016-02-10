@@ -12,10 +12,6 @@ $white-strip-height: 15rem;
   animation: $a-fade-in-delay;
   margin-bottom: -$white-strip-height;
 
-  img {
-    display: block;
-  }
-
   .text {
     box-sizing: border-box;
     color: $dark-gray;
@@ -26,6 +22,18 @@ $white-strip-height: 15rem;
 
   h2 {
     margin-bottom: 0.25rem;
+  }
+}
+
+.team-photo-wrapper {
+  padding-top: 128.21%;
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 
