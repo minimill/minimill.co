@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){var e=new MobileDetect(window.navigator.userAgent);null===e.mobile()&&new PageAnimation({}).register(/^\/$/,"team-hero","animating-to-home").register(/^\/wac\/?$/,"team-hero","animating-to-wac-project").register(/^\/fin\/?$/,"team-hero","animating-to-fin-project").register(/^\/upchannel\/?$/,"team-hero","animating-to-upchannel-project").register(/^\/unscan\/?$/,"team-hero","animating-to-unscan-project").enable()});
+//# sourceMappingURL=dist/js/team.js.map

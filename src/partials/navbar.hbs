@@ -8,17 +8,24 @@
             </div>
             <ul class="links">
                 <li>
-                    {{#if "on-home-page"}}
-                    <a class="scroll-to close-contact-modal-link" href="#world-after-capital">Work</a>
-                    {{else}}
-                    <a href="/" class="close-contact-modal-link">Work</a>
-                    {{/if}}
+                    <a id="work-link" href="/"
+                       {{#if this.inModal }}
+                       class="close-contact-modal-link"
+                       {{/if}}>Work</a>
                 </li>
                 <li>
-                    <a href="/team/" class="close-contact-modal-link">Team</a>
+                    <a href="/team/"
+                       {{#if this.inModal }}
+                       class="close-contact-modal-link"
+                       {{/if}}>Team</a>
                 </li>
                 <li>
-                    <a href="#contact" class="open-contact-modal-link">Contact</a>
+                    <a href="#contact"
+                       {{#if this.inModal }}
+                       class="close-contact-modal-link"
+                       {{ else }}
+                       class="open-contact-modal-link"
+                       {{/if}}>Contact</a>
                 </li>
             </ul>
         </div>

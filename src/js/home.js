@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var links = document.getElementsByClassName('scroll-to');
+  var workLink = document.getElementById('work-link');
   var sections = new Sections().enable();
   var MOBILE_WIDTH = 640;
   var md = new MobileDetect(window.navigator.userAgent);
 
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', onClickScrollToLink);
-  }
+  workLink.addEventListener('click', onClickWorkLink);
 
-  function onClickScrollToLink(e) {
-    var linkHREF = e.target.getAttribute('href');
+  function onClickWorkLink(e) {
+    var linkHREF = '#world-after-capital'
 
     if (linkHREF[0] !== '#') {
       return;

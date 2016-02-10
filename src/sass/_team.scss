@@ -5,6 +5,7 @@ $white-strip-height: 15rem;
   background-color: $blue;
   padding-top: 12.5rem;
   transition: $t-page-opacity;
+  z-index: 12;
 }
 
 .team-member {
@@ -33,9 +34,14 @@ $white-strip-height: 15rem;
   background-color: $white;
   padding-top: $white-strip-height;
   transition: $t-page-opacity;
+  z-index: 10;
 }
 
 .team-page {
+  section {
+    position: relative;
+  }
+
   footer {
     animation: $a-fade-in-delay;
   }
