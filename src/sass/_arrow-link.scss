@@ -1,56 +1,71 @@
-$arrow-width: 4px;
 $arrow-label-padding: 0 1rem;
 
+@mixin arrow-link($width) {
+  .arrow-component {
+    background-color: $white;
+    transition: $t-scroll-background-color;
+  }
+
+  .arrow-tail {
+    height: $width;
+    width: $width;
+  }
+
+  .arrow-label {
+    padding: $arrow-label-padding;
+  }
+
+  .arrow-shaft {
+    flex-grow: 1;
+    height: $width;
+  }
+
+  .arrow-head {
+    box-sizing: border-box;
+    height: (3 * $width);
+    padding-left: (2 * $width);
+    position: relative;
+    width: (4 * $width);
+
+    .arrow-component {
+      height: $width;
+      position: absolute;
+      width: $width;
+    }
+  }
+
+  .arrow-head-top {
+    right: $width;
+    top: 0;
+  }
+
+  .arrow-head-end {
+    right: 0;
+    top: $width;
+  }
+
+  .arrow-head-bottom {
+    right: $width;
+    top: (2 * $width);
+  }
+}
+
 .arrow-link {
+  @include arrow-link(4px);
   align-items: center;
   display: flex;
   transition: $t-scroll-opacity;
 }
 
-.arrow-component {
-  background-color: $white;
-  transition: $t-scroll-background-color;
-}
-
-.arrow-tail {
-  height: $arrow-width;
-  width: $arrow-width;
-}
-
-.arrow-label {
-  padding: $arrow-label-padding;
-}
-
-.arrow-shaft {
-  flex-grow: 1;
-  height: $arrow-width;
-}
-
-.arrow-head {
-  box-sizing: border-box;
-  height: (3 * $arrow-width);
-  padding-left: (2 * $arrow-width);
-  position: relative;
-  width: (4 * $arrow-width);
-
-  .arrow-component {
-    height: $arrow-width;
-    position: absolute;
-    width: $arrow-width;
+@media screen and (max-width: $phone-landscape-max) {
+  .arrow-link {
+    @include arrow-link(2px);
+    max-width: 11rem;
+    margin: 0 auto;
   }
-}
 
-.arrow-head-top {
-  right: $arrow-width;
-  top: 0;
-}
-
-.arrow-head-end {
-  right: 0;
-  top: $arrow-width;
-}
-
-.arrow-head-bottom {
-  right: $arrow-width;
-  top: (2 * $arrow-width);
+  .arrow-tail {
+    flex-grow: 1;
+    width: auto;
+  }
 }

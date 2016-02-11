@@ -16,7 +16,7 @@ $white-strip-height: 15rem;
     box-sizing: border-box;
     color: $dark-gray;
     height: $white-strip-height;
-    padding-top: 32px;
+    padding-top: 2rem;
     text-align: center;
   }
 
@@ -77,5 +77,48 @@ $white-strip-height: 15rem;
 
   footer {
     animation: $a-fade-in-delay;
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .team-hero {
+    padding-top: 6rem;
+
+    > .content {
+      padding: 0;
+    }
+  }
+
+  .team-photo-wrapper {
+    padding-top: 0;
+    position: relative;
+
+    img {
+      display: block;
+      height: 18.75rem;
+      margin: 0 auto;
+      position: relative;
+      width: auto;
+    }
+  }
+
+  .team-member {
+    margin: 0;
+    overflow: hidden;
+
+    .text {
+      background-color: $light-gray;
+      height: auto;
+      margin: 0 -2rem;
+      padding: 1rem 0 2rem;
+    }
+
+    .team-member-social-links .icon path {
+      fill: $dark-gray;
+    }
+  }
+
+  .team-white-strip {
+    padding-top: 0;
   }
 }

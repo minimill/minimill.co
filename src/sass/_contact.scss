@@ -45,11 +45,12 @@
   }
 
   .modal-content {
-    left: 50%;
+    left: 2rem;
+    right: 2rem;
     position: absolute;
     text-align: center;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%)
   }
 }
 

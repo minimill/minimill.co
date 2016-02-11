@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   var workLink = document.getElementById('work-link');
-  var sections = new Sections().enable();
   var MOBILE_WIDTH = 640;
   var md = new MobileDetect(window.navigator.userAgent);
 
@@ -21,39 +20,49 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (md.mobile() === null) {
-  new PageAnimation({
-    animateLinksToSelf: true,
-    scrollTiming: 'during',
+    // Sections
+    var sections = new Sections().enable();
 
-    shouldAnimate: function(anchor, path) {
-      if (anchor.id === 'work-link') {
-        return false;
-      }
+    // PageAnimation
+    new PageAnimation({
+      animateLinksToSelf: true,
+      scrollTiming: 'during',
 
-      return window.innerWidth > MOBILE_WIDTH;
-    },
-
-    computeScrollOffset: function(animation) {
-      if (animation.path === '/') {
-        return 0;
-      }
-
-      var currentElement = animation.anchor;
-      while (currentElement) {
-        if (currentElement.className.indexOf('animated-section') > -1) {
-          return currentElement.offsetTop;
+      shouldAnimate: function(anchor, path) {
+        if (anchor.id === 'work-link') {
+          return false;
         }
 
-        currentElement = currentElement.parentElement;
-      }
-    },
-  }).register(/^\/$/, 'sections', 'animating-to-home', {
-    scrollTiming: 'after',
-  }).register(/^\/wac\/?$/, 'sections', 'animating-to-wac-project')
-    .register(/^\/fin\/?$/, 'sections', 'animating-to-fin-project')
-    .register(/^\/upchannel\/?$/, 'sections', 'animating-to-upchannel-project')
-    .register(/^\/unscan\/?$/, 'sections', 'animating-to-unscan-project')
-    .register(/^\/team\/?$/, 'sections', 'animating-to-team-page')
-    .enable();
+        return window.innerWidth > MOBILE_WIDTH;
+      },
+
+      computeScrollOffset: function(animation) {
+        if (animation.path === '/') {
+          return 0;
+        }
+
+        var currentElement = animation.anchor;
+        while (currentElement) {
+          if (currentElement.className.indexOf('animated-section') > -1) {
+            return currentElement.offsetTop;
+          }
+
+          currentElement = currentElement.parentElement;
+        }
+      },
+    }).register(/^\/$/, 'sections', 'animating-to-home', {
+      scrollTiming: 'after',
+    }).register(/^\/wac\/?$/, 'sections', 'animating-to-wac-project')
+      .register(/^\/fin\/?$/, 'sections', 'animating-to-fin-project')
+      .register(/^\/upchannel\/?$/, 'sections', 'animating-to-upchannel-project')
+      .register(/^\/unscan\/?$/, 'sections', 'animating-to-unscan-project')
+      .register(/^\/team\/?$/, 'sections', 'animating-to-team-page')
+      .enable();
+  } else {
+    var sectionElements = document.getElementsByClassName('project-preview');
+    var height = window.innerHeight * 1.2;
+    for (var i = 0; i < sectionElements.length; i++) {
+      sectionElements[i].style.minHeight = height + 'px';
+    }
   }
 });

@@ -51,3 +51,30 @@ $xl-logo-height: 55px;
     line-height: $xl-logo-height;
   }
 }
+
+$tablet-logo-height: 33px;
+@media screen and (max-width: $tablet-landscape-max) {
+  .minimill-logo, .minimill-logo svg, nav .links {
+    height: $tablet-logo-height;
+  }
+
+  nav .links li {
+    line-height: $tablet-logo-height;
+  }
+}
+
+$phone-logo-height: 22px;
+@media screen and (max-width: $phone-landscape-max) {
+  .minimill-logo, .minimill-logo svg, nav .links {
+    height: $phone-logo-height;
+  }
+
+  nav {
+    padding: 1.5rem 0;
+  }
+
+  nav .links li {
+    line-height: $phone-logo-height;
+    margin-left: 1rem;
+  }
+}

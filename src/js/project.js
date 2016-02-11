@@ -1,7 +1,7 @@
-var sections = new Sections().enable();
 var MOBILE_WIDTH = 640;
 var md = new MobileDetect(window.navigator.userAgent);
 if (md.mobile() === null) {
+  var sections = new Sections().enable();
   new PageAnimation({
     shouldAnimate: function() {
       return window.innerWidth > MOBILE_WIDTH;

@@ -10,7 +10,8 @@
 
 .section-work-identities {
   > .content {
-    padding: 16rem 0 8rem;
+    padding-bottom: 8rem;
+    padding-top: 16rem;
   }
 
   .h1 {
@@ -24,6 +25,23 @@
 
     img {
       opacity: 0.4;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .section-work-hero {
+    padding: 8.5rem 0 7.5rem;
+  }
+
+  .section-work-identities {
+    > .content {
+      padding-bottom: 4rem;
+      padding-top: 4rem;
+    }
+
+    .logos {
+      padding-top: 2rem;
     }
   }
 }

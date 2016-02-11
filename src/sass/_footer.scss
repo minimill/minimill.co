@@ -30,8 +30,10 @@ footer {
     fill: $medium-gray;
   }
 
-  .logo > svg {
-    height: $logo-height;
+  .social {
+    width: 50%;
+    display: inline-block;
+    float: left;
   }
 
   .icon {
@@ -72,6 +74,60 @@ footer {
       rect, polygon, path {
         fill: $blue;
       }
+    }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  footer {
+    background-color: $light-gray;
+    display: block;
+    padding: 0.5rem 0 2.5rem;
+    position: relative;
+
+    &:before {
+      background-color: $light-gray;
+      content: ' ';
+      display: block;
+      left: 0;
+      top: -2px;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+    }
+
+    .cta {
+      padding-bottom: 0;
+    }
+
+    .h1 + .h1 {
+      margin-top: 0.5rem;
+    }
+
+    .minimill-logo, .copyright, .icon-label {
+      display: none;
+    }
+
+    .address {
+      text-align: center;
+    }
+
+    .social {
+      display: inline;
+      width: auto;
+      float: none;
+      margin-right: 2.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .col-4.socials {
+      display: flex;
+      flex-direction: horizontal;
+      justify-content: center;
+      padding: 2.25rem 0;
     }
   }
 }

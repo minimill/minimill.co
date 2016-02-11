@@ -34,3 +34,9 @@ hr {
     display: block;
   }
 }
+
+@media screen and (max-width: $phone-landscape-max) {
+  hr {
+    margin-bottom: 4rem;
+  }
+}

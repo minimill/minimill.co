@@ -8,38 +8,37 @@
   }
 }
 
-.backgrounds {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1;
+@mixin color-backgrounds($prefix) {
+  display: block;
 
-  li {
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: $t-scroll-opacity;
-    width: 100%;
-  }
+  // Minimill Hero
+  .#{$prefix}-work-hero { background-color: $blue; }
 
-  .background-fin-hero,
-  .background-work-fin { background-color: $fin-blue; }
+  // The footer at the bottom of every page
+  .#{$prefix}-footer,
+  [class*="#{$prefix}"][class*="related"],
+  .#{$prefix}-work-identities { background-color: $light-gray; }
 
-  .background-footer,
-  .background-fin-related,
-  .background-work-identities { background-color: $light-gray; }
+  // Fin
+  .#{$prefix}-fin-hero,
+  .#{$prefix}-work-fin { background-color: $fin-blue; }
 
-  .background-work-hero { background-color: $blue; }
-  .background-fin-goal { background-color: $fin-black; }
-  .background-work-wac { background-color: $wac-yellow; }
-  .background-work-redspread { background-color: $redspread-red; }
-  .background-work-unscan { background-color: $unscan-gold; }
-  .background-work-upchannel {
+  .#{$prefix}-fin-goal { background-color: $fin-black; }
+
+  // World After Capital
+  .#{$prefix}-work-wac { background-color: $wac-yellow; }
+
+  // Redspread
+  .#{$prefix}-work-redspread { background-color: $redspread-red; }
+
+  // Unscan
+  .#{$prefix}-work-unscan { background-color: $unscan-gold; }
+
+  // Upchannel
+  .#{$prefix}-work-upchannel {
     background-color: $upchannel-white;
+    overflow: hidden;
+    position: relative;
 
     &:before {
       animation: $a-upchannel-shift;
@@ -58,73 +57,65 @@
   }
 }
 
+.backgrounds {
+  @include color-backgrounds('background');
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  li {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: $t-scroll-opacity;
+    width: 100%;
+  }
+}
+
+// Change background-color of body for the overscroll on the bottom
+// of the page.
 .in-section-fin-related,
 .in-section-work-identities,
 .in-section-footer {
   background-color: $light-gray;
 }
 
-%section-work-hero {
-  p, .h1 {
-    color: $white;
-  }
-
-  .arrow-component {
-    background-color: $white;
-  }
+@function contains($list, $var) {
+  $_out: false;
+  @each $item in $list { @if $item == $var { $_out: true; } }
+  @return $_out;
 }
 
-%section-fin-hero,
-%section-fin-goal,
-%section-work-fin {
-  p, .h1 {
-    color: $fin-white;
-  }
+@mixin section($id) {
+  @if contains(('work-hero'), $id) {
+    p, .h1 { color: $white; }
+    .arrow-component { background-color: $white; }
 
-  .arrow-component {
-    background-color: $fin-light-blue;
-  }
-}
+  } @else if contains(('fin-hero', 'fin-goal', 'work-fin'), $id) {
+    p, .h1 { color: $fin-white; }
+    .arrow-component { background-color: $fin-light-blue;}
 
-%section-work-wac {
-  p, .h1 {
-    color: $wac-black;
-  }
+  } @else if contains(('work-wac'), $id) {
+    p, .h1 { color: $wac-black; }
+    .arrow-component { background-color: $wac-blue; }
 
-  .arrow-component {
-    background-color: $wac-blue;
-  }
-}
+  } @else if contains(('work-upchannel'), $id) {
+    p, .h1 { color: $upchannel-black; }
+    .arrow-component { background-color: $upchannel-blue; }
 
-%section-work-upchannel {
-  p, .h1 {
-    color: $upchannel-black;
-  }
+  } @else if contains(('work-unscan'), $id) {
+    p, .h1 { color: $unscan-black; }
+    .arrow-component { background-color: $unscan-blue; }
 
-  .arrow-component {
-    background-color: $upchannel-blue;
-  }
-}
+  } @else if contains(('footer', 'fin-related', 'work-identities'), $id) {
+    p, .h1 { color: $dark-gray; }
+    .arrow-component { background-color: $dark-gray; }
 
-%section-work-unscan {
-  p, .h1 {
-    color: $unscan-black;
-  }
-
-  .arrow-component {
-    background-color: $unscan-blue;
-  }
-}
-
-%section-footer,
-%section-fin-related,
-%section-work-identities {
-  p, .h1 {
-    color: $dark-gray;
-  }
-
-  .arrow-component {
-    background-color: $dark-gray;
   }
 }
 
@@ -152,8 +143,28 @@ $sections: $work-sections, $fin-sections;
       .section-#{if($index < length($page), nth($page, $index + 1), $current-section)},
       // $current-section
       .section-#{$current-section} {
-        @extend %section-#{$current-section};
+        @include section($current-section);
       }
     }
   }
 }
+
+@media screen and (max-width: $phone-landscape-max) {
+  .sections {
+    @include color-backgrounds('section');
+  }
+
+  @each $page in $sections {
+    @each $current-section in $page {
+      .section-#{$current-section} {
+        @include section($current-section);
+      }
+    }
+  }
+
+  .backgrounds {
+    display: none;
+  }
+}
+
+

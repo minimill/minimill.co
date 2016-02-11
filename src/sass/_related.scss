@@ -43,3 +43,36 @@
     }
   }
 }
+
+@media screen and (max-width: $phone-landscape-max) {
+  .related {
+    padding: 3rem 2rem 2rem;
+    margin-bottom: 2rem;
+
+    .icon {
+      background-color: $light-gray;
+      border-radius: 50%;
+      height: 2rem;
+      left: 50%;
+      padding: 1rem;
+      top: 0;
+      transform: translate(-50%, -50%);
+      width: 2rem;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .text {
+      padding: 0;
+    }
+
+    &:hover {
+      path {
+        fill: $blue;
+      }
+    }
+  }
+}

@@ -15,10 +15,14 @@ $content-width: 66rem;
   [class^="col-"] {
     @include column;
     display: block;
+    float: left;
 
     &.col-centered {
       float: none;
       margin: 0 auto;
+    }
+    &.col-right {
+      float: right;
     }
   }
 
@@ -42,7 +46,21 @@ $content-width: 66rem;
     width: 16.666666%;
   }
 
-  + .content {
-    margin-top: 8rem;
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .content {
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+
+    > [class^="col"] {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      &.m-col-6 {
+        width: 50%;
+      }
+    }
   }
 }

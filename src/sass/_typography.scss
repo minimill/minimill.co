@@ -45,3 +45,24 @@ p, %p {
   background-size: 2px $height;
   background-position: 0 $font-size;
 }
+
+@media screen and (max-width: $phone-landscape-max) {
+  h1, %h1, .h1 {
+    font-size: 1.5rem;
+  }
+
+  h2, %h2 {
+    font-size: 1.5rem;
+  }
+
+  h3, %h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: $phone-portrait-max) {
+
+  h1, %h1, .h1 {
+    font-size: 1.3rem;
+  }
+}
