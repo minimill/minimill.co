@@ -69,10 +69,26 @@ footer {
     }
 
     a:hover {
-      color: $blue;
 
-      rect, polygon, path {
+      rect, polygon {
         fill: $blue;
+      }
+
+      &.twitter-link {
+        color: $twitter-blue;
+        path { fill: $twitter-blue; }
+      }
+      &.github-link {
+        color: $github-blue;
+        path { fill: $github-blue; }
+      }
+      &.facebook-link, {
+        color: $facebook-blue;
+        path { fill: $facebook-blue; }
+      }
+      &.dribbble-link, {
+        color: $dribbble-pink;
+        path { fill: $dribbble-pink; }
       }
     }
   }

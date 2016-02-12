@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function _shouldCloseModal(link) {
     var href = link.getAttribute('href');
-    console.log(href, window.location.pathname)
     if (href[0] === '#' || href === window.location.pathname) {
       return true;
     }
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < closeContactModalLinks.length; i++) {
     closeContactModalLinks[i].addEventListener('click', closeContactModal);
   }
+
   openContactModalLink.addEventListener('click', openContactModal);
   document.documentElement.addEventListener('keyup', function(e) {
     if (e.keyCode == 27) { // escape key

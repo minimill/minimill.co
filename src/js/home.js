@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var workLink = document.getElementById('work-link');
+  var workLinks = document.getElementsByClassName('work-link');
   var MOBILE_WIDTH = 640;
   var md = new MobileDetect(window.navigator.userAgent);
 
-  workLink.addEventListener('click', onClickWorkLink);
+  for (var i = 0; i < workLinks.length; i++) {
+    workLinks[i].addEventListener('click', onClickWorkLink);
+  }
+
+  var hero = document.getElementsByClassName('section-work-hero')[0];
+  hero.style.height = hero.offsetHeight + 'px';
+
+  window.addEventListener('resize', function() {
+    hero.style.height = '';
+    hero.style.height = hero.offsetHeight + 'px';
+  });
 
   function onClickWorkLink(e) {
-    var linkHREF = '#world-after-capital'
+    var linkHREF = '#world-after-capital';
 
     if (linkHREF[0] !== '#') {
       return;
@@ -29,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollTiming: 'during',
 
       shouldAnimate: function(anchor, path) {
-        if (anchor.id === 'work-link') {
+        if (anchor.className.indexOf('work-link') >= 0) {
           return false;
         }
 

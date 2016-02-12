@@ -15,8 +15,10 @@
       console.error('Could not find any elements with the class "' + this.settings.sectionClass + '".');
     }
 
+    this.scrollingEnabled = false;
     this.lastWindowHeight = window.innerHeight;
     this.inRAF = false;
+    this.shouldResize = false;
     this.lastYOffset = window.pageYOffset;
     this.sectionMap = this._computeSectionMap();
     this._onScroll();
@@ -28,7 +30,6 @@
     var sectionMap = [];
 
     [].forEach.call(this.sectionElements, function(sectionElement) {
-      console.log(this.lastWindowHeight);
       sectionMap.push({
         element: sectionElement,
         begin: Math.max(sectionElement.offsetTop - (this.lastWindowHeight / 2), 0),
@@ -67,7 +68,13 @@
 
     var onScroll = function() {
       _this.lastYOffset = window.pageYOffset;
-      if (!_this.inRAF) {
+
+      // If we should resize, and entering the requestAnimationFrame would
+      // cause us to set _this._inRAF = true and block from resizing, we should
+      // just do a resize (which will itself call _this._onScroll).
+      if (_this.shouldResize) {
+        _this._onResize();
+      } else if (!_this.inRAF) {
         _this.inRAF = true;
         window.requestAnimationFrame(_this._onScroll.bind(_this));
       }
@@ -77,14 +84,26 @@
   };
 
   Sections.prototype._onResize = function() {
-    this.sectionMap = this._computeSectionMap();
-    this._onScroll();
+    if (this.scrollingEnabled && window.innerWidth <= this.settings.mobileWidth) {
+      this._disableScrolling();
+    } else if (!this.scrollingEnabled && window.innerWidth > this.settings.mobileWidth) {
+      this._enableScrolling();
+    }
+
+    if (this.scrollingEnabled) {
+      this.sectionMap = this._computeSectionMap();
+      this._onScroll();
+    }
+
+    this.inRAF = false;
+    this.shouldResize = false;
   };
 
   Sections.prototype._getOnResize = function() {
     var _this = this;
 
     var onResize = function() {
+      _this.shouldResize = true;
       _this.lastWindowHeight = window.innerHeight;
       if (!_this.inRAF) {
         _this.inRAF = true;
@@ -95,18 +114,31 @@
     return onResize;
   };
 
-  Sections.prototype.enable = function() {
-    this.onScroll = this._getOnScroll();
-    this.onResize = this._getOnResize();
+  Sections.prototype._enableScrolling = function() {
     window.addEventListener('scroll', this.onScroll);
+    this.scrollingEnabled = true;
+  };
+
+  Sections.prototype._disableScrolling = function() {
+    window.removeEventListener('scroll', this.onScroll);
+    this.scrollingEnabled = false;
+  };
+
+  Sections.prototype.enable = function() {
+    this.onResize = this._getOnResize();
+    this.onScroll = this._getOnScroll();
     window.addEventListener('resize', this.onResize);
     window.addEventListener('orientationchange', this.onResize);
+
+    if (window.innerWidth > this.settings.mobileWidth) {
+      this._enableScrolling();
+    }
   };
 
   Sections.prototype.disable = function() {
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onResize);
+    this._disableScrolling();
     window.removeEventListener('orientationchange', this.onResize);
+    window.removeEventListener('resize', this.onResize);
   };
 
   if (typeof define === 'function' && define.amd) {

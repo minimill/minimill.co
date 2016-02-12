@@ -1,10 +1,28 @@
 .section-work-hero {
-  padding: 24.5rem 0 10rem;
+  box-sizing: border-box;
+  padding: 4rem 0;
+  height: 100vh;
+  position: relative;
   text-align: center;
 
   h1 {
     animation: $a-fade-in;
     transition: $t-scroll-color;
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .work-link {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    width: 3.25rem;
+    padding: 1rem;
+    margin-left: -1.625rem;
+    bottom: 8rem;
   }
 }
 
