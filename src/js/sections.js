@@ -130,6 +130,9 @@
     window.addEventListener('resize', this.onResize);
     window.addEventListener('orientationchange', this.onResize);
 
+    // Recompute our sectionMap once all of the images on the page have loaded.
+    window.addEventListener('load', this.onResize);
+
     if (window.innerWidth > this.settings.mobileWidth) {
       this._enableScrolling();
     }
@@ -139,6 +142,7 @@
     this._disableScrolling();
     window.removeEventListener('orientationchange', this.onResize);
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('load', this.onResize);
   };
 
   if (typeof define === 'function' && define.amd) {

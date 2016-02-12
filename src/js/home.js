@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (md.mobile() === null) {
     // Sections
-    var sections = new Sections().enable();
+    var sections;
+    setTimeout(function() {
+      sections = new Sections().enable();
+    }, 100);
 
     // PageAnimation
     new PageAnimation({
@@ -71,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     var sectionElements = document.getElementsByClassName('project-preview');
     var height = window.innerHeight * 1.2;
-    for (var i = 0; i < sectionElements.length; i++) {
+    for (i = 0; i < sectionElements.length; i++) {
       sectionElements[i].style.minHeight = height + 'px';
     }
   }
