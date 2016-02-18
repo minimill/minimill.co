@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return false;
   }
 
-  function closeContactModal(e) {
-    if (!_shouldCloseModal(this) || !modalIsOpen) { return; }
-
-    if (e) { e.preventDefault(); }
-
+  function _closeContactModal() {
     // Remove any hash if there is one
     history.pushState('', document.title, window.location.pathname + window.location.search);
 
@@ -31,6 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.className = modal.className.replace(' active', '');
       modalIsOpen = false;
     }, 200);
+  }
+
+  function closeContactModal(e) {
+    if (!_shouldCloseModal(this) || !modalIsOpen) { return; }
+
+    if (e) { e.preventDefault(); }
+
+    _closeContactModal();
   }
 
   function openContactModal(e) {
@@ -53,9 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   openContactModalLink.addEventListener('click', openContactModal);
+
   document.documentElement.addEventListener('keyup', function(e) {
     if (e.keyCode == 27) { // escape key
-      closeContactModal();
+      _closeContactModal();
     }
   });
 });
