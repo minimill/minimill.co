@@ -1,3 +1,4 @@
+$quote-height: 8.5rem;
 
 // Components
 
@@ -11,6 +12,7 @@
 
   img {
     margin-bottom: 5rem;
+    width: 100%;
   }
 }
 
@@ -24,7 +26,6 @@
   float: right;
   margin-bottom: 2rem;
   padding: 0 1.25rem;
-  transition: $t-scroll-color;
   width: 33.333333%;
 }
 
@@ -34,14 +35,17 @@
 
 // Sections
 
-.project-hero, .project-preview {
+.project-preview {
+  padding: 16rem 0 0;
+}
+
+.project-hero {
   padding: 16rem 0 0;
 
   .services {
     @extend %h3;
     @include column;
     animation: $a-fade-in;
-    color: $fin-light-blue;
     display: inline-block;
     float: left;
     position: absolute;
@@ -63,32 +67,61 @@
     @extend %h2;
     @include column;
     animation: $a-fade-in;
-    border: 1px solid $fin-white;
+    border-bottom: 1px solid $fin-white;
+    border-left: 1px solid $fin-white;
     float: right;
     margin-top: -9rem;
-    padding: 4rem 5.5rem;
+    padding: 8.75rem 5.5rem 4rem;
     position: relative;
     width: 66.666666%;
     z-index: 1;
 
-    &:before {
-      background-image: url('../img/icon-quote.svg');
-      background-position: top right;
-      background-repeat: no-repeat;
-      background-size: 2rem 1.25rem;
+    .quote-upper-line, .quote-lower-line {
+      background-color: $white;
       content: ' ';
       display: block;
-      font-size: 6rem;
-      height: 4.75rem;
-      line-height: 4rem;
-      text-align: right;
+      position: absolute;
+    }
+
+    .quote-upper-line {
+      height: 1px;
+      left: 0;
+      right: ($quote-height / 2);
+      top: 0;
+    }
+
+    .quote-lower-line {
+      bottom: 0;
+      right: 0;
+      top: ($quote-height / 2);
+      width: 1px;
+    }
+
+    .quote-mark {
+      content: ' ';
+      display: block;
+      height: $quote-height;
+      position: absolute;
+      right: - ($quote-height / 2);
+      top: - ($quote-height / 2);
+      width: $quote-height;
+
+      svg {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
+
 
   cite {
     @extend %p;
     display: block;
-    padding-top: 3rem;
+    margin-top: 2.5rem;
+    padding-left: 5rem;
+    position: relative;
 
     span {
       display: block;
@@ -99,12 +132,12 @@
     }
 
     .photo {
-      bottom: 2.5rem;
-      height: 7.5rem;
-      left: -3.75rem;
+      height: 3rem;
+      left: 0;
       overflow: hidden;
       position: absolute;
-      width: 7.5rem;
+      top: 0;
+      width: 3rem;
 
       img {
         height: 100%;
@@ -114,17 +147,13 @@
   }
 }
 
-.project-goal {
-  padding: 16rem 0 0;
+.project-section {
+  padding: 16rem 0 8rem;
 
   .h1 {
     margin-bottom: 4rem;
     text-align: center;
   }
-}
-
-.project-related-work {
-  padding: 16rem 0 8rem;
 
   .content > div > p {
     margin-bottom: 4rem;
@@ -140,8 +169,8 @@
   // Components
 
   .project-title, .project-summary, .project-arrow {
-    float: none;
     display: block;
+    float: none;
     padding: 0;
     width: 100%;
   }
@@ -182,8 +211,8 @@
     padding: 6rem 0 4rem;
 
     blockquote {
-      font-size: 1rem;
       float: none;
+      font-size: 1rem;
       margin-top: 4rem;
       padding: 3rem 2rem 2rem;
       width: 100%;
@@ -220,12 +249,12 @@
     .services {
       display: block;
       float: none;
+      margin-bottom: 2rem;
       padding: 0;
       position: relative;
       text-align: center;
       top: auto;
       width: 100%;
-      margin-bottom: 2rem;
 
       li {
         display: inline-block;
@@ -237,17 +266,12 @@
     }
   }
 
-  .project-goal {
+  .project-section {
     padding: 4rem 0;
 
     .h1 {
       margin-bottom: 2rem;
       text-align: center;
     }
-  }
-
-  .project-related-work {
-    color: $dark-gray;
-    padding: 6rem 0 4rem;
   }
 }

@@ -1,11 +1,6 @@
 $arrow-label-padding: 0 1rem;
 
 @mixin arrow-link($width) {
-  .arrow-component {
-    background-color: $white;
-    transition: $t-scroll-background-color;
-  }
-
   .arrow-tail {
     height: $width;
     width: $width;
@@ -27,7 +22,7 @@ $arrow-label-padding: 0 1rem;
     position: relative;
     width: (4 * $width);
 
-    .arrow-component {
+    span {
       height: $width;
       position: absolute;
       width: $width;
@@ -60,8 +55,8 @@ $arrow-label-padding: 0 1rem;
 @media screen and (max-width: $phone-landscape-max) {
   .arrow-link {
     @include arrow-link(2px);
-    max-width: 11rem;
     margin: 0 auto;
+    max-width: 11rem;
   }
 
   .arrow-tail {

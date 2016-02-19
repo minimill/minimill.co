@@ -21,6 +21,7 @@ $content-width: 66rem;
       float: none;
       margin: 0 auto;
     }
+
     &.col-right {
       float: right;
     }
@@ -30,8 +31,16 @@ $content-width: 66rem;
     width: 100%;
   }
 
+  .col-10 {
+    width: 83.333333%;
+  }
+
   .col-8 {
     width: 66.666666%;
+  }
+
+  .col-6 {
+    width: 50%;
   }
 
   .col-4 {
@@ -54,8 +63,8 @@ $content-width: 66rem;
     padding: 0 1.5rem;
 
     > [class^="col"] {
-      padding: 0;
       margin: 0;
+      padding: 0;
       width: 100%;
 
       &.m-col-6 {

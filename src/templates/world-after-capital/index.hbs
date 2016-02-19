@@ -1,0 +1,114 @@
+{{#extend "project" }}
+{{#content "title" mode="append"}} - World After Capital{{/content}}
+{{#content "body-class" mode="append"}} page-wac{{/content}}
+{{#content "backgrounds" mode="append"}}
+<li class="background-wac-hero"></li>
+<li class="background-wac-open-source"></li>
+<li class="background-wac-motion"></li>
+<li class="background-wac-brand"></li>
+{{/content}}
+{{#content "sections" mode="prepend"}}
+<li class="animated-section project-hero section-wac-hero" data-section-id="wac-hero">
+    <div class="content">
+        <h1 class="project-title sc-text">World After Capital</h1>
+        <div class="project-img-wrapper">
+            <img src="/img/wac-macbook.png" alt="World After Capital">
+            <ul class="services">
+                <li class="sc-text">Brand Identity</li>
+                <li class="sc-text">UI/UX Design</li>
+                <li class="sc-text">Web Development</li>
+            </ul>
+        </div>
+        <p class="project-summary sc-text">We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+        <blockquote class="sbd-accent">
+            <div class="quote-upper-line sbg-accent"></div>
+            <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
+            <div class="quote-lower-line sbg-accent"></div>
+
+            <span class="sc-text">These guys hit all of my goals. We made a unique site together and it was a pleasure working with the team.</span>
+            <cite>
+                <span class="name sc-text">Albert Wenger</span>
+                <span class="title sc-text">Partner, Union Square Ventures</span>
+                <span class="subtitle sc-text">Author, World After Capital</span>
+                <span class="photo"><img src="/img/avatar-sam.png" alt="Sam Lessin"></span>
+            </cite>
+        </blockquote>
+    </div>
+</li>
+<li class="animated-section project-section section-wac-open-source" data-section-id="wac-open-source">
+    <div class="content">
+        <h2 class="h1 sc-text">A major book release, 100% online, 100% open-source</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/wac-macbook.png" alt="Fin">
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-wac-motion" data-section-id="wac-motion">
+    <div class="content">
+        <h2 class="h1 sc-text">Motion and code draw the reader in</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/wac-macbook.png" alt="Fin">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-8 col-centered">
+            <a href="https://github.com/minimill/staple.js/">
+                <div class="related sbg-h-accent sbd-accent">
+                    <div class="icon">
+                        {{> "icons/github.svg" }}
+                    </div>
+                    <div class="text">
+                        <h3 class="sc-accent">staple.js</h3>
+                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-wac-brand" data-section-id="wac-brand">
+    <div class="content">
+        <h2 class="h1 sc-text">Converting abstract concepts into a cohesive brand</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <img class="project-screenshot full-bleed" src="/img/wac-macbook.png" alt="Fin">
+    <div class="content">
+        <div class="col-12">
+            {{> color-block
+              name="Electric Blue"
+              hex="00ACE6"
+              class="dark"}}
+            {{> color-block
+              name="Brilliant Yellow"
+              hex="FFDD33"
+              class="light"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="White"
+              hex="FFFFFF"
+              class="light"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="Black"
+              hex="111111"
+              class="dark with-border"}}
+        </div>
+    </div>
+</li>
+{{> "footer" class="solid" id="fin-footer" }}
+{{/content}}
+{{/extend}}

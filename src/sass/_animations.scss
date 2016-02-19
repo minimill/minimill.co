@@ -37,10 +37,14 @@ $a-upchannel-shift: shift 15s linear infinite;
 $a-fade-in-delay: fade-in-delay $d2 ease;
 
 $t-page-opacity: $page-speed ease opacity;
+$t-page-fill: $page-speed ease fill;
+$t-page-color: $page-speed ease color;
 
 $t-scroll-opacity: $scroll-speed ease opacity;
 $t-scroll-color: $scroll-speed ease color;
 $t-scroll-background-color: $scroll-speed ease background-color;
+$t-scroll-border-color: $scroll-speed ease border-color;
+$t-scroll-fill: $scroll-speed ease fill;
 
 $t-hover-color: $hover-speed ease color;
 $t-hover-background-color: $hover-speed ease background-color;

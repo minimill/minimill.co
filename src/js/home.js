@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
   var workLinks = document.getElementsByClassName('work-link');
   var MOBILE_WIDTH = 640;
   var md = new MobileDetect(window.navigator.userAgent);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // PageAnimation
     new PageAnimation({
       animateLinksToSelf: true,
-      scrollTiming: 'during',
+      scrollTiming: 'before',
 
       shouldAnimate: function(anchor, path) {
         if (anchor.className.indexOf('work-link') >= 0) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     }).register(/^\/$/, 'sections', 'animating-to-home', {
       scrollTiming: 'after',
-    }).register(/^\/wac\/?$/, 'sections', 'animating-to-wac-project')
+    }).register(/^\/world-after-capital\/?$/, 'sections', 'animating-to-wac-project')
       .register(/^\/fin\/?$/, 'sections', 'animating-to-fin-project')
       .register(/^\/upchannel\/?$/, 'sections', 'animating-to-upchannel-project')
       .register(/^\/unscan\/?$/, 'sections', 'animating-to-unscan-project')

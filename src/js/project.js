@@ -3,11 +3,12 @@ var md = new MobileDetect(window.navigator.userAgent);
 if (md.mobile() === null) {
   var sections = new Sections().enable();
   new PageAnimation({
+    scrollTiming: 'before',
     shouldAnimate: function() {
       return window.innerWidth > MOBILE_WIDTH;
     },
-  }).register(/^\/$/, 'sections', 'animating-to-home', {
+  }).register(/^\/$/, 'background-work-hero', 'animating-to-home', {
     scrollTiming: 'after',
-  }).register(/^\/team$/, 'sections', 'animating-to-team-page')
+  }).register(/^\/team\/?$/, 'background-work-hero', 'animating-to-team-page')
     .enable();
 }

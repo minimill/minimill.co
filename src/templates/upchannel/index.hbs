@@ -1,0 +1,115 @@
+{{#extend "project" }}
+{{#content "title" mode="append"}} - Upchannel{{/content}}
+{{#content "body-class" mode="append"}} page-upchannel in-section-unscan-hero{{/content}}
+{{#content "backgrounds" mode="append"}}
+<li class="background-upchannel-hero"></li>
+<li class="background-upchannel-brand"></li>
+<li class="background-upchannel-web"></li>
+{{/content}}
+{{#content "sections" mode="prepend"}}
+<li class="animated-section project-hero section-upchannel-hero" data-section-id="upchannel-hero">
+    <div class="content">
+        <h1 class="project-title sc-text">Upchannel</h1>
+        <div class="project-img-wrapper">
+            <img src="/img/upchannel-macbook.png" alt="Upchannel">
+            <ul class="services">
+                <li class="sc-text">Product Naming</li>
+                <li class="sc-text">Brand Identity</li>
+                <li class="sc-text">UI/UX Design</li>
+                <li class="sc-text">Web Development</li>
+            </ul>
+        </div>
+        <p class="project-summary sc-text">Previously known as AppCow, our team worked to rebrand and redesign this company to better fit its new direction in data utilization. UpChannel’s new image gives their clients a more clear understanding of their products.</p>
+        <blockquote class="sbd-accent">
+            <div class="quote-upper-line sbg-accent"></div>
+            <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
+            <div class="quote-lower-line sbg-accent"></div>
+
+            <span class="sc-text">These guys hit all of my goals. We made a unique site together and it was a pleasure working with the team.</span>
+            <cite>
+                <span class="name sc-text">Jacob Katsoff</span>
+                <span class="title sc-text">Founder, Upchannel</span>
+                <span class="photo"><img src="/img/avatar-sam.png" alt="Sam Lessin"></span>
+            </cite>
+        </blockquote>
+    </div>
+</li>
+<li class="animated-section project-section section-upchannel-brand" data-section-id="upchannel-brand">
+    <div class="content">
+        <h2 class="h1 sc-text">Restarting the entire brand from zero</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/upchannel-macbook.png" alt="Fin">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/upchannel-macbook.png" alt="Fin">
+        </div>
+    </div>
+    <img class="project-screenshot full-bleed" src="/img/upchannel-macbook.png" alt="Fin">
+    <div class="content">
+        <div class="col-12">
+            {{> color-block
+              name="Deep Sea Blue"
+              hex="4747FF"
+              class="dark"}}
+            {{> color-block
+              name="Dark Tan"
+              hex="594E4C"
+              class="dark"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="Seaweed Green"
+              hex="3DD971"
+              class="light"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="Medium Tan"
+              hex="ACA5A5"
+              class="light"}}
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/upchannel-macbook.png" alt="Fin">
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-upchannel-web" data-section-id="upchannel-web">
+    <div class="content">
+        <h2 class="h1 sc-text">Definitely a website</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/upchannel-macbook.png" alt="Fin">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-8 col-centered">
+            <a href="https://github.com/minimill/staple.js/">
+                <div class="related sbg-h-accent sbd-accent">
+                    <div class="icon">
+                        {{> "icons/github.svg" }}
+                    </div>
+                    <div class="text">
+                        <h3 class="sc-accent">staple.js</h3>
+                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</li>
+{{> "footer" class="solid" id="fin-footer" }}
+{{/content}}
+{{/extend}}

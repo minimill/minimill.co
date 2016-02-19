@@ -1,8 +1,15 @@
+
 footer {
-  padding-bottom: 8rem;
+  &.solid {
+    background-color: $light-gray;
+  }
+
+  &.with-line > .content:first-child {
+    border-top: 2px solid $medium-gray;
+  }
 
   .cta {
-    padding-bottom: 8rem;
+    padding: 8rem 0 4rem;
   }
 
   .h1 {
@@ -31,9 +38,9 @@ footer {
   }
 
   .social {
-    width: 50%;
     display: inline-block;
     float: left;
+    width: 50%;
   }
 
   .icon {
@@ -55,7 +62,11 @@ footer {
     float: left;
   }
 
-  &:hover {
+  .bottom {
+    padding: 4rem 0 8rem;
+  }
+
+  .bottom:hover {
     a, p {
       color: $dark-gray;
     }
@@ -78,14 +89,17 @@ footer {
         color: $twitter-blue;
         path { fill: $twitter-blue; }
       }
+
       &.github-link {
         color: $github-blue;
         path { fill: $github-blue; }
       }
+
       &.facebook-link, {
         color: $facebook-blue;
         path { fill: $facebook-blue; }
       }
+
       &.dribbble-link, {
         color: $dribbble-pink;
         path { fill: $dribbble-pink; }
@@ -105,11 +119,11 @@ footer {
       background-color: $light-gray;
       content: ' ';
       display: block;
-      left: 0;
-      top: -2px;
       height: 4px;
-      width: 100%;
+      left: 0;
       position: absolute;
+      top: -2px;
+      width: 100%;
     }
 
     .cta {
@@ -130,9 +144,9 @@ footer {
 
     .social {
       display: inline;
-      width: auto;
       float: none;
       margin-right: 2.5rem;
+      width: auto;
 
       &:last-child {
         margin-right: 0;

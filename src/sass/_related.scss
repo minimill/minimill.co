@@ -1,9 +1,9 @@
 .related {
-  border: 1px solid $blue;
+  border-style: solid;
+  border-width: 1px;
   margin-bottom: 4rem;
   padding: 4rem 5.5rem;
   position: relative;
-  transition: $t-hover-background-color;
 
   .icon {
     left: 5.5rem;
@@ -32,13 +32,11 @@
   }
 
   &:hover {
-    background-color: $blue;
-
     path {
       fill: $white;
     }
 
-    h3, .text p {
+    .text h3, .text p {
       color: $white;
     }
   }
@@ -46,8 +44,8 @@
 
 @media screen and (max-width: $phone-landscape-max) {
   .related {
-    padding: 3rem 2rem 2rem;
     margin-bottom: 2rem;
+    padding: 3rem 2rem 2rem;
 
     .icon {
       background-color: $light-gray;

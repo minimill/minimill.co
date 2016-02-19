@@ -178,6 +178,11 @@ gulp.task('serve', ['build'], function() {
 
   // Serve files from the root of this project
   browserSync.init(['./dist/**/*'], {
+    ghostMode: {
+      clicks: false,
+      forms: false,
+      scroll: false,
+    },
     server: {
       baseDir: './dist',
       notify: false,

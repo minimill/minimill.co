@@ -16,16 +16,9 @@ img {
   max-width: 100%;
 }
 
-body { background-color: $blue; }
-.page-fin { background-color: $fin-blue; }
-
-hr {
-  background-color: $medium-gray;
-  border: 0;
-  height: 2px;
-  margin-bottom: 8rem;
-  outline: 0;
-}
+/*
+ * Helper Functions & Mixins
+ */
 
 @mixin clearfix {
   &:after {
@@ -34,6 +27,13 @@ hr {
     display: block;
   }
 }
+
+@function contains($list, $var) {
+  $_out: false;
+  @each $item in $list { @if $item == $var { $_out: true; } }
+  @return $_out;
+}
+
 
 @media screen and (max-width: $phone-landscape-max) {
   hr {

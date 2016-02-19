@@ -9,10 +9,11 @@
   }
 
   .backgrounds > li:not(.background-work-hero) {
+    transition: $t-page-opacity;
     opacity: 0;
   }
 
-  .background-work-hero {
+  .backgrounds > .background-work-hero {
     opacity: 1;
   }
 }

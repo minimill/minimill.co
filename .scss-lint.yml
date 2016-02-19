@@ -1,4 +1,6 @@
 linters:
+  Comment:
+    enabled: false
   HexNotation:
     style: 'uppercase'
   HexLength:
@@ -8,7 +10,7 @@ linters:
   LeadingZero:
     style: 'include_zero'
   NestingDepth:
-    max_depth: 4
+    max_depth: 5
   SelectorDepth:
     max_depth: 4
   ImportantRule:

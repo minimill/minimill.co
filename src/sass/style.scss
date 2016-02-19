@@ -1,19 +1,26 @@
+// Basics
 @import 'lib/reset.min';
-@import 'media_queries';
+@import 'z-index';
+@import 'media-queries';
+@import 'responsive';
 @import 'colors';
 @import 'animations';
 @import 'typography';
 @import 'base';
 @import 'layout';
-@import 'responsive';
+
+// Components
 @import 'arrow-link';
 @import 'svg';
 @import 'sections';
 @import 'navbar';
-@import 'work';
-@import 'project';
+@import 'color-block';
 @import 'related';
 @import 'footer';
 @import 'page-animations';
+
+// Pages
+@import 'work';
+@import 'project';
 @import 'contact';
 @import 'team';

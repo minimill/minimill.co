@@ -1,13 +1,25 @@
+///////////////////////////////////////////////////////////////////////////////
+// Adding a new page:
+//
+// 1. Add entries to @mixin color-backgrounds
+// 2. Add entry to body.page-<yourpage> for the overscroll
+// 3. Add the new project to $projects
+// 4. Add a new variable called $<yourpage>-sections and list out the sections
+//    on that page, IN ORDER
+// 5. Add your new $<yourpage>-sections variable to $sections
+// 6. Define your new section content styles in @mixin section
+//
+///////////////////////////////////////////////////////////////////////////////
 
-.sections {
-  position: relative;
-  z-index: 2;
+/////////////////
+// Backgrounds //
+/////////////////
 
-  .animated-section {
-    transition: $t-page-opacity;
-  }
-}
-
+// @mixin color-backgrounds
+//
+// Controls the background color of sections.  This is defined as a mixin so
+// that it can be used to both style the animated backgrounds, and the sections
+// themselves (on mobile).
 @mixin color-backgrounds($prefix) {
   display: block;
 
@@ -15,26 +27,30 @@
   .#{$prefix}-work-hero { background-color: $blue; }
 
   // The footer at the bottom of every page
-  .#{$prefix}-footer,
-  [class*="#{$prefix}"][class*="related"],
+  .#{$prefix}-work-footer,
   .#{$prefix}-work-identities { background-color: $light-gray; }
 
   // Fin
+  .#{$prefix}-fin-footer,
+  .#{$prefix}-fin-related { background-color: $white;}
+
   .#{$prefix}-fin-hero,
   .#{$prefix}-work-fin { background-color: $fin-blue; }
 
   .#{$prefix}-fin-goal { background-color: $fin-black; }
 
   // World After Capital
+  .#{$prefix}-wac-hero,
   .#{$prefix}-work-wac { background-color: $wac-yellow; }
 
-  // Redspread
-  .#{$prefix}-work-redspread { background-color: $redspread-red; }
+  .#{$prefix}-wac-open-source { background-color: $wac-blue; }
 
-  // Unscan
-  .#{$prefix}-work-unscan { background-color: $unscan-gold; }
+  .#{$prefix}-wac-motion { background-color: $white; }
+
+  .#{$prefix}-wac-brand { background-color: $wac-black; }
 
   // Upchannel
+  .#{$prefix}-upchannel-hero,
   .#{$prefix}-work-upchannel {
     background-color: $upchannel-white;
     overflow: hidden;
@@ -52,9 +68,24 @@
       position: absolute;
       right: -12rem;
       top: 0;
-      z-index: 1;
+      // z-index: $z-background;
     }
   }
+
+  .#{$prefix}-upchannel-brand { background-color: $upchannel-light-tan; }
+
+  .#{$prefix}-upchannel-web { background-color: $upchannel-blue; }
+
+  // Unscan
+  .#{$prefix}-unscan-hero,
+  .#{$prefix}-work-unscan { background-color: $unscan-gold; }
+
+  .#{$prefix}-unscan-brand { background-color: $unscan-black; }
+
+  .#{$prefix}-unscan-web { background-color: $unscan-blue; }
+
+  // Redspread
+  .#{$prefix}-work-redspread { background-color: $redspread-red; }
 }
 
 .backgrounds {
@@ -64,7 +95,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: $z-background;
 
   li {
     height: 100%;
@@ -74,56 +105,198 @@
     top: 0;
     transition: $t-scroll-opacity;
     width: 100%;
+    z-index: $z-background;
   }
 }
 
-// Change background-color of body for the overscroll on the bottom
-// of the page.
-.in-section-fin-related,
-.in-section-work-identities,
-.in-section-footer {
-  background-color: $light-gray;
+[class*='page-'] .backgrounds .background-work-hero {
+  opacity: 0;
 }
 
-@function contains($list, $var) {
-  $_out: false;
-  @each $item in $list { @if $item == $var { $_out: true; } }
-  @return $_out;
+[class*='in-section'] .backgrounds li {
+  opacity: 1;
 }
 
+/////////////////////
+// Body Overscroll //
+/////////////////////
+
+// Set the body background color at the top and
+// bottom of each page, so that overscrolls look good.
+body {
+
+  // Top
+  background-color: $blue;
+
+  &.page-fin {
+    background-color: $fin-blue;
+  }
+
+  &.page-wac {
+    background-color: $wac-yellow;
+  }
+
+  &.page-upchannel {
+    background-color: $white;
+  }
+
+  &.page-unscan {
+    background-color: $unscan-gold;
+  }
+
+  // Bottom
+  &.in-section-work-identities,
+  &.in-section-work-footer,
+  &.in-section-wac-brand,
+  &.in-section-wac-footer,
+  &.in-section-fin-related,
+  &.in-section-fin-footer,
+  &.in-section-upchannel-web,
+  &.in-section-upchannel-footer,
+  &.in-section-unscan-web,
+  &.in-section-unscan-footer {
+    background-color: $light-gray;
+  }
+}
+
+//////////////
+// Sections //
+//////////////
+
+// List of all existing projects
+$projects: 'wac', 'fin', 'upchannel', 'unscan';
+
+// List of sections on each page, IN ORDER
+$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel',
+                'work-unscan', 'work-identities', 'work-footer';
+$wac-sections: 'wac-hero', 'wac-open-source', 'wac-motion', 'wac-brand',
+               'wac-footer';
+$fin-sections: 'fin-hero', 'fin-goal', 'fin-related', 'fin-footer';
+$upchannel-sections: 'upchannel-hero', 'upchannel-brand', 'upchannel-web',
+                     'upchannel-footer';
+$unscan-sections: 'unscan-hero', 'unscan-brand', 'unscan-web', 'unscan-footer';
+
+// List of all sets of sections
+$sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
+           $unscan-sections;
+
+.sections {
+  position: relative;
+  transition: $t-page-opacity;
+  z-index: 2;
+
+  .animated-section {
+    overflow: hidden;
+    transition: $t-page-opacity;
+  }
+}
+
+// Ensure that if we are changing a property on scroll,
+// we are transitioning between values.
+.sc-text, .sc-accent { transition: $t-scroll-color; }
+.sbg-accent {transition: $t-scroll-background-color;}
+.sbg-h-accent { transition: $t-hover-background-color; }
+.sbd-accent { transition: $t-scroll-border-color; }
+.sf-svg-accent path { transition: $t-scroll-fill; }
+
+// @mixin section-style
+//
+// Defines what will change about the content of a section. This mixin is
+// applied to every possible section setup, with different text/accent colors.
+@mixin section-style($text, $accent) {
+
+  // Scroll color
+  .sc-text {
+    color: $text;
+  }
+
+  .sc-accent {
+    color: $accent;
+  }
+
+  // Scroll background-color
+  .sbg-accent {
+    background-color: $accent;
+  }
+
+  // Scroll background-color on hover
+  .sbg-h-accent:hover {
+    background-color: $accent;
+  }
+
+  // Scroll border-color
+  .sbd-accent {
+    border-color: $accent;
+  }
+
+  // Scroll SVG fill color
+  .sf-svg-accent path {
+    fill: $accent;
+  }
+}
+
+// @mixin section
+//
+// This mixin will include some variation of @mixin section-style, depending on
+// the passed ID. Different IDs will result in different text/accent colors.
 @mixin section($id) {
   @if contains(('work-hero'), $id) {
-    p, .h1 { color: $white; }
-    .arrow-component { background-color: $white; }
+    @include section-style($white, $white);
 
+  } @else if contains(('work-identities', 'work-footer'), $id) {
+    @include section-style($dark-gray, $blue);
+
+  // World After Capital
+  } @else if contains(('wac-hero', 'work-wac'), $id) {
+    @include section-style($wac-black, $wac-blue);
+
+  } @else if contains(('wac-open-source'), $id) {
+    @include section-style($wac-white, $wac-yellow);
+
+  } @else if contains(('wac-motion'), $id) {
+    @include section-style($wac-gray, $wac-blue);
+
+  } @else if contains(('wac-brand', 'wac-footer'), $id) {
+    @include section-style($wac-white, $wac-yellow);
+
+  // Fin
   } @else if contains(('fin-hero', 'fin-goal', 'work-fin'), $id) {
-    p, .h1 { color: $fin-white; }
-    .arrow-component { background-color: $fin-light-blue;}
+    @include section-style($fin-white, $fin-light-blue);
 
-  } @else if contains(('work-wac'), $id) {
-    p, .h1 { color: $wac-black; }
-    .arrow-component { background-color: $wac-blue; }
+  } @else if contains(('fin-related', 'fin-footer'), $id) {
+    @include section-style($fin-black, $fin-blue);
 
-  } @else if contains(('work-upchannel'), $id) {
-    p, .h1 { color: $upchannel-black; }
-    .arrow-component { background-color: $upchannel-blue; }
+  // Upchannel
+  } @else if contains(('upchannel-hero', 'work-upchannel'), $id) {
+    @include section-style($upchannel-dark-tan, $upchannel-blue);
 
-  } @else if contains(('work-unscan'), $id) {
-    p, .h1 { color: $unscan-black; }
-    .arrow-component { background-color: $unscan-blue; }
+  } @else if contains(('upchannel-brand'), $id) {
+    @include section-style($upchannel-dark-tan, $upchannel-blue);
 
-  } @else if contains(('footer', 'fin-related', 'work-identities'), $id) {
-    p, .h1 { color: $dark-gray; }
-    .arrow-component { background-color: $dark-gray; }
+  } @else if contains(('upchannel-web'), $id) {
+    @include section-style($upchannel-white, $upchannel-green);
 
+  // Unscan
+  } @else if contains(('unscan-hero', 'work-unscan'), $id) {
+    @include section-style($unscan-black, $unscan-blue);
+
+  } @else if contains(('unscan-brand'), $id) {
+    @include section-style($unscan-white, $unscan-blue);
+
+  } @else if contains(('unscan-web'), $id) {
+    @include section-style($unscan-white, $unscan-black);
   }
 }
 
-// List of sections, IN ORDER!
-$projects: 'wac', 'fin', 'upchannel', 'unscan';
-$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel', 'work-unscan', 'work-identities', 'footer';
-$fin-sections: 'fin-hero', 'fin-goal', 'fin-related', 'footer';
-$sections: $work-sections, $fin-sections;
+
+///////////////////////////////
+// Section Style Application //
+///////////////////////////////
+
+// Used below.  By extending instead of just including `opacity: 0;` directly,
+// SCSS will combine the rules, auto-merging them all.
+%hidden { opacity: 0; }
+%visible { opacity: 1; }
 
 @each $page in $sections {
   // If you're in $current-section, that section, and the sections above and
@@ -133,19 +306,37 @@ $sections: $work-sections, $fin-sections;
     $index: index($page, $current-section);
 
     .in-section-#{$current-section} {
-      .background-#{$current-section} {
-        opacity: 1;
+
+      // Previous section
+      @if ($index > 1) {
+        .section-#{nth($page, $index - 1)} {
+          @include section($current-section);
+        }
       }
 
-      // Section above $current-section, if it exists.
-      .section-#{if($index > 1, nth($page, $index - 1), $current-section)},
-      // Section below $current-section, if it exists.
-      .section-#{if($index < length($page), nth($page, $index + 1), $current-section)},
-      // $current-section
+      // Current Section
       .section-#{$current-section} {
         @include section($current-section);
       }
+
+      // Next section
+      @if ($index < length($page)) {
+        .section-#{nth($page, $index + 1)} {
+          @include section($current-section);
+        }
+      }
+
+      // All backgrounds after the current section should be invisible.
+      .backgrounds .background-#{$current-section} ~ li {
+        @extend %hidden;
+      }
     }
+  }
+}
+
+@each $project in $projects {
+  .page-#{$project}:not([class*='in-section']) .section-#{$project}-hero {
+    @include section('#{$project}-hero');
   }
 }
 
@@ -166,5 +357,3 @@ $sections: $work-sections, $fin-sections;
     display: none;
   }
 }
-
-

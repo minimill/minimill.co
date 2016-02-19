@@ -1,0 +1,27 @@
+.color-block {
+  box-sizing: border-box;
+  margin: 2.5rem 0 0;
+  padding: 4rem 5.5rem;
+  text-align: right;
+  width: 100%;
+
+  > div {
+    @extend %p;
+  }
+
+  &.dark > div {
+    color: rgba($white, 0.5);
+  }
+
+  &.light > div {
+    color: rgba($black, 0.5);
+  }
+
+  &.with-border.dark {
+    border: 1px solid rgba($white, 0.5);
+  }
+
+  &.with-border.light {
+    border: 1px solid rgba($black, 0.5);
+  }
+}

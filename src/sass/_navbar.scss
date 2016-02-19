@@ -9,13 +9,16 @@ nav {
   .minimill-logo {
     rect, polygon {
       fill: $white;
+      transition: $t-page-fill;
     }
   }
 
   .links {
     display: inline-block;
     float: right;
+    font-size: 0;
     height: $logo-height;
+    transition: $t-page-color;
 
     li {
       display: inline-block;
@@ -26,6 +29,36 @@ nav {
 
     a {
       @extend %h3;
+    }
+  }
+}
+
+.page-wac:not([class*="animating-to-"]) nav, .animating-to-wac-project nav {
+  color: $wac-black;
+
+  .minimill-logo {
+    rect, polygon {
+      fill: $wac-black;
+    }
+  }
+}
+
+.page-upchannel:not([class*="animating-to-"]) nav, .animating-to-upchannel-project nav {
+  color: $upchannel-blue;
+
+  .minimill-logo {
+    rect, polygon {
+      fill: $upchannel-blue;
+    }
+  }
+}
+
+.page-unscan:not([class*="animating-to-"]) nav, .animating-to-unscan-project nav {
+  color: $unscan-black;
+
+  .minimill-logo {
+    rect, polygon {
+      fill: $unscan-black;
     }
   }
 }
