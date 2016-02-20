@@ -43,15 +43,15 @@
   .h1 a {
     @include nice-underline($white, 2px, 2.5rem);
   }
+}
 
-  .modal-content {
-    left: 2rem;
-    position: absolute;
-    right: 2rem;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.modal-content {
+  left: 2rem;
+  position: absolute;
+  right: 2rem;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .contact-modal-open {

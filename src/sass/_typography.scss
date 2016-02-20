@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Calibre';
-  src: url('../../font/CalibreWeb-Regular.eot'); // IE9 Compat Modes
-  src: url('../../font/CalibreWeb-Regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-       url('../../font/CalibreWeb-Regular.woff') format('woff'); // Pretty Modern Browsers
+  src: url('/font/CalibreWeb-Regular.eot'); // IE9 Compat Modes
+  src: url('/font/CalibreWeb-Regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+       url('/font/CalibreWeb-Regular.woff') format('woff'); // Pretty Modern Browsers
 }
 
 // Font weights
@@ -21,6 +21,7 @@ h1, %h1, .h1 {
 h2, %h2 {
   font-size: 2rem;
 }
+
 
 h3, %h3 {
   font-size: 1.5rem;

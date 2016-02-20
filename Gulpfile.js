@@ -161,7 +161,7 @@ gulp.task('deploy', ['build:optimized'], function() {
   gulp.src('')
     .pipe(shell('scp -r dist/* root@minimill.co:/srv/work/private_html/minimill/'))
     .on('finish', function() {
-      process.stdout.write('Deployed to work.minimill.co/minimill');
+      process.stdout.write('Deployed to work.minimill.co/site');
     });
 });
 

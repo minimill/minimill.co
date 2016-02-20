@@ -1,0 +1,17 @@
+.error-404-page {
+  background-color: $medium-gray;
+  height: 100%;
+  width: 100%;
+}
+
+.error-404:before {
+  background-image: url('/img/icon-404.svg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 2.75rem 1.25rem;
+  content: ' ';
+  display: block;
+  height: 5.25rem;
+  margin-top: -5.25rem;
+  width: 100%;
+}
