@@ -31,10 +31,9 @@ window.addEventListener('load', function() {
 
   if (md.mobile() === null) {
     // Sections
-    var sections;
-    setTimeout(function() {
-      sections = new Sections().enable();
-    }, 100);
+    var sections = new Sections({
+      mobileWidth: 1024,
+    }).enable();
 
     // PageAnimation
     new PageAnimation({

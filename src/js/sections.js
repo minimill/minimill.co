@@ -41,22 +41,26 @@
     return sectionMap;
   };
 
+  Sections.prototype._setBodySectionClass = function(newSectionClass) {
+    var newBodyClassName = document.body.className;
+
+    // Remove other section classes
+    var re = new RegExp(this.settings.bodyClassPrefix + '.+ ', 'g');
+    newBodyClassName = newBodyClassName.replace(re, '');
+    newBodyClassName = newBodyClassName.replace('  ', ' ');
+
+    // Add new section class
+    newBodyClassName += ' ' + newSectionClass + ' ';
+
+    // Set body class name
+    document.body.className = newBodyClassName;
+  };
+
   Sections.prototype._onScroll = function() {
     for (var i = 0; i < this.sectionMap.length; i++) {
       if (this.lastYOffset >= this.sectionMap[i].begin && this.lastYOffset < this.sectionMap[i].end) {
-        var newBodyClassName = document.body.className;
         var newSectionClass = this.settings.bodyClassPrefix + this.sectionMap[i].sectionId;
-
-        // Remove other section classes
-        var re = new RegExp(this.settings.bodyClassPrefix + '.+ ', 'g');
-        newBodyClassName = newBodyClassName.replace(re, '');
-        newBodyClassName = newBodyClassName.replace('  ', ' ');
-
-        // Add new section class
-        newBodyClassName += ' ' + newSectionClass + ' ';
-
-        // Set body class name
-        document.body.className = newBodyClassName;
+        this._setBodySectionClass(newSectionClass);
       }
     }
 
@@ -93,6 +97,9 @@
     if (this.scrollingEnabled) {
       this.sectionMap = this._computeSectionMap();
       this._onScroll();
+      console.log('scrollpart')
+    } else {
+      console.log('noscrollpart')
     }
 
     this.inRAF = false;
@@ -105,6 +112,8 @@
     var onResize = function() {
       _this.shouldResize = true;
       _this.lastWindowHeight = window.innerHeight;
+      _this.lastYOffset = window.pageYOffset;
+
       if (!_this.inRAF) {
         _this.inRAF = true;
         window.requestAnimationFrame(_this._onResize.bind(_this));
@@ -115,13 +124,16 @@
   };
 
   Sections.prototype._enableScrolling = function() {
+    console.log('_enableScrolling');
     window.addEventListener('scroll', this.onScroll);
     this.scrollingEnabled = true;
   };
 
   Sections.prototype._disableScrolling = function() {
+    console.log('_disableScrolling');
     window.removeEventListener('scroll', this.onScroll);
     this.scrollingEnabled = false;
+    this._setBodySectionClass('');
   };
 
   Sections.prototype.enable = function() {
@@ -135,6 +147,8 @@
 
     if (window.innerWidth > this.settings.mobileWidth) {
       this._enableScrolling();
+    } else {
+      this._disableScrolling();
     }
   };
 

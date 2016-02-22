@@ -58,7 +58,7 @@
 
     &:before {
       animation: $a-upchannel-shift;
-      background-image: url('/img/pattern-trans.png');
+      background-image: url('/img/upchannel/pattern-trans.png');
       background-repeat: repeat;
       background-size: 12rem 12rem;
       bottom: 0;
@@ -193,11 +193,29 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 
 // Ensure that if we are changing a property on scroll,
 // we are transitioning between values.
-.sc-text, .sc-accent { transition: $t-scroll-color; }
-.sbg-accent {transition: $t-scroll-background-color;}
-.sbg-h-accent { transition: $t-hover-background-color; }
-.sbd-accent { transition: $t-scroll-border-color; }
-.sf-svg-accent path { transition: $t-scroll-fill; }
+.sc-text, .sc-accent {
+  transition: $t-scroll-color;
+}
+
+.sbg-text, .sbg-accent {
+  transition: $t-scroll-background-color;
+}
+
+.sbd-accent {
+  transition: $t-scroll-border-color;
+}
+
+.sf-svg-accent path {
+  transition: $t-scroll-fill;
+}
+
+.sbg-h-accent {
+  transition: $t-hover-background-color;
+
+  &.sbd-accent {
+    transition: $t-hover-background-color, $t-scroll-border-color;
+  }
+}
 
 // @mixin section-style
 //
@@ -222,6 +240,10 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   // Scroll background-color on hover
   .sbg-h-accent:hover {
     background-color: $accent;
+  }
+
+  .sbg-text {
+    background-color: $text;
   }
 
   // Scroll border-color
@@ -340,7 +362,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   }
 }
 
-@media screen and (max-width: $phone-landscape-max) {
+@media screen and (max-width: $tablet-landscape-max) {
   .sections {
     @include color-backgrounds('section');
   }
