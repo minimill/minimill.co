@@ -1,28 +1,40 @@
 .external-link {
   border-style: solid;
   border-width: 1px;
+  border-top-width: 0;
   margin-bottom: 4rem;
   padding: 4rem 5.5rem;
   position: relative;
   text-align: center;
 
+  .link-left-line, .link-right-line {
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 40%;
+  }
+
+  .link-left-line {
+    left: 0;
+  }
+
+  .link-right-line {
+    right: 0;
+  }
+
   .icon {
     border-radius: 50%;
-    height: 8.5rem;
+    height: 3rem;
     left: 50%;
     position: absolute;
-    top: -4.25rem;
-    transform: translateX(-50%);
-    width: 8.5rem;
+    top: -1.5rem;
+    transform: translate3d(-50%, 0, 0);
+    width: 3rem;
 
     svg {
-      height: 3rem;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 3rem;
-      transform-origin: 50% 50%;
+      height: 100%;
+      transition: $t-hover-transform;
+      width: 100%;
     }
   }
 
@@ -32,17 +44,8 @@
   }
 
   &:hover {
-    .icon svg {
-      transform: scale(1.25, 1.25) translateX(-50%);
-    }
-
-    path {
-      fill: $white;
-    }
-
-    .text h3, .text p {
-      // color: $white;
-      // transform: scale(0.833333333, 1);
+    .icon svg{
+      transform: scale(1.25, 1.25);
     }
   }
 }
@@ -50,32 +53,20 @@
 @media screen and (max-width: $phone-landscape-max) {
   .external-link {
     margin-bottom: 2rem;
-    padding: 3rem 2rem 2rem;
+    padding: 2.5rem 2rem 2rem;
+
+    .link-left-line, .link-right-line {
+      width: 35%;
+    }
 
     .icon {
-      background-color: $light-gray;
-      border-radius: 50%;
       height: 2rem;
-      left: 50%;
-      padding: 1rem;
-      top: 0;
-      transform: translate(-50%, -50%);
+      top: -1rem;
       width: 2rem;
-
-      svg {
-        height: 2rem;
-        width: 2rem;
-      }
     }
 
     .text {
       padding: 0;
-    }
-
-    &:hover {
-      path {
-        fill: $blue;
-      }
     }
   }
 }

@@ -22,6 +22,15 @@
     padding: 1rem;
     position: absolute;
     width: 3.25rem;
+
+    &.down-arrow {
+      animation: $a-bounce;
+      transition: $t-hover-opacity;
+
+      &:hover {
+        opacity: $semi-trans;
+      }
+    }
   }
 }
 

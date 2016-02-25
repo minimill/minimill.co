@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       modal.className = modal.className.replace(' active', '');
       modalIsOpen = false;
-    }, 200);
+    }, 1000);
   }
 
   function closeContactModal(e) {

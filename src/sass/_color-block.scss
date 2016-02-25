@@ -7,6 +7,22 @@
 
   > div {
     @extend %p;
+    transform: translate3d(0, 1rem, 0);
+    transition: $t-hover-opacity, $t-hover-transform;
+
+    &:last-child {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    > div {
+      transform: none;
+
+      &:last-child {
+        opacity: 1;
+      }
+    }
   }
 
   &.dark > div {
@@ -23,5 +39,31 @@
 
   &.with-border.light {
     border: 1px solid rgba($black, 0.5);
+  }
+}
+
+@media screen and (max-width: $tablet-portrait-max) {
+  .color-block {
+    height: 3rem;
+    margin: 1rem 0 0;
+    padding: 1rem;
+
+    > div {
+      transform: none;
+      opacity: 1;
+      display: inline-block;
+      line-height: 1;
+
+      &:first-child {
+        float: left;
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+        float: right;
+        opacity: 1;
+      }
+    }
   }
 }

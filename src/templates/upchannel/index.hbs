@@ -109,20 +109,14 @@
     </div>
     <div class="content">
         <div class="col-8 col-centered">
-            <a href="https://github.com/minimill/staple.js/">
-                <div class="related sbg-h-accent sbd-accent">
-                    <div class="icon">
-                        {{> "icons/github.svg" }}
-                    </div>
-                    <div class="text">
-                        <h3 class="sc-accent">staple.js</h3>
-                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
-                    </div>
-                </div>
-            </a>
+            {{#embed "external-link"
+                href="http://upchannel.com/"}}
+                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                {{#content "h2"}}upchannel.com{{/content}}
+            {{/embed}}
         </div>
     </div>
 </li>
-{{> "footer" class="solid" id="fin-footer" }}
+{{> "footer" class="solid" id="upchannel-footer" }}
 {{/content}}
 {{/extend}}

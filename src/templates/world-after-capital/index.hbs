@@ -62,17 +62,12 @@
     </div>
     <div class="content">
         <div class="col-8 col-centered">
-            <a href="https://github.com/minimill/staple.js/">
-                <div class="related sbg-h-accent sbd-accent">
-                    <div class="icon">
-                        {{> "icons/github.svg" }}
-                    </div>
-                    <div class="text">
-                        <h3 class="sc-accent">staple.js</h3>
-                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
-                    </div>
-                </div>
-            </a>
+            {{#embed "external-link"
+                href="https://github.com/minimill/pageanimation.js/"}}
+                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                {{#content "h3"}}pageanimation.js{{/content}}
+                {{#content "p"}}Easily staple an element to be fixed at a certain height from the top of the viewport.{{/content}}
+            {{/embed}}
         </div>
     </div>
 </li>
@@ -122,11 +117,11 @@
           class="has-8px-descenders" }}
         {{> font-stack
           name="Oswald"
-          weight="Light,Regular"
+          weight="Light, Regular"
           src="/img/wac/text-wac-oswald.png" }}
       </div>
     </div>
 </li>
-{{> "footer" class="solid" id="fin-footer" }}
+{{> "footer" class="solid" id="wac-footer" }}
 {{/content}}
 {{/extend}}

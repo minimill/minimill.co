@@ -68,7 +68,7 @@
       position: absolute;
       right: -12rem;
       top: 0;
-      // z-index: $z-background;
+      z-index: $z-background-active;
     }
   }
 
@@ -197,7 +197,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   transition: $t-scroll-color;
 }
 
-.sbg-text, .sbg-accent, .sbg-background {
+.sbg-text, .sbg-accent {
   transition: $t-scroll-background-color;
 }
 
@@ -221,7 +221,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 //
 // Defines what will change about the content of a section. This mixin is
 // applied to every possible section setup, with different text/accent colors.
-@mixin section-style($background, $text, $accent) {
+@mixin section-style($text, $accent) {
 
   // Scroll color
   .sc-text {
@@ -235,10 +235,6 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   // Scroll background-color
   .sbg-accent {
     background-color: $accent;
-  }
-
-  .sbg-background {
-    background-color: $background;
   }
 
   // Scroll background-color on hover
@@ -267,50 +263,50 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 // the passed ID. Different IDs will result in different text/accent colors.
 @mixin section($id) {
   @if contains(('work-hero'), $id) {
-    @include section-style($blue, $white, $white);
+    @include section-style($white, $white);
 
   } @else if contains(('work-identities', 'work-footer'), $id) {
-    @include section-style($light-gray, $dark-gray, $blue);
+    @include section-style($dark-gray, $blue);
 
   // World After Capital
   } @else if contains(('wac-hero', 'work-wac'), $id) {
-    @include section-style($wac-yellow, $wac-black, $wac-blue);
+    @include section-style($wac-black, $wac-blue);
 
   } @else if contains(('wac-open-source'), $id) {
-    @include section-style($wac-blue, $wac-white, $wac-yellow);
+    @include section-style($wac-white, $wac-yellow);
 
   } @else if contains(('wac-motion'), $id) {
-    @include section-style($wac-white, $wac-gray, $wac-blue);
+    @include section-style($wac-gray, $wac-blue);
 
   } @else if contains(('wac-brand', 'wac-footer'), $id) {
-    @include section-style($wac-black, $wac-white, $wac-yellow);
+    @include section-style($wac-white, $wac-yellow);
 
   // Fin
   } @else if contains(('fin-hero', 'fin-goal', 'work-fin'), $id) {
-    @include section-style($fin-blue, $fin-white, $fin-light-blue);
+    @include section-style($fin-white, $fin-light-blue);
 
   } @else if contains(('fin-related', 'fin-footer'), $id) {
-    @include section-style($fin-white, $fin-black, $fin-blue);
+    @include section-style($fin-black, $fin-blue);
 
   // Upchannel
   } @else if contains(('upchannel-hero', 'work-upchannel'), $id) {
-    @include section-style($upchannel-white, $upchannel-dark-tan, $upchannel-blue);
+    @include section-style($upchannel-dark-tan, $upchannel-blue);
 
   } @else if contains(('upchannel-brand'), $id) {
-    @include section-style($upchannel-light-tan, $upchannel-dark-tan, $upchannel-blue);
+    @include section-style($upchannel-dark-tan, $upchannel-blue);
 
   } @else if contains(('upchannel-web'), $id) {
-    @include section-style($upchannel-blue, $upchannel-white, $upchannel-green);
+    @include section-style($upchannel-white, $upchannel-green);
 
   // Unscan
   } @else if contains(('unscan-hero', 'work-unscan'), $id) {
-    @include section-style($unscan-gold, $unscan-black, $unscan-blue);
+    @include section-style($unscan-black, $unscan-blue);
 
   } @else if contains(('unscan-brand'), $id) {
-    @include section-style($unscan-black, $unscan-white, $unscan-blue);
+    @include section-style($unscan-white, $unscan-blue);
 
-  } @else if contains(('unscan-web'), $id) {
-    @include section-style($unscan-blue, $unscan-white, $unscan-black);
+  } @else if contains(('unscan-web', 'unscan-footer'), $id) {
+    @include section-style($unscan-white, $unscan-black);
   }
 }
 

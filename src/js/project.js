@@ -4,6 +4,7 @@ if (md.mobile() === null) {
   var sections = new Sections().enable();
   new PageAnimation({
     scrollTiming: 'before',
+    scrollDuration: 500,
     shouldAnimate: function() {
       return window.innerWidth > MOBILE_WIDTH;
     },

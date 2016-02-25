@@ -29,6 +29,11 @@ nav {
 
     a {
       @extend %h3;
+      transition: $t-hover-opacity;
+
+      &:hover {
+        opacity: $semi-trans;
+      }
     }
   }
 }

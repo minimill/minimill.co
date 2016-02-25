@@ -52,15 +52,22 @@ $arrow-label-padding: 0 1rem;
   transition: $t-scroll-opacity;
 }
 
-@media screen and (max-width: $phone-landscape-max) {
+@media screen and (max-width: $tablet-landscape-max) {
   .arrow-link {
-    @include arrow-link(2px);
+    @include arrow-link(4px);
+    max-width: 20rem;
     margin: 0 auto;
-    max-width: 11rem;
   }
 
   .arrow-tail {
     flex-grow: 1;
     width: auto;
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .arrow-link {
+    @include arrow-link(2px);
+    max-width: 16rem;
   }
 }

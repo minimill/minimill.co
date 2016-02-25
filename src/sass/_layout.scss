@@ -10,7 +10,7 @@ $content-width: 66rem;
   @include clearfix;
   margin: 0 auto;
   max-width: $content-width;
-  width: 100%;
+  width: 90%;
 
   [class^="col-"] {
     @include column;
@@ -69,11 +69,11 @@ $content-width: 66rem;
   }
 
   .h1 a {
-    @include nice-underline($white, 2px, 2.5rem);
+    @include nice-underline($white, 2px, 2.9rem);
   }
 }
 
-@media screen and (max-width: $phone-landscape-max) {
+@media screen and (max-width: $tablet-portrait-max) {
   .content {
     box-sizing: border-box;
     padding: 0 1.5rem;

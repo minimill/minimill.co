@@ -4,32 +4,52 @@ $white-strip-height: 15rem;
   animation: $a-slide-up;
   background-color: $blue;
   padding-top: 12.5rem;
-  transition: $t-page-opacity;
+  transition: $t-page-opacity, $t-page-transform;
   z-index: 12;
 }
 
 .team-member {
-  animation: $a-fade-in-delay;
+  animation: $a-fade-in;
   margin-bottom: -$white-strip-height;
 
   .text {
+    background-color: $white;
     box-sizing: border-box;
     color: $dark-gray;
     height: $white-strip-height;
     padding-top: 2rem;
+    position: relative;
     text-align: center;
+    z-index: 10;
   }
 
   h2 {
     margin-bottom: 0.25rem;
   }
 
-  &:hover .team-member-social-links .icon path {
-    fill: $dark-gray;
+  .team-photo-wrapper {
+    padding-top: 128.21%;
+    position: relative;
+    width: 100%;
+    transform: translate3d(0, 1rem, 0);
+    transition: $t-hover-transform;
+    z-index: 9;
+
+    img {
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
   }
 
-  &:hover .team-member-social-links .icon:hover path {
-    fill: $blue;
+  &:hover {
+    .team-photo-wrapper {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .team-member-social-links .icon path {
+      fill: $dark-gray;
+    }
   }
 }
 
@@ -50,23 +70,12 @@ $white-strip-height: 15rem;
   }
 }
 
-.team-photo-wrapper {
-  padding-top: 128.21%;
-  position: relative;
-  width: 100%;
-
-  img {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-  }
-}
 
 .team-white-strip {
   animation: $a-slide-up;
   background-color: $white;
   padding-top: $white-strip-height;
-  transition: $t-page-opacity;
+  transition: $t-page-opacity, $t-page-transform;
   z-index: 10;
 }
 
@@ -76,7 +85,7 @@ $white-strip-height: 15rem;
   }
 
   footer {
-    animation: $a-fade-in-delay;
+    animation: $a-fade-in;
   }
 }
 

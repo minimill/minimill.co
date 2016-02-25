@@ -22,8 +22,13 @@ footer {
     }
 
     a {
-      @include nice-underline($blue, 2px, 2.5rem);
+      @include nice-underline($blue, 2px, 2.9rem);
       color: $blue;
+
+      &:hover {
+        @include nice-underline($green, 2px, 2.9rem);
+        color: $green;
+      }
     }
   }
 
@@ -84,31 +89,33 @@ footer {
       rect, polygon {
         fill: $blue;
       }
-
-      &.twitter-link {
-        color: $twitter-blue;
-        path { fill: $twitter-blue; }
-      }
-
-      &.github-link {
-        color: $github-blue;
-        path { fill: $github-blue; }
-      }
-
-      &.facebook-link, {
-        color: $facebook-blue;
-        path { fill: $facebook-blue; }
-      }
-
-      &.dribbble-link, {
-        color: $dribbble-pink;
-        path { fill: $dribbble-pink; }
-      }
     }
   }
 }
 
-@media screen and (max-width: $phone-landscape-max) {
+footer .bottom:hover a:hover, .team-member:hover .icon:hover {
+  &.twitter-link {
+    color: $twitter-blue;
+    path { fill: $twitter-blue; }
+  }
+
+  &.github-link {
+    color: $github-blue;
+    path { fill: $github-blue; }
+  }
+
+  &.facebook-link, {
+    color: $facebook-blue;
+    path { fill: $facebook-blue; }
+  }
+
+  &.dribbble-link, {
+    color: $dribbble-pink;
+    path { fill: $dribbble-pink; }
+  }
+}
+
+@media screen and (max-width: $tablet-portrait-max) {
   footer {
     background-color: $light-gray;
     display: block;

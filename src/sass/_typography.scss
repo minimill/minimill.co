@@ -40,11 +40,19 @@ p, %p {
 }
 
 @mixin nice-underline($color, $height, $font-size) {
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, $color, $color);
-  background-repeat: repeat-x;
-  background-size: 2px $height;
-  background-position: 0 $font-size;
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    background-color: $color;
+    content: ' ';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: $font-size;
+    transition: $t-hover-background-color;
+    right: 0;
+  }
 }
 
 @media screen and (max-width: $phone-landscape-max) {

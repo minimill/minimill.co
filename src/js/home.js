@@ -26,7 +26,7 @@ window.addEventListener('load', function() {
     var target = document.getElementById(linkHREF.slice(1));
     var offset = target.offsetTop;
 
-    PageAnimation.scrollTo(offset, 200);
+    PageAnimation.scrollTo(offset, 1000);
   }
 
   if (md.mobile() === null) {
@@ -39,6 +39,7 @@ window.addEventListener('load', function() {
     new PageAnimation({
       animateLinksToSelf: true,
       scrollTiming: 'before',
+      scrollDuration: 500,
 
       shouldAnimate: function(anchor, path) {
         if (anchor.className.indexOf('work-link') >= 0) {
@@ -70,11 +71,5 @@ window.addEventListener('load', function() {
       .register(/^\/unscan\/?$/, 'sections', 'animating-to-unscan-project')
       .register(/^\/team\/?$/, 'sections', 'animating-to-team-page')
       .enable();
-  } else {
-    var sectionElements = document.getElementsByClassName('project-preview');
-    var height = window.innerHeight * 1.2;
-    for (i = 0; i < sectionElements.length; i++) {
-      sectionElements[i].style.minHeight = height + 'px';
-    }
   }
 });

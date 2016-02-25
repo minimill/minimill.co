@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var md = new MobileDetect(window.navigator.userAgent);
 
   if (md.mobile() === null) {
-    new PageAnimation({})
-      .register(/^\/$/, 'team-hero', 'animating-to-home')
+    new PageAnimation({
+      scrollDuration: 500,
+    }).register(/^\/$/, 'team-hero', 'animating-to-home')
       .register(/^\/world-after-capital\/?$/, 'team-hero', 'animating-to-wac-project')
       .register(/^\/fin\/?$/, 'team-hero', 'animating-to-fin-project')
       .register(/^\/upchannel\/?$/, 'team-hero', 'animating-to-upchannel-project')
