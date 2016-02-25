@@ -1,5 +1,5 @@
 $delay: 0.2s;
-$scroll-speed: 0.5s;
+$scroll-speed: 0.7s;
 $gap: 0s;
 $hover-speed: 0.3s;
 $page-speed: 0.3s;
@@ -7,6 +7,7 @@ $t1: $delay;
 $d1: $t1 + $page-speed;
 $t2: $d1 + $gap;
 $d2: $t2 + $page-speed;
+$easing: ease; //cubic-bezier(0.77, 0, 0.175, 1);
 
 @keyframes fade-in {
   0% { opacity: 0; }
@@ -31,22 +32,22 @@ $d2: $t2 + $page-speed;
   100% { transform: 0; }
 }
 
-$a-fade-in: fade-in $d1 ease;
-$a-slide-up: slide-up $d1 ease;
+$a-fade-in: fade-in $d1 $easing;
+$a-slide-up: slide-up $d1 $easing;
 $a-upchannel-shift: shift 15s linear infinite;
-$a-fade-in-delay: fade-in-delay $d2 ease;
+$a-fade-in-delay: fade-in-delay $d2 $easing;
 
-$t-page-opacity: $page-speed ease opacity;
-$t-page-fill: $page-speed ease fill;
-$t-page-color: $page-speed ease color;
+$t-page-opacity: $page-speed $easing opacity;
+$t-page-fill: $page-speed $easing fill;
+$t-page-color: $page-speed $easing color;
 
-$t-scroll-opacity: $scroll-speed ease opacity;
-$t-scroll-color: $scroll-speed ease color;
-$t-scroll-background-color: $scroll-speed ease background-color;
-$t-scroll-border-color: $scroll-speed ease border-color;
-$t-scroll-fill: $scroll-speed ease fill;
+$t-scroll-opacity: $scroll-speed $easing opacity;
+$t-scroll-color: $scroll-speed $easing color;
+$t-scroll-background-color: $scroll-speed $easing background-color;
+$t-scroll-border-color: $scroll-speed $easing border-color;
+$t-scroll-fill: $scroll-speed $easing fill;
 
-$t-hover-color: $hover-speed ease color;
-$t-hover-background-color: $hover-speed ease background-color;
-$t-hover-fill: $hover-speed ease fill;
+$t-hover-color: $hover-speed $easing color;
+$t-hover-background-color: $hover-speed $easing background-color;
+$t-hover-fill: $hover-speed $easing fill;
 

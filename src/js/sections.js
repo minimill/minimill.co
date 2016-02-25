@@ -97,9 +97,6 @@
     if (this.scrollingEnabled) {
       this.sectionMap = this._computeSectionMap();
       this._onScroll();
-      console.log('scrollpart')
-    } else {
-      console.log('noscrollpart')
     }
 
     this.inRAF = false;
@@ -124,13 +121,11 @@
   };
 
   Sections.prototype._enableScrolling = function() {
-    console.log('_enableScrolling');
     window.addEventListener('scroll', this.onScroll);
     this.scrollingEnabled = true;
   };
 
   Sections.prototype._disableScrolling = function() {
-    console.log('_disableScrolling');
     window.removeEventListener('scroll', this.onScroll);
     this.scrollingEnabled = false;
     this._setBodySectionClass('');

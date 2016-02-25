@@ -66,18 +66,12 @@
     <div class="content">
         <h2 class="h1 sc-text">A web presence for a mobile product</h2>
         <div class="col-8 col-centered">
-            <a href="https://github.com/minimill/staple.js/">
-                <div class="related sbg-h-accent sbd-accent">
-                    <div class="icon">
-                        {{> "icons/github.svg" }}
-                    </div>
-                    <div class="text">
-                        <h3 class="sc-accent">staple.js</h3>
-                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
-                    </div>
-                </div>
-            </a>
-            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+            {{#embed "external-link"
+                href="https://github.com/minimill/staple.js/"}}
+                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                {{#content "h3"}}staple.js{{/content}}
+                {{#content "p"}}Easily staple an element to be fixed at a certain height from the top of the viewport.{{/content}}
+            {{/embed}}
         </div>
     </div>
     <div class="content">
@@ -87,17 +81,11 @@
     </div>
     <div class="content">
         <div class="col-8 col-centered">
-            <a href="https://github.com/minimill/staple.js/">
-                <div class="related sbg-h-accent sbd-accent">
-                    <div class="icon">
-                        {{> "icons/github.svg" }}
-                    </div>
-                    <div class="text">
-                        <h3 class="sc-accent">staple.js</h3>
-                        <p class="sc-text">Easily staple an element to be fixed at a certain height from the top of the viewport.</p>
-                    </div>
-                </div>
-            </a>
+            {{#embed "external-link"
+                href="https://www.getfin.com/"}}
+                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                {{#content "h2"}}getfin.com{{/content}}
+            {{/embed}}
         </div>
     </div>
 </li>

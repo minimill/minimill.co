@@ -96,7 +96,7 @@ $quote-height: 8.5rem;
 }
 
 .project-hero {
-  padding: 16rem 0 0;
+  padding: 16rem 0 8rem;
 
   .services {
     @extend %h3;
@@ -205,7 +205,7 @@ $quote-height: 8.5rem;
 }
 
 .project-section {
-  padding: 16rem 0 8rem;
+  padding: 8rem 0;
 
   .h1 {
     margin-bottom: 4rem;

@@ -1,0 +1,18 @@
+<a href="{{ href }}">
+    <div class="external-link sbd-accent">
+        <div class="icon sbg-background sf-svg-accent">
+            {{#block "icon"}}{{/block}}
+        </div>
+        <div class="text">
+            {{#if (content "h2") }}
+            <h2 class="sc-accent">{{#block "h2"}}{{/block}}</h2>
+            {{/if}}
+            {{#if (content "h3") }}
+            <h3 class="sc-accent">{{#block "h3"}}{{/block}}</h3>
+            {{/if}}
+            {{#if (content "p") }}
+            <p class="sc-text">{{#block "p"}}{{/block}}</p>
+            {{/if}}
+        </div>
+    </div>
+</a>
