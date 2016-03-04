@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
   });
 
   function onClickWorkLink(e) {
-    var linkHREF = '#fin';
+    var linkHREF = '#world-after-capital';
 
     if (linkHREF[0] !== '#') {
       return;

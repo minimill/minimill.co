@@ -167,7 +167,7 @@ body {
 $projects: 'wac', 'fin', 'upchannel', 'unscan';
 
 // List of sections on each page, IN ORDER
-$work-sections: 'work-hero', 'work-fin', 'work-wac', 'work-upchannel',
+$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel',
                 'work-unscan', 'work-identities', 'work-footer';
 $wac-sections: 'wac-hero', 'wac-open-source', 'wac-motion', 'wac-brand',
                'wac-footer';
@@ -214,7 +214,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 }
 
 .sbg-h-accent {
-  background-color: $blue;
+  backgrozund-color: $blue;
   transition: $t-hover-background-color;
 
   &.sbd-accent {
