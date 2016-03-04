@@ -44,15 +44,15 @@
 
 @media screen and (max-width: $tablet-portrait-max) {
   .color-block {
-    height: 3rem;
+    height: 5rem;
     margin: 1rem 0 0;
-    padding: 1rem;
+    padding: 2rem;
 
     > div {
-      transform: none;
-      opacity: 1;
       display: inline-block;
       line-height: 1;
+      opacity: 1;
+      transform: none;
 
       &:first-child {
         float: left;
@@ -60,10 +60,17 @@
       }
 
       &:last-child {
-        text-align: right;
         float: right;
         opacity: 1;
+        text-align: right;
       }
     }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .color-block {
+    height: 3rem;
+    padding: 1rem;
   }
 }

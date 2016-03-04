@@ -9,7 +9,7 @@ $d1: $t1 + $page-speed;
 $t2: $d1 + $gap;
 $d2: $t2 + $page-speed;
 $slide-up-distance: 30rem;
-$semi-trans: 0.8;
+$semi-trans: 0.5;
 
 @keyframes fade-in {
   0% { opacity: 0; }
@@ -57,10 +57,10 @@ $t-scroll-background-color: $scroll-speed ease background-color;
 $t-scroll-border-color: $scroll-speed ease border-color;
 $t-scroll-fill: $scroll-speed ease fill;
 
-$t-hover-color: $hover-speed ease color;
-$t-hover-background-color: $hover-speed ease background-color;
-$t-hover-fill: $hover-speed ease fill;
-$t-hover-opacity: $hover-speed ease opacity;
+$t-hover-color: $hover-speed linear color;
+$t-hover-background-color: $hover-speed linear background-color;
+$t-hover-fill: $hover-speed linear fill;
+$t-hover-opacity: $hover-speed linear opacity;
 $t-hover-transform: $hover-speed ease transform;
 
 $t-fade-opacity: $fade-speed ease opacity;

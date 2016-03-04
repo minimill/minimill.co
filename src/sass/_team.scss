@@ -30,15 +30,15 @@ $white-strip-height: 15rem;
   .team-photo-wrapper {
     padding-top: 128.21%;
     position: relative;
-    width: 100%;
     transform: translate3d(0, 1rem, 0);
     transition: $t-hover-transform;
+    width: 100%;
     z-index: 9;
 
     img {
       bottom: 0;
+      height: auto;
       position: absolute;
-      width: 100%;
     }
   }
 
@@ -89,7 +89,7 @@ $white-strip-height: 15rem;
   }
 }
 
-@media screen and (max-width: $phone-landscape-max) {
+@media screen and (max-width: $tablet-portrait-max) {
   .team-hero {
     padding-top: 6rem;
 
@@ -98,22 +98,25 @@ $white-strip-height: 15rem;
     }
   }
 
-  .team-photo-wrapper {
-    padding-top: 0;
-    position: relative;
-
-    img {
-      display: block;
-      height: 18.75rem;
-      margin: 0 auto;
-      position: relative;
-      width: auto;
-    }
-  }
-
   .team-member {
     margin: 0;
     overflow: hidden;
+
+    .team-photo-wrapper {
+      height: auto;
+      padding-top: 3rem;
+      position: relative;
+
+      img {
+        display: block;
+        height: auto;
+        left: 0;
+        margin: 0 auto;
+        max-width: 24rem;
+        position: relative;
+        width: 80%;
+      }
+    }
 
     .text {
       background-color: $light-gray;
@@ -130,4 +133,7 @@ $white-strip-height: 15rem;
   .team-white-strip {
     padding-top: 0;
   }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
 }

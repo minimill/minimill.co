@@ -38,7 +38,7 @@ nav {
   }
 }
 
-.page-wac:not([class*="animating-to-"]) nav, .animating-to-wac-project nav {
+.page-wac:not([class*="animating-to-"]) > nav, .animating-to-wac-project > nav {
   color: $wac-black;
 
   .minimill-logo {
@@ -48,7 +48,7 @@ nav {
   }
 }
 
-.page-upchannel:not([class*="animating-to-"]) nav, .animating-to-upchannel-project nav {
+.page-upchannel:not([class*="animating-to-"]) > nav, .animating-to-upchannel-project > nav {
   color: $upchannel-blue;
 
   .minimill-logo {
@@ -58,7 +58,7 @@ nav {
   }
 }
 
-.page-unscan:not([class*="animating-to-"]) nav, .animating-to-unscan-project nav {
+.page-unscan:not([class*="animating-to-"]) > nav, .animating-to-unscan-project > nav {
   color: $unscan-black;
 
   .minimill-logo {

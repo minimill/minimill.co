@@ -26,12 +26,6 @@ var uglify = require('gulp-uglify');
 var yaml = require('js-yaml');
 
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
-// handlebars.Handlebars.registerHelper('partial', function(name, ctx, hash) {
-//   var ps = handlebars.Handlebars.partials;
-//   if(typeof ps[name] !== 'function')
-//     ps[name] = handlebars.Handlebars.compile(ps[name]);
-//   return ps[name](ctx, hash);
-// });
 
 gulp.task('sass:lint', function() {
   gulp.src('./src/sass/*.scss')
@@ -99,9 +93,6 @@ gulp.task('js', ['js:lint', 'js:build']);
 gulp.task('images', function() {
   gulp.src('src/img/**/*')
     .pipe(plumber())
-    .pipe(imagemin({
-      progressive: true,
-    }))
     .pipe(gulp.dest('./dist/img'));
 });
 

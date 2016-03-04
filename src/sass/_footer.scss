@@ -22,11 +22,10 @@ footer {
     }
 
     a {
-      @include nice-underline($blue, 2px, 2.9rem);
       color: $blue;
+      text-decoration: underline;
 
       &:hover {
-        @include nice-underline($green, 2px, 2.9rem);
         color: $green;
       }
     }

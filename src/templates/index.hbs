@@ -1,34 +1,20 @@
 
 {{#extend "scrolling-page"}}
 {{#content "backgrounds"}}
-<li class="background-work-wac" id="background-work-wac"></li>
 <li class="background-work-fin" id="background-work-fin"></li>
+<li class="background-work-wac" id="background-work-wac"></li>
 <li class="background-work-upchannel" id="background-work-upchannel"></li>
 <li class="background-work-unscan" id="background-work-unscan"></li>
 <li class="background-work-identities" id="background-work-identities"></li>
 {{/content}}
 {{#content "sections"}}
-<li class="animated-section section-work-hero" data-section-id="work-hero">
+<li class="animated-section section-work-hero" data-section-id="work-hero" id="work-hero">
     <div class="content">
         <div class="col-12">
             <h1 class="h1 sc-text">We are Minimill, a design agency for branding and web.</h1>
         </div>
     </div>
     <a href="#work" class="work-link down-arrow"><img src="/img/icon-down.svg"></a>
-</li>
-<li class="animated-section project-preview section-work-wac" id="world-after-capital" data-section-id="work-wac">
-    <div class="content">
-        <h2 class="h1 project-title sc-text">
-            <a href="/world-after-capital">World After Capital</a>
-        </h2>
-        <div class="project-img-wrapper">
-            <a href="/world-after-capital">
-                <img src="img/wac/wac-macbook.png" alt="World After Capital">
-            </a>
-        </div>
-        <p class="project-summary sc-text">We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
-        <p class="project-arrow">{{> arrow-link url="/world-after-capital" label="View Project"}}</p>
-    </div>
 </li>
 <li class="animated-section project-preview section-work-fin" id="fin" data-section-id="work-fin">
     <div class="content">
@@ -42,6 +28,20 @@
         </div>
         <p class="project-summary sc-text">We teamed up with Andrew Staub, Andrew Kortina, and Sam Lessin to develop an informative web presence for their new forward-thinking mobile application, Fin.</p>
         <p class="project-arrow">{{> arrow-link url="/fin" label="View Project"}}</p>
+    </div>
+</li>
+<li class="animated-section project-preview section-work-wac" id="world-after-capital" data-section-id="work-wac">
+    <div class="content">
+        <h2 class="h1 project-title sc-text">
+            <a href="/worldaftercapital">World After Capital</a>
+        </h2>
+        <div class="project-img-wrapper">
+            <a href="/worldaftercapital">
+                <img src="img/wac/wac-macbook.png" alt="World After Capital">
+            </a>
+        </div>
+        <p class="project-summary sc-text">We worked with Albert Wenger to create a web presence for his new book. Readers are immersed in an online experience that pairs nicely with the book’s provocative yet accessible thesis.</p>
+        <p class="project-arrow">{{> arrow-link url="/worldaftercapital" label="View Project"}}</p>
     </div>
 </li>
 <li class="animated-section project-preview section-work-upchannel" id="upchannel" data-section-id="work-upchannel">

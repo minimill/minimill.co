@@ -45,9 +45,9 @@
     var newBodyClassName = document.body.className;
 
     // Remove other section classes
-    var re = new RegExp(this.settings.bodyClassPrefix + '.+ ', 'g');
+    var re = new RegExp(this.settings.bodyClassPrefix + '[^ ]+ ', 'g');
     newBodyClassName = newBodyClassName.replace(re, '');
-    newBodyClassName = newBodyClassName.replace('  ', ' ');
+    newBodyClassName = newBodyClassName.replace(/($ |[ ]+)/, ' ');
 
     // Add new section class
     newBodyClassName += ' ' + newSectionClass + ' ';
@@ -123,12 +123,15 @@
   Sections.prototype._enableScrolling = function() {
     window.addEventListener('scroll', this.onScroll);
     this.scrollingEnabled = true;
+    setTimeout(function() {
+      document.body.className = document.body.className.replace('is-mobile', '')
+    }, 400);
   };
 
   Sections.prototype._disableScrolling = function() {
     window.removeEventListener('scroll', this.onScroll);
     this.scrollingEnabled = false;
-    this._setBodySectionClass('');
+    this._setBodySectionClass('is-mobile');
   };
 
   Sections.prototype.enable = function() {

@@ -59,20 +59,45 @@ $quote-height: 8.5rem;
     position: relative;
     width: 80%;
 
+    img {
+      display: block;
+    }
+
     .underline {
-      bottom: 8px;
-      content: ' ';
+      bottom: 0;
       display: block;
       height: 1px;
       opacity: 0.25;
       position: absolute;
-      width: 500%;
+      width: 200%;
     }
+
+    .underline-fill {
+      bottom: 0;
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transform: scale(0, 1);
+      transform-origin: 0 0;
+      transition: (2 * $hover-speed) ease transform;
+      width: 200%;
+    }
+  }
+
+  &:hover .font-img-wrapper .underline-fill {
+    transform: scale(1, 1);
   }
 
   &.has-16px-descenders {
     .font-img-wrapper img {
       margin-bottom: -16px;
+    }
+  }
+
+  &.has-10px-descenders {
+    .font-img-wrapper img {
+      margin-bottom: -10px;
     }
   }
 
@@ -163,11 +188,11 @@ $quote-height: 8.5rem;
       width: $quote-height;
 
       svg {
+        height: 100%;
         left: 50%;
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
-        height: 100%;
       }
     }
   }
@@ -245,8 +270,8 @@ $small-quote-height: 10px;
 
     img {
       display: block;
-      max-width: 66.666666%;
       margin: 0 auto 2rem;
+      max-width: 66.666666%;
     }
   }
 
@@ -262,6 +287,7 @@ $small-quote-height: 10px;
 
   .project-preview {
     padding: 8rem 0;
+
     .project-summary {
       display: none;
     }
@@ -305,9 +331,9 @@ $small-quote-height: 10px;
     }
 
     cite {
-      padding-top: 0.25rem;
-      padding-left: 3rem;
       margin-top: 1.5rem;
+      padding-left: 3rem;
+      padding-top: 0.25rem;
 
       span {
         display: inline;

@@ -1,7 +1,7 @@
 .external-link {
   border-style: solid;
-  border-width: 1px;
   border-top-width: 0;
+  border-width: 1px;
   margin-bottom: 4rem;
   padding: 4rem 5.5rem;
   position: relative;
@@ -43,10 +43,8 @@
     margin-bottom: 0.5rem;
   }
 
-  &:hover {
-    .icon svg{
-      transform: scale(1.25, 1.25);
-    }
+  &:hover .icon svg {
+    transform: scale(1.125, 1.125);
   }
 }
 

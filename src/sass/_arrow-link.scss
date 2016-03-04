@@ -55,8 +55,8 @@ $arrow-label-padding: 0 1rem;
 @media screen and (max-width: $tablet-landscape-max) {
   .arrow-link {
     @include arrow-link(4px);
-    max-width: 20rem;
     margin: 0 auto;
+    max-width: 20rem;
   }
 
   .arrow-tail {

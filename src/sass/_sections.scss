@@ -167,7 +167,7 @@ body {
 $projects: 'wac', 'fin', 'upchannel', 'unscan';
 
 // List of sections on each page, IN ORDER
-$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel',
+$work-sections: 'work-hero', 'work-fin', 'work-wac', 'work-upchannel',
                 'work-unscan', 'work-identities', 'work-footer';
 $wac-sections: 'wac-hero', 'wac-open-source', 'wac-motion', 'wac-brand',
                'wac-footer';
@@ -194,22 +194,27 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 // Ensure that if we are changing a property on scroll,
 // we are transitioning between values.
 .sc-text, .sc-accent {
+  color: $white;
   transition: $t-scroll-color;
 }
 
 .sbg-text, .sbg-accent {
+  background-color: $white;
   transition: $t-scroll-background-color;
 }
 
 .sbd-accent {
+  border-color: $blue;
   transition: $t-scroll-border-color;
 }
 
 .sf-svg-accent path {
+  fill: $blue;
   transition: $t-scroll-fill;
 }
 
 .sbg-h-accent {
+  background-color: $blue;
   transition: $t-hover-background-color;
 
   &.sbd-accent {
@@ -362,6 +367,10 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   }
 }
 
+.is-mobile * {
+  transition: none !important;
+}
+
 @media screen and (max-width: $tablet-landscape-max) {
   .sections {
     @include color-backgrounds('section');
@@ -373,9 +382,5 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
         @include section($current-section);
       }
     }
-  }
-
-  .backgrounds {
-    display: none;
   }
 }
