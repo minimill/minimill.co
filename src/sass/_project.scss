@@ -1,5 +1,20 @@
 $quote-height: 8.5rem;
 
+.full-bleed {
+  margin-top: 8rem;
+  margin-bottom: 5.5rem;
+
+  &.pattern-trans {
+    @include upchannel-pattern-trans(0.2);
+  }
+
+  .project-screenshot {
+    margin: 0;
+    position: relative;
+    z-index: $z-content;
+  }
+}
+
 // Components
 
 .project-img-wrapper {
@@ -30,18 +45,36 @@ $quote-height: 8.5rem;
 }
 
 .project-screenshot {
-  margin: 8rem 0;
+  display: block;
+  margin: 8rem 0 0;
   width: 100%;
 
   &.with-shadow {
     box-shadow: 0 0 2rem rgba($true-black, 0.25);
   }
+
+  &.padded {
+    padding: 4rem 0;
+  }
+
+  & + .project-screenshot {
+    margin-top: 4rem;
+  }
+
+  &.illustrations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.font-stacks {
+  margin-top: 8rem;
 }
 
 .project-font-stack {
   align-items: flex-end;
   display: flex;
-  margin-top: 8rem;
 
   + .project-font-stack {
     margin-top: 4rem;
@@ -80,7 +113,7 @@ $quote-height: 8.5rem;
       position: absolute;
       transform: scale(0, 1);
       transform-origin: 0 0;
-      transition: (2 * $hover-speed) ease transform;
+      transition: (2 * $slow-speed) ease transform;
       width: 200%;
     }
   }
@@ -121,7 +154,7 @@ $quote-height: 8.5rem;
 }
 
 .project-hero {
-  padding: 16rem 0 8rem;
+  padding: 16rem 0 6rem;
 
   .services {
     @extend %h3;
@@ -139,8 +172,7 @@ $quote-height: 8.5rem;
       &:after {
         content: '+';
         display: inline;
-        padding-left: 0.5rem;
-
+        padding: 0 0.3rem 0 .5rem
       }
     }
   }
@@ -196,41 +228,40 @@ $quote-height: 8.5rem;
       }
     }
   }
+}
 
+cite {
+  @extend %p;
+  display: block;
+  margin-top: 2.5rem;
+  padding-left: 5rem;
+  position: relative;
 
-  cite {
-    @extend %p;
+  span {
     display: block;
-    margin-top: 2.5rem;
-    padding-left: 5rem;
-    position: relative;
+  }
 
-    span {
-      display: block;
-    }
+  .subtitle {
+    opacity: 0.5;
+  }
 
-    .subtitle {
-      opacity: 0.5;
-    }
+  .photo {
+    height: 3rem;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 3rem;
 
-    .photo {
-      height: 3rem;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      width: 3rem;
-
-      img {
-        height: 100%;
-        width: 100%;
-      }
+    img {
+      height: 100%;
+      width: 100%;
     }
   }
 }
 
 .project-section {
-  padding: 8rem 0;
+  padding: 6rem 0;
 
   .h1 {
     margin-bottom: 4rem;
@@ -246,15 +277,24 @@ $quote-height: 8.5rem;
   }
 }
 
-$small-quote-height: 10px;
+$small-quote-height: 15px;
 @media screen and (max-width: $tablet-landscape-max) {
+
+  .full-bleed {
+    margin-top: 4rem;
+  }
 
   // Components
   .project-title, .project-summary, .project-arrow {
     display: block;
     float: none;
+    margin-bottom: 3rem;
     padding: 0;
     width: 100%;
+  }
+
+  .project-hero .project-img-wrapper .services {
+    display: none;
   }
 
   .project-title {
@@ -265,18 +305,21 @@ $small-quote-height: 10px;
   .project-img-wrapper {
     display: block;
     float: none;
-    padding: 0;
-    width: 100%;
+    width: 66%;
+    margin: 3rem auto 0;
 
     img {
       display: block;
-      margin: 0 auto 2rem;
-      max-width: 66.666666%;
+      margin: 0 auto 3rem;
+      max-width: 100%;
     }
   }
 
-  .project-screenshot {
-    margin: 2rem 0;
+  .project-summary, .blockquote-wrapper {
+    box-sizing: border-box;
+    width: 66%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .project-hero {
@@ -293,15 +336,19 @@ $small-quote-height: 10px;
     }
   }
 
+  .project-screenshot {
+    margin: 4rem 0 0;
+  }
+
   .project-hero {
-    padding: 12rem 0 4rem;
+    padding: 12rem 0 6rem;
 
     blockquote {
       border-right: 1px solid $white;
       float: none;
-      font-size: 1rem;
+      font-size: 1.5rem;
       margin-top: 4rem;
-      padding: 3rem 2rem 2rem;
+      padding: 2.5rem 2rem 2rem;
       width: 100%;
 
       .quote-upper-line {
@@ -330,29 +377,6 @@ $small-quote-height: 10px;
       }
     }
 
-    cite {
-      margin-top: 1.5rem;
-      padding-left: 3rem;
-      padding-top: 0.25rem;
-
-      span {
-        display: inline;
-      }
-
-      .name:after {
-        content: ',';
-      }
-
-      .subtitle {
-        display: none;
-      }
-
-      .photo {
-        height: 2rem;
-        width: 2rem;
-      }
-    }
-
     .services {
       display: block;
       float: none;
@@ -373,18 +397,176 @@ $small-quote-height: 10px;
     }
   }
 
+  cite {
+    margin-top: 1.5rem;
+    padding-left: 4.5rem;
+    padding-top: 0;
+
+    span {
+      vertical-align: top;
+      font-size: 1rem;
+    }
+
+    .subtitle {
+      display: none;
+    }
+
+    .photo {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  .project-section {
+    .h1 {
+      margin-bottom: 3rem;
+    }
+
+    .project-font-stack {
+      .underline, .underline-fill {
+        display: none;
+      }
+    }
+  }
+
+  .font-stacks {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-width: $tablet-portrait-max) {
+  .project-hero {
+    padding: 16rem 0 4rem;
+  }
+
+  .project-summary, .blockquote-wrapper, .project-img-wrapper {
+    margin-top: 4rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .project-preview {
+    padding: 5rem 0 3rem;
+  }
+
+  .font-stacks {
+    margin-top: 4rem;
+  }
+
   .project-section {
     padding: 4rem 0;
 
     .h1 {
       margin-bottom: 2rem;
-      text-align: center;
     }
+  }
+
+  .project-font-stack {
+    margin-top: 0;
+    flex-wrap: wrap;
+
+    + .project-font-stack {
+      margin-top: 4rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .font-description {
+      margin-bottom: 1rem;
+      width: 100%;
+
+      p {
+        display: inline;
+
+        &:first-child:after {
+          content: ','
+        }
+      }
+    }
+  }
+
+  .project-screenshot {
+    margin: 4rem 0 0;
+
+    &.padded {
+      max-width: 75%;
+      padding: 3rem 0;
+      margin: 3rem auto 0;
+    }
+
+    & + .project-screenshot {
+      margin-top: 3rem;
+    }
+
+    &.illustrations {
+      margin-bottom: -1rem;
+
+      .col-2 {
+        padding: 0 0 1rem;
+      }
+    }
+  }
+
+  .project-hero blockquote {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .full-bleed {
+    margin: 3rem 0 0;
+  }
+
+  .project-title {
+    font-size: 3.5rem;
+    line-height: 1;
   }
 }
 
 @media screen and (max-width: $phone-landscape-max) {
   .project-hero {
-    padding-top: 6rem;
+    padding: 6rem 0 3rem;
+  }
+
+  .project-hero blockquote {
+    font-size: 1.25rem;
+
+    .quote-mark {
+      content: ' ';
+      display: block;
+      height: 0.9375rem;
+      position: absolute;
+      right: - (1.5rem / 2);
+      top: - (0.9375rem / 2);
+      width: 1.5rem;
+    }
+  }
+
+  .project-title {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .project-screenshot {
+    margin: 4rem 0 0;
+  }
+
+  .project-section {
+    padding: 3rem 0;
+  }
+
+  .font-stacks {
+    margin-top: 3rem;
+  }
+
+  .project-font-stack {
+    + .project-font-stack {
+      margin-top: 3rem;
+    }
+
+    .font-description p {
+      font-size: 1rem;
+    }
   }
 }

@@ -67,7 +67,7 @@ $arrow-label-padding: 0 1rem;
 
 @media screen and (max-width: $phone-landscape-max) {
   .arrow-link {
-    @include arrow-link(2px);
+    @include arrow-link(3px);
     max-width: 16rem;
   }
 }

@@ -1,0 +1,54 @@
+@mixin upchannel-pattern-trans($opacity) {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    animation: $a-upchannel-shift;
+    background-image: url('/img/upchannel/pattern-trans.png');
+    background-repeat: repeat;
+    background-size: 12rem 12rem;
+    bottom: 0;
+    content: '';
+    left: -12rem;
+    opacity: $opacity;
+    position: absolute;
+    right: -12rem;
+    top: 0;
+    z-index: $z-background-active;
+  }
+}
+
+.upchannel-icon-construction {
+  position: relative;
+
+  .overlay {
+    left: 0;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: $t-hover-ease-opacity;
+
+    &:hover {
+      opacity: 0;
+    }
+  }
+}
+
+.full-bleed.pattern-trans .project-screenshot {
+  margin: 0 auto;
+  width: 75%;
+}
+
+@media screen and (max-width: $tablet-portrait-max) {
+  .full-bleed.pattern-trans > .content > div:first-child:after {
+    background-color: $upchannel-light-tan;
+    content: ' ';
+    display: block;
+    height:3rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    position: relative;
+    width: auto;
+    z-index: 100;
+  }
+}

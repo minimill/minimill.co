@@ -18,19 +18,21 @@
             </ul>
         </div>
         <p class="project-summary sc-text">We teamed up with Andrew Staub, Andrew Kortina, and Sam Lessin to develop an informative web presence for their new forward-thinking mobile application, Fin.</p>
-        <blockquote class="sbd-accent sc-text">
-            <div class="quote-upper-line sbg-accent"></div>
-            <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
-            <div class="quote-lower-line sbg-accent"></div>
+        <div class="blockquote-wrapper">
+          <blockquote class="sbd-accent sc-text">
+              <div class="quote-upper-line sbg-accent"></div>
+              <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
+              <div class="quote-lower-line sbg-accent"></div>
 
-            Minimill killed it. We gave our entire web product to them with a crazy schedule and still launched on time.
-            <cite>
-                <span class="name sc-text">Sam Lessin</span>
-                <span class="title sc-text">Founder, Fin</span>
-                <span class="subtitle sc-text">Former VP of Product, Facebook</span>
-                <span class="photo"><img src="/img/fin/head-sam.png" alt="Sam Lessin"></span>
-            </cite>
-        </blockquote>
+              Minimill killed it. We gave our entire web product to them with a crazy schedule and still launched on time.
+              <cite>
+                  <span class="name sc-text">Sam Lessin</span>
+                  <span class="title sc-text">Founder, Fin</span>
+                  <span class="subtitle sc-text">Former VP of Product, Facebook</span>
+                  <span class="photo"><img src="/img/fin/head-sam.png" alt="Sam Lessin"></span>
+              </cite>
+          </blockquote>
+        </div>
     </div>
 </li>
 <li class="animated-section project-section section-fin-goal" data-section-id="fin-goal">
@@ -46,6 +48,17 @@
         </div>
     </div>
     <div class="content">
+        <div class="col-8 col-centered">
+            {{#embed "external-link"
+                href="https://github.com/minimill/staple.js/"
+                iconClass="github"}}
+                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                {{#content "h2"}}staple.js{{/content}}
+                {{#content "p"}}Easily staple an element to be fixed at a certain height from the top of the viewport.{{/content}}
+            {{/embed}}
+        </div>
+    </div>
+    <div class="content color-blocks">
         <div class="col-12">
             {{> color-block
               name="Navy Blue"
@@ -66,12 +79,7 @@
     <div class="content">
         <h2 class="h1 sc-text">A web presence for a mobile product</h2>
         <div class="col-8 col-centered">
-            {{#embed "external-link"
-                href="https://github.com/minimill/staple.js/"}}
-                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
-                {{#content "h3"}}staple.js{{/content}}
-                {{#content "p"}}Easily staple an element to be fixed at a certain height from the top of the viewport.{{/content}}
-            {{/embed}}
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
         </div>
     </div>
     <div class="content">
@@ -82,9 +90,10 @@
     <div class="content">
         <div class="col-8 col-centered">
             {{#embed "external-link"
-                href="https://www.getfin.com/"}}
-                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
-                {{#content "h2"}}getfin.com{{/content}}
+                href="https://www.fin.com/"
+                iconClass="link"}}
+                {{#content "icon"}}{{> "icons/link.svg" }}{{/content}}
+                {{#content "h2"}}fin.com{{/content}}
             {{/embed}}
         </div>
     </div>

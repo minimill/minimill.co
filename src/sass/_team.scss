@@ -5,7 +5,7 @@ $white-strip-height: 15rem;
   background-color: $blue;
   padding-top: 12.5rem;
   transition: $t-page-opacity, $t-page-transform;
-  z-index: 12;
+  z-index: 80;
 }
 
 .team-member {
@@ -31,7 +31,7 @@ $white-strip-height: 15rem;
     padding-top: 128.21%;
     position: relative;
     transform: translate3d(0, 1rem, 0);
-    transition: $t-hover-transform;
+    transition: $t-hover-ease-transform;
     width: 100%;
     z-index: 9;
 
@@ -57,8 +57,15 @@ $white-strip-height: 15rem;
   padding-top: 1rem;
 
   .icon {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     padding: 0.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -76,7 +83,7 @@ $white-strip-height: 15rem;
   background-color: $white;
   padding-top: $white-strip-height;
   transition: $t-page-opacity, $t-page-transform;
-  z-index: 10;
+  z-index: 70;
 }
 
 .team-page {
@@ -102,9 +109,13 @@ $white-strip-height: 15rem;
     margin: 0;
     overflow: hidden;
 
+    h2 {
+      font-size: 1.75rem;
+    }
+
     .team-photo-wrapper {
       height: auto;
-      padding-top: 3rem;
+      padding-top: 0;
       position: relative;
 
       img {
@@ -114,7 +125,7 @@ $white-strip-height: 15rem;
         margin: 0 auto;
         max-width: 24rem;
         position: relative;
-        width: 80%;
+        width: 70%;
       }
     }
 
@@ -125,15 +136,27 @@ $white-strip-height: 15rem;
       padding: 1rem 0 2rem;
     }
 
-    .team-member-social-links .icon path {
-      fill: $dark-gray;
+    .team-member-social-links .icon {
+      height: 1.25rem;
+      margin-right: 2rem;
+      width: 1.25rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      svg {
+        height: 1.25rem;
+        width: 1.25rem;
+      }
+
+      path, rect {
+        fill: $dark-gray;
+      }
     }
   }
 
   .team-white-strip {
     padding-top: 0;
   }
-}
-
-@media screen and (max-width: $phone-landscape-max) {
 }

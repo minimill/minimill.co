@@ -1,9 +1,10 @@
 .section-work-hero {
   box-sizing: border-box;
   height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 0;
   position: relative;
   text-align: center;
+  margin-bottom: -4rem;
 
   h1 {
     animation: $a-fade-in;
@@ -15,7 +16,7 @@
   }
 
   .work-link {
-    bottom: 8rem;
+    bottom: 4rem;
     box-sizing: border-box;
     left: 50%;
     margin-left: -1.625rem;
@@ -37,7 +38,7 @@
 .section-work-identities {
   > .content {
     padding-bottom: 8rem;
-    padding-top: 16rem;
+    padding-top: 8rem;
   }
 
   .h1 {
@@ -59,14 +60,35 @@
   }
 }
 
+@media screen and (max-width: $tablet-landscape-max) {
+  .section-work-hero {
+    margin-bottom: 0;
+  }
+
+  .section-work-identities {
+    .logos {
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .col-3 {
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $phone-landscape-max) {
   .section-work-hero {
     padding: 8.5rem 0 7.5rem;
   }
 
   .section-work-identities {
+
     > .content {
-      padding-bottom: 4rem;
+      padding-bottom: 2rem;
       padding-top: 4rem;
     }
 

@@ -1,5 +1,8 @@
 
 footer {
+  position: relative;
+  z-index: 100;
+
   &.solid {
     background-color: $light-gray;
   }
@@ -114,26 +117,35 @@ footer .bottom:hover a:hover, .team-member:hover .icon:hover {
   }
 }
 
+@media screen and (max-width: $tablet-landscape-max) {
+  footer {
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
 @media screen and (max-width: $tablet-portrait-max) {
   footer {
     background-color: $light-gray;
     display: block;
     padding: 0.5rem 0 2.5rem;
-    position: relative;
 
     &:before {
       background-color: $light-gray;
       content: ' ';
       display: block;
-      height: 4px;
+      height: 8px;
       left: 0;
       position: absolute;
-      top: -2px;
+      top: -4px;
       width: 100%;
+      z-index: 200;
     }
 
     .cta {
-      padding-bottom: 0;
+      padding: 3rem 0 0;
+      width: 90%;
     }
 
     .h1 + .h1 {
@@ -148,10 +160,23 @@ footer .bottom:hover a:hover, .team-member:hover .icon:hover {
       text-align: center;
     }
 
+    .bottom {
+      padding: 3rem 0;
+    }
+
+    .icon {
+      height: 1.75rem;
+
+      > svg {
+        height: 1.25rem;
+        width: 1.25rem;
+      }
+    }
+
     .social {
       display: inline;
       float: none;
-      margin-right: 2.5rem;
+      margin-right: 2rem;
       width: auto;
 
       &:last-child {
@@ -163,7 +188,7 @@ footer .bottom:hover a:hover, .team-member:hover .icon:hover {
       display: flex;
       flex-direction: horizontal;
       justify-content: center;
-      padding: 2.25rem 0;
+      padding: 0 0 2.25rem;
     }
   }
 }

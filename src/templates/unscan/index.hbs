@@ -4,6 +4,7 @@
 {{#content "backgrounds" mode="append"}}
 <li class="background-unscan-hero"></li>
 <li class="background-unscan-brand"></li>
+<li class="background-unscan-imagery"></li>
 <li class="background-unscan-web"></li>
 {{/content}}
 {{#content "sections" mode="prepend"}}
@@ -41,11 +42,25 @@
         </div>
     </div>
     <div class="content">
-        <div class="col-12">
-            <img class="project-screenshot" src="/img/unscan/unscan-logotype.svg" alt="Fin">
+        <div class="col-8 col-centered">
+            <img class="project-screenshot padded" src="/img/unscan/unscan-logotype.svg" alt="Unscan Logotype">
         </div>
     </div>
     <div class="content">
+        <div class="col-12">
+            {{#embed "external-link"
+                iconClass="quote"}}
+                {{#content "icon"}}{{> "icons/quote.svg" }}{{/content}}
+                {{#content "h2"}}It was sometimes hard for us to imagine how a manufactured brand could convey values like security and reliability until we worked with the fine folks of Minimill. It was so so so so great.{{/content}}
+                {{#content "cite"}}
+                  <span class="photo"><img src="/img/unscan/head-richard.png" alt="Richard"></span>
+                  <span class="name sc-text">Richard Higgins</span>
+                  <span class="title sc-text">Co-Founder, Unscan</span>
+                {{/content}}
+            {{/embed}}
+        </div>
+    </div>
+    <div class="content color-blocks">
         <div class="col-12">
             {{> color-block
               name="Gold"
@@ -69,7 +84,7 @@
               class="light"}}
         </div>
     </div>
-    <div class="content">
+    <div class="content font-stacks">
       <div class="col-12">
         {{> font-stack
           name="Standard CT"
@@ -81,6 +96,37 @@
           src="/img/unscan/text-unscan-standardbold.png" }}
         </div>
       </div>
+    </div>
+</li>
+<li class="animated-section project-section section-unscan-imagery" data-section-id="unscan-imagery">
+    <div class="content">
+        <h2 class="h1 sc-text">Something about imagery</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Well, yes, but that's not the point. Guess I'm not all smart like you. And maybe it'll be a different story, like when I'm ready to get married, but right now, I am telling you, the musical numbers are a bunch of amateurs! Gene, that is not what you said. And maybe it'll be a different story. You're not so bad yourself.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <div class="content project-screenshot illustrations">
+                <div class="col-2 m-col-6">
+                    <img src="/img/unscan/illustration-normalization.svg" alt="Unscan Normalization Illustration">
+                </div>
+                <div class="col-2 m-col-6">
+                    <img src="/img/unscan/illustration-extraction.svg" alt="Unscan Extraction Illustration">
+                </div>
+                <div class="col-2 m-col-6">
+                    <img src="/img/unscan/illustration-ocr.svg" alt="Unscan OCR Illustration">
+                </div>
+                <div class="col-2 m-col-6">
+                    <img src="/img/unscan/illustration-qa.svg" alt="Unscan QA Illustration">
+                </div>
+                <div class="col-2 m-col-6">
+                    <img src="/img/unscan/illustration-integration.svg" alt="Unscan Integration Illustration">
+                </div>
+            </div>
+            <img class="project-screenshot" src="/img/unscan/testimonial-photo.png" alt="Unscan Testimonial Photo">
+            <img class="project-screenshot" src="/img/unscan/office-photo.png" alt="Unscan Office Photo">
+        </div>
     </div>
 </li>
 <li class="animated-section project-section section-unscan-web" data-section-id="unscan-web">
@@ -98,8 +144,9 @@
     <div class="content">
         <div class="col-8 col-centered">
             {{#embed "external-link"
-                href="https://unscan.com/"}}
-                {{#content "icon"}}{{> "icons/github.svg" }}{{/content}}
+                href="https://unscan.com/"
+                iconClass="link"}}
+                {{#content "icon"}}{{> "icons/link.svg" }}{{/content}}
                 {{#content "h2"}}unscan.com{{/content}}
             {{/embed}}
         </div>

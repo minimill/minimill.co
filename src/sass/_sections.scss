@@ -49,28 +49,9 @@
 
   .#{$prefix}-wac-brand { background-color: $wac-black; }
 
-  // Upchannel
+  // UpChannel
   .#{$prefix}-upchannel-hero,
-  .#{$prefix}-work-upchannel {
-    background-color: $upchannel-white;
-    overflow: hidden;
-    position: relative;
-
-    &:before {
-      animation: $a-upchannel-shift;
-      background-image: url('/img/upchannel/pattern-trans.png');
-      background-repeat: repeat;
-      background-size: 12rem 12rem;
-      bottom: 0;
-      content: '';
-      left: -12rem;
-      opacity: 0.1;
-      position: absolute;
-      right: -12rem;
-      top: 0;
-      z-index: $z-background-active;
-    }
-  }
+  .#{$prefix}-work-upchannel { background-color: $upchannel-white; @include upchannel-pattern-trans(0.1); }
 
   .#{$prefix}-upchannel-brand { background-color: $upchannel-light-tan; }
 
@@ -81,6 +62,8 @@
   .#{$prefix}-work-unscan { background-color: $unscan-gold; }
 
   .#{$prefix}-unscan-brand { background-color: $unscan-black; }
+
+  .#{$prefix}-unscan-imagery { background-color: $white; }
 
   .#{$prefix}-unscan-web { background-color: $unscan-blue; }
 
@@ -174,7 +157,8 @@ $wac-sections: 'wac-hero', 'wac-open-source', 'wac-motion', 'wac-brand',
 $fin-sections: 'fin-hero', 'fin-goal', 'fin-related', 'fin-footer';
 $upchannel-sections: 'upchannel-hero', 'upchannel-brand', 'upchannel-web',
                      'upchannel-footer';
-$unscan-sections: 'unscan-hero', 'unscan-brand', 'unscan-web', 'unscan-footer';
+$unscan-sections: 'unscan-hero', 'unscan-brand', 'unscan-imagery',
+                  'unscan-web', 'unscan-footer';
 
 // List of all sets of sections
 $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
@@ -208,7 +192,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   transition: $t-scroll-border-color;
 }
 
-.sf-svg-accent path {
+.sf-svg-accent path, .sf-svg-accent rect {
   fill: $blue;
   transition: $t-scroll-fill;
 }
@@ -237,6 +221,10 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
     color: $accent;
   }
 
+  .sc-h-children-accent:hover .sc-text {
+    color: $accent;
+  }
+
   // Scroll background-color
   .sbg-accent {
     background-color: $accent;
@@ -257,7 +245,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   }
 
   // Scroll SVG fill color
-  .sf-svg-accent path {
+  .sf-svg-accent path, .sf-svg-accent rect {
     fill: $accent;
   }
 }
@@ -293,7 +281,7 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   } @else if contains(('fin-related', 'fin-footer'), $id) {
     @include section-style($fin-black, $fin-blue);
 
-  // Upchannel
+  // UpChannel
   } @else if contains(('upchannel-hero', 'work-upchannel'), $id) {
     @include section-style($upchannel-dark-tan, $upchannel-blue);
 
@@ -309,6 +297,9 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 
   } @else if contains(('unscan-brand'), $id) {
     @include section-style($unscan-white, $unscan-blue);
+
+  } @else if contains(('unscan-imagery'), $id) {
+    @include section-style($unscan-black, $unscan-blue);
 
   } @else if contains(('unscan-web', 'unscan-footer'), $id) {
     @include section-style($unscan-white, $unscan-black);
@@ -367,9 +358,17 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   }
 }
 
-.is-mobile * {
-  transition: none !important;
+.is-mobile {
+  .sc-text, .sc-accent,
+  .sbg-text, .sbg-accent,
+  .sbd-accent,
+  .sf-svg-accent path,
+  .sbg-h-accent,
+  .backgrounds li {
+    transition: none !important;
+  }
 }
+
 
 @media screen and (max-width: $tablet-landscape-max) {
   .sections {

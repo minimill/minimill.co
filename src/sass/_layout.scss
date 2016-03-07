@@ -54,6 +54,10 @@ $content-width: 66rem;
   .col-2 {
     width: 16.666666%;
   }
+
+  .col-1 {
+    width: 8.333333%;
+  }
 }
 
 .centered-content {
@@ -63,6 +67,7 @@ $content-width: 66rem;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 110;
 
   .h1 + .h1 {
     margin-top: 1rem;
@@ -76,20 +81,41 @@ $content-width: 66rem;
 @media screen and (max-width: $tablet-portrait-max) {
   .content {
     box-sizing: border-box;
-    padding: 0 1.5rem;
+    padding: 0 4rem;
+    width: 100%;
 
     > [class^="col"] {
       margin: 0;
       padding: 0;
       width: 100%;
 
-      &.m-col-6 {
-        width: 50%;
+      &.m-col-4.col-3 {
+        width: 25%;
+      }
+
+      &.m-col-6.col-2 {
+        width: 33.333333%;
       }
     }
 
     &.full-on-mobile {
       width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-portrait-max) {
+  .content {
+    padding: 0 1rem;
+
+    > [class^="col"] {
+      &.m-col-6.col-2 {
+        width: 33.333333%;
+      }
+
+      &.m-col-4.col-3 {
+        width: 33.333333%;
+      }
     }
   }
 }

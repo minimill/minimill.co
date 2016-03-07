@@ -1,70 +1,154 @@
 .external-link {
   border-style: solid;
-  border-top-width: 0;
+  border-top: 0;
   border-width: 1px;
-  margin-bottom: 4rem;
+  margin: 9rem 0 0;
   padding: 4rem 5.5rem;
   position: relative;
   text-align: center;
 
-  .link-left-line, .link-right-line {
+  .icon-line-break {
+    display: flex;
     height: 1px;
+    left: 0;
     position: absolute;
     top: 0;
-    width: 40%;
+    width: 100%;
+
+    .link-left-line, .link-right-line {
+      height: 1px;
+      flex-grow: 1;
+    }
+
+    .icon {
+      width: 8.5rem;
+
+
+      svg {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transition: $t-hover-ease-transform;
+      }
+    }
+
   }
 
-  .link-left-line {
-    left: 0;
+  &.github svg {
+    height: 2rem;
+    width: 2rem;
+    margin: -1rem 0 0 -1rem;
   }
 
-  .link-right-line {
-    right: 0;
+  &.quote svg {
+    height: 1.25rem;
+    width: 2rem;
+    margin: -0.625rem 0 0 -1rem;
   }
 
-  .icon {
-    border-radius: 50%;
-    height: 3rem;
-    left: 50%;
-    position: absolute;
-    top: -1.5rem;
-    transform: translate3d(-50%, 0, 0);
-    width: 3rem;
+  &.link svg {
+    height: 1.25rem;
+    width: 2.5rem;
+    margin: -0.625rem 0 0 -1.25rem;
+  }
 
-    svg {
-      height: 100%;
-      transition: $t-hover-transform;
-      width: 100%;
+  &.link {
+    margin: 13rem 0 6rem;
+  }
+
+  cite {
+    .photo {
+      display: inline-block;
+      position: relative;
+      margin-right: 2.5rem;
+      vertical-align: middle;
+    }
+
+    .name, .title {
+      display: inline-block;
+    }
+
+    .name:after {
+      content: ', ';
     }
   }
 
-  h3 {
-    color: $blue;
-    margin-bottom: 0.5rem;
+  h2 + p {
+    margin-top: 1rem;
   }
+}
 
-  &:hover .icon svg {
-    transform: scale(1.125, 1.125);
+a > .external-link:hover .icon svg {
+  transform: scale(1.125, 1.125);
+}
+
+@media screen and (max-width: $tablet-landscape-max) {
+  .external-link {
+    margin: 5rem 0 0;
+
+    &.link {
+      margin: 9rem 0 4rem;
+    }
   }
 }
 
 @media screen and (max-width: $phone-landscape-max) {
   .external-link {
-    margin-bottom: 2rem;
-    padding: 2.5rem 2rem 2rem;
+    margin: 3.5rem 0 0;
+    padding: 2rem;
 
-    .link-left-line, .link-right-line {
-      width: 35%;
+    .icon-line-break {56
+      .icon {
+        height: 2rem;
+        width: 4rem;
+      }
     }
 
-    .icon {
-      height: 2rem;
-      top: -1rem;
-      width: 2rem;
+    &.github svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin: -0.75rem 0 0 -0.75rem;
+    }
+
+    &.quote svg {
+      height: 0.9375rem;
+      width: 1.5rem;
+      margin: -0.46875rem 0 0 -0.75rem;
+    }
+
+    &.link svg {
+      height: 0.9375rem;
+      width: 1.875rem;
+      margin: -0.46875rem 0 0 -0.9375rem;
     }
 
     .text {
       padding: 0;
+    }
+
+    &.quote h2 {
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    cite {
+      text-align: left;
+
+      .photo {
+        position: absolute;
+      }
+
+      .name, .title {
+        display: block;
+      }
+
+      .name:after {
+        content: '';
+      }
     }
   }
 }
