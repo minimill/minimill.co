@@ -151,6 +151,8 @@ $quote-height: 8.5rem;
 
 .project-preview {
   padding: 16rem 0 0;
+  position: relative;
+  z-index: 5;
 }
 
 .project-hero {

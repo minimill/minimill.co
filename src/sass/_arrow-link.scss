@@ -50,6 +50,8 @@ $arrow-label-padding: 0 1rem;
   align-items: center;
   display: flex;
   transition: $t-scroll-opacity;
+  position: relative;
+  z-index: 5;
 }
 
 @media screen and (max-width: $tablet-landscape-max) {
