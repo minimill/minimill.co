@@ -124,7 +124,7 @@
     window.addEventListener('scroll', this.onScroll);
     this.scrollingEnabled = true;
     setTimeout(function() {
-      document.body.className = document.body.className.replace('is-mobile', '')
+      document.body.className = document.body.className.replace('is-mobile', '');
     }, 400);
   };
 

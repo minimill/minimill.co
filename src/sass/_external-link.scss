@@ -56,12 +56,14 @@
     margin: 13rem 0 6rem;
   }
 
-  cite {
+  &.quote .text cite {
     .photo {
       display: inline-block;
       position: relative;
       margin-right: 2.5rem;
       vertical-align: middle;
+      height: 3rem;
+      width: 3rem;
     }
 
     .name, .title {

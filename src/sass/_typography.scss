@@ -37,6 +37,10 @@ p, %p {
   &.large {
     @extend %h3;
   }
+
+  cite {
+    font-style: italic;
+  }
 }
 
 @media screen and (max-width: $tablet-landscape-max) {

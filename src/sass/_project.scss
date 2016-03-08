@@ -232,7 +232,7 @@ $quote-height: 8.5rem;
   }
 }
 
-cite {
+blockquote cite, .quote .text cite {
   @extend %p;
   display: block;
   margin-top: 2.5rem;
@@ -399,7 +399,7 @@ $small-quote-height: 15px;
     }
   }
 
-  cite {
+  blockquote cite, .quote .text cite {
     margin-top: 1.5rem;
     padding-left: 4.5rem;
     padding-top: 0;
