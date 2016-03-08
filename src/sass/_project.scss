@@ -1,8 +1,8 @@
 $quote-height: 8.5rem;
 
 .full-bleed {
-  margin-top: 8rem;
   margin-bottom: 5.5rem;
+  margin-top: 8rem;
 
   &.pattern-trans {
     @include upchannel-pattern-trans(0.2);
@@ -57,7 +57,7 @@ $quote-height: 8.5rem;
     padding: 4rem 0;
   }
 
-  & + .project-screenshot {
+  + .project-screenshot {
     margin-top: 4rem;
   }
 
@@ -174,7 +174,7 @@ $quote-height: 8.5rem;
       &:after {
         content: '+';
         display: inline;
-        padding: 0 0.3rem 0 .5rem
+        padding: 0 0.3rem 0 0.5rem;
       }
     }
   }
@@ -255,10 +255,11 @@ blockquote cite, .quote .text cite {
     top: 0;
     width: 3rem;
 
-    img {
-      height: 100%;
-      width: 100%;
-    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -307,8 +308,8 @@ $small-quote-height: 15px;
   .project-img-wrapper {
     display: block;
     float: none;
-    width: 66%;
     margin: 3rem auto 0;
+    width: 66%;
 
     img {
       display: block;
@@ -319,9 +320,9 @@ $small-quote-height: 15px;
 
   .project-summary, .blockquote-wrapper {
     box-sizing: border-box;
-    width: 66%;
     margin: 0 auto;
     padding: 0 1.5rem;
+    width: 66%;
   }
 
   .project-hero {
@@ -405,8 +406,8 @@ $small-quote-height: 15px;
     padding-top: 0;
 
     span {
-      vertical-align: top;
       font-size: 1rem;
+      vertical-align: top;
     }
 
     .subtitle {
@@ -464,8 +465,8 @@ $small-quote-height: 15px;
   }
 
   .project-font-stack {
-    margin-top: 0;
     flex-wrap: wrap;
+    margin-top: 0;
 
     + .project-font-stack {
       margin-top: 4rem;
@@ -483,7 +484,7 @@ $small-quote-height: 15px;
         display: inline;
 
         &:first-child:after {
-          content: ','
+          content: ',';
         }
       }
     }
@@ -493,12 +494,12 @@ $small-quote-height: 15px;
     margin: 4rem 0 0;
 
     &.padded {
+      margin: 3rem auto 0;
       max-width: 75%;
       padding: 3rem 0;
-      margin: 3rem auto 0;
     }
 
-    & + .project-screenshot {
+    + .project-screenshot {
       margin-top: 3rem;
     }
 

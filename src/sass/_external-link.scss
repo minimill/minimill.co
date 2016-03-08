@@ -16,13 +16,12 @@
     width: 100%;
 
     .link-left-line, .link-right-line {
-      height: 1px;
       flex-grow: 1;
+      height: 1px;
     }
 
     .icon {
       width: 8.5rem;
-
 
       svg {
         left: 50%;
@@ -31,43 +30,45 @@
         transition: $t-hover-ease-transform;
       }
     }
-
   }
 
   &.github svg {
     height: 2rem;
-    width: 2rem;
     margin: -1rem 0 0 -1rem;
+    width: 2rem;
   }
 
   &.quote svg {
     height: 1.25rem;
-    width: 2rem;
     margin: -0.625rem 0 0 -1rem;
-  }
-
-  &.link svg {
-    height: 1.25rem;
-    width: 2.5rem;
-    margin: -0.625rem 0 0 -1.25rem;
+    width: 2rem;
   }
 
   &.link {
     margin: 13rem 0 6rem;
+
+    svg {
+      height: 1.25rem;
+      margin: -0.625rem 0 0 -1.25rem;
+      width: 2.5rem;
+    }
   }
 
   &.quote .text cite {
+    padding-left: 0;
+
     .photo {
       display: inline-block;
-      position: relative;
-      margin-right: 2.5rem;
-      vertical-align: middle;
       height: 3rem;
+      margin-right: 2.5rem;
+      position: relative;
+      vertical-align: middle;
       width: 3rem;
     }
 
     .name, .title {
       display: inline-block;
+      line-height: 3rem;
     }
 
     .name:after {
@@ -108,20 +109,20 @@ a > .external-link:hover .icon svg {
 
     &.github svg {
       height: 1.5rem;
-      width: 1.5rem;
       margin: -0.75rem 0 0 -0.75rem;
+      width: 1.5rem;
     }
 
     &.quote svg {
       height: 0.9375rem;
-      width: 1.5rem;
       margin: -0.46875rem 0 0 -0.75rem;
+      width: 1.5rem;
     }
 
     &.link svg {
       height: 0.9375rem;
-      width: 1.875rem;
       margin: -0.46875rem 0 0 -0.9375rem;
+      width: 1.875rem;
     }
 
     .text {
@@ -137,7 +138,8 @@ a > .external-link:hover .icon svg {
       font-size: 1rem;
     }
 
-    cite {
+    &.quote .text cite {
+      padding-left: 4.5rem;
       text-align: left;
 
       .photo {
@@ -146,6 +148,7 @@ a > .external-link:hover .icon svg {
 
       .name, .title {
         display: block;
+        line-height: 1.5;
       }
 
       .name:after {

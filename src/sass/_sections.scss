@@ -51,7 +51,10 @@
 
   // UpChannel
   .#{$prefix}-upchannel-hero,
-  .#{$prefix}-work-upchannel { background-color: $upchannel-white; @include upchannel-pattern-trans(0.1); }
+  .#{$prefix}-work-upchannel {
+    @include upchannel-pattern-trans(0.1);
+    background-color: $upchannel-white;
+  }
 
   .#{$prefix}-upchannel-brand { background-color: $upchannel-light-tan; }
 
@@ -197,15 +200,6 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   transition: $t-scroll-fill;
 }
 
-.sbg-h-accent {
-  backgrozund-color: $blue;
-  transition: $t-hover-background-color;
-
-  &.sbd-accent {
-    transition: $t-hover-background-color, $t-scroll-border-color;
-  }
-}
-
 // @mixin section-style
 //
 // Defines what will change about the content of a section. This mixin is
@@ -227,11 +221,6 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 
   // Scroll background-color
   .sbg-accent {
-    background-color: $accent;
-  }
-
-  // Scroll background-color on hover
-  .sbg-h-accent:hover {
     background-color: $accent;
   }
 
@@ -363,7 +352,6 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   .sbg-text, .sbg-accent,
   .sbd-accent,
   .sf-svg-accent path,
-  .sbg-h-accent,
   .backgrounds li {
     transition: none !important;
   }

@@ -49,8 +49,8 @@ $arrow-label-padding: 0 1rem;
   @include arrow-link(4px);
   align-items: center;
   display: flex;
-  transition: $t-scroll-opacity;
   position: relative;
+  transition: $t-scroll-opacity;
   z-index: 5;
 }
 

@@ -11,8 +11,8 @@
     transition: $t-hover-ease-opacity, $t-hover-ease-transform;
 
     &:last-child {
-      opacity: 0;
       font-family: monospace;
+      opacity: 0;
     }
   }
 

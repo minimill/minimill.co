@@ -115,6 +115,11 @@ footer .bottom:hover a:hover, .team-member:hover .icon:hover {
     color: $dribbble-pink;
     path { fill: $dribbble-pink; }
   }
+
+  &.globe-link, {
+    color: $blue;
+    path { fill: $blue; }
+  }
 }
 
 @media screen and (max-width: $tablet-landscape-max) {
