@@ -49,8 +49,8 @@
     margin: 0 -1.25rem;
     padding-top: 5rem;
 
-    img {
-      opacity: 0.4;
+    svg:not(:hover) path {
+      fill: $medium-gray;
     }
 
     .col-3 {
