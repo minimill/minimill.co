@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var md = new MobileDetect(window.navigator.userAgent);
 
   if (md.mobile() === null) {
-    new PageAnimation({
+    new Pangea({
       scrollDuration: 500,
     }).register(/^\/$/, 'team-hero', 'animating-to-home')
       .register(/^\/worldaftercapital\/?$/, 'team-hero', 'animating-to-wac-project')

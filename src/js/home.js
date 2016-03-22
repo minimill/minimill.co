@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
     var target = document.getElementById(linkHREF.slice(1));
     var offset = target.offsetTop;
 
-    PageAnimation.scrollTo(offset, 1000);
+    Pangea.scrollTo(offset, 1000);
   }
 
   if (md.mobile() === null) {
@@ -33,8 +33,8 @@ window.addEventListener('load', function() {
       mobileWidth: 1024,
     }).enable();
 
-    // PageAnimation
-    new PageAnimation({
+    // Page animations managed by pangea.js
+    new Pangea({
       animateLinksToSelf: true,
       scrollTiming: 'before',
       scrollDuration: 500,

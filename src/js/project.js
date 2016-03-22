@@ -4,7 +4,7 @@ if (md.mobile() === null) {
   var sections = new Sections({
     mobileWidth: 1024,
   }).enable();
-  new PageAnimation({
+  new Pangea({
     scrollTiming: 'before',
     scrollDuration: 500,
     shouldAnimate: function() {
