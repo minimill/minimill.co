@@ -28,13 +28,13 @@ var yaml = require('js-yaml');
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
 
 gulp.task('sass:lint', function() {
-  gulp.src('./src/sass/*.scss')
+  return gulp.src('./src/sass/*.scss')
     .pipe(plumber())
     .pipe(scsslint());
 });
 
 gulp.task('sass:build', function() {
-  gulp.src('./src/sass/**/style.scss')
+  return gulp.src('./src/sass/**/style.scss')
     .pipe(rename({
       suffix: '.min',
     }))
@@ -49,7 +49,7 @@ gulp.task('sass:build', function() {
 });
 
 gulp.task('sass:optimized', function() {
-  gulp.src('./src/sass/**/style.scss')
+  return gulp.src('./src/sass/**/style.scss')
     .pipe(rename({
       suffix: '.min',
     }))
@@ -67,13 +67,13 @@ gulp.task('sass:optimized', function() {
 gulp.task('sass', ['sass:lint', 'sass:build']);
 
 gulp.task('js:build', function() {
-  gulp.src('src/js/**/*.js')
+  return gulp.src('src/js/**/*.js')
     .pipe(plumber())
     .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('js:optimized', function() {
-  gulp.src('src/js/**/*.js')
+  return gulp.src('src/js/**/*.js')
     .pipe(plumber())
     .pipe(sourcemaps.init())
       .pipe(uglify())
@@ -81,7 +81,7 @@ gulp.task('js:optimized', function() {
 });
 
 gulp.task('js:lint', function() {
-  gulp.src(['./src/js/**/*.js', '!./src/js/lib/**/*.js', 'Gulpfile.js'])
+  return gulp.src(['./src/js/**/*.js', '!./src/js/lib/**/*.js', 'Gulpfile.js'])
     .pipe(plumber())
       .pipe(jscs())
     .pipe(jshint())
@@ -91,13 +91,13 @@ gulp.task('js:lint', function() {
 gulp.task('js', ['js:lint', 'js:build']);
 
 gulp.task('images', function() {
-  gulp.src('src/img/**/*')
+  return gulp.src('src/img/**/*')
     .pipe(plumber())
     .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('images:optimized', function() {
-  gulp.src('src/img/**/*')
+  return gulp.src('src/img/**/*')
     .pipe(plumber())
     .pipe(imagemin({
       progressive: true,
@@ -107,7 +107,7 @@ gulp.task('images:optimized', function() {
 });
 
 gulp.task('fonts', function() {
-  gulp.src('src/font/*')
+  return gulp.src('src/font/*')
     .pipe(plumber())
     .pipe(gulp.dest('./dist/font'));
 });
@@ -134,7 +134,7 @@ gulp.task('templates', function() {
 });
 
 gulp.task('templates:optimized', ['templates'], function() {
-  gulp.src('./dist/**/*.html')
+  return gulp.src('./dist/**/*.html')
     .pipe(inlinesource())
     .pipe(replace(/\.\.\//g, ''))
     .pipe(minifyHTML({
@@ -155,7 +155,7 @@ gulp.task('build', ['sass', 'images', 'fonts', 'js', 'templates']);
 gulp.task('build:optimized', ['sass:optimized', 'images:optimized', 'fonts', 'js:optimized', 'templates:optimized']);
 
 gulp.task('deploy', ['build:optimized'], function() {
-  gulp.src('')
+  return gulp.src('')
     .pipe(shell('scp -r dist/* root@minimill.co:/srv/work/private_html/minimill/'))
     .on('finish', function() {
       process.stdout.write('Deployed to work.minimill.co/site');
