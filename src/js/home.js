@@ -63,11 +63,11 @@ window.addEventListener('load', function() {
       },
     }).register(/^\/$/, 'sections', 'animating-to-home', {
       scrollTiming: 'after',
-    }).register(/^\/worldaftercapital\/?$/, 'sections', 'animating-to-wac-project')
-      .register(/^\/fin\/?$/, 'sections', 'animating-to-fin-project')
-      .register(/^\/upchannel\/?$/, 'sections', 'animating-to-upchannel-project')
-      .register(/^\/unscan\/?$/, 'sections', 'animating-to-unscan-project')
-      .register(/^\/team\/?$/, 'sections', 'animating-to-team-page')
+    }).register(/^\/worldaftercapital\/?$/, 'fixed', 'animating-to-wac-project')
+      .register(/^\/fin\/?$/, 'fixed', 'animating-to-fin-project')
+      .register(/^\/upchannel\/?$/, 'fixed', 'animating-to-upchannel-project')
+      .register(/^\/unscan\/?$/, 'fixed', 'animating-to-unscan-project')
+      .register(/^\/team\/?$/, 'fixed', 'animating-to-team-page')
       .enable();
   } else {
     workHero.style.height = workHero.clientHeight + 'px';

@@ -29,9 +29,9 @@
 @each $project in $projects {
   .animating-to-#{$project}-project {
 
-    nav {
-      animation: $a-fade-in;
-      position: fixed;
+    nav.fixed {
+      transform: none;
+      opacity: 1;
     }
 
     .animated-section:not(.section-work-#{$project}) {

@@ -36,9 +36,21 @@ nav {
       }
     }
   }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: $t-page-opacity, $t-page-transform;
+  }
 }
 
-.page-wac:not([class*="animating-to-"]) > nav, .animating-to-wac-project > nav {
+.in-section-work-wac,
+.page-wac:not([class*="animating-to-"]) > nav,
+.animating-to-wac-project > nav {
   color: $wac-black;
 
   .minimill-logo {
@@ -48,7 +60,9 @@ nav {
   }
 }
 
-.page-upchannel:not([class*="animating-to-"]) > nav, .animating-to-upchannel-project > nav {
+.in-section-work-upchannel,
+.page-upchannel:not([class*="animating-to-"]) > nav,
+.animating-to-upchannel-project > nav {
   color: $upchannel-blue;
 
   .minimill-logo {
@@ -58,7 +72,9 @@ nav {
   }
 }
 
-.page-unscan:not([class*="animating-to-"]) > nav, .animating-to-unscan-project > nav {
+.in-section-work-unscan,
+.page-unscan:not([class*="animating-to-"]) > nav,
+.animating-to-unscan-project > nav {
   color: $unscan-black;
 
   .minimill-logo {

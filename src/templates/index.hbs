@@ -7,6 +7,10 @@
 <li class="background-work-unscan" id="background-work-unscan"></li>
 <li class="background-work-identities" id="background-work-identities"></li>
 {{/content}}
+{{#content "navbar"}}
+{{> "navbar" }}
+{{> "navbar" fixed="true" }}
+{{/content}}
 {{#content "sections"}}
 <li class="animated-section section-work-hero" data-section-id="work-hero" id="work-hero">
     <div class="content">
@@ -126,6 +130,6 @@
 {{> "footer" id="work-footer" class="with-line"}}
 {{/content}}
 {{#content "js" mode="append"}}
-<script src="/js/home.js"></script>
+<script inline src="/js/home.js"></script>
 {{/content}}
 {{/extend}}

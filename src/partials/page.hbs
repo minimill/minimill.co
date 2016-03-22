@@ -2,15 +2,17 @@
 
 {{#content "body" mode="append"}}
 {{#block "main"}}
+{{#block "navbar"}}
 {{> "navbar" }}
+{{/block}}
 <div class="contact">
   {{> "contact-modal" }}
 </div>
 {{/block}}
 {{#block "js"}}
-<script src="/js/lib/mobile-detect.min.js"></script>
-<script src="/js/lib/pageanimation.min.js"></script>
-<script src="/js/contact-modal.js"></script>
+<script inline src="/js/lib/mobile-detect.min.js"></script>
+<script inline src="/js/lib/pageanimation.min.js"></script>
+<script inline src="/js/contact-modal.js"></script>
 {{/block}}
 {{/content}}
 
