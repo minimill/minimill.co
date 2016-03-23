@@ -85,17 +85,23 @@
         </div>
     </div>
     <div class="content font-stacks">
-      <div class="col-12">
-        {{> font-stack
-          name="Standard CT"
-          weight="Regular"
-          src="/img/unscan/text-unscan-standard.png" }}
-        {{> font-stack
-          name="Standard CT"
-          weight="Bold"
-          src="/img/unscan/text-unscan-standardbold.png" }}
+        <div class="col-12">
+
+            {{#embed "font-stack"
+              name="Standard CT"
+              weight="Regular"}}
+                {{#content "svg"}}
+                    {{> "typography/text-unscan-standard.svg" }}
+                {{/content}}
+            {{/embed}}
+            {{#embed "font-stack"
+              name="Standard CT"
+              weight="Bold"}}
+                {{#content "svg"}}
+                    {{> "typography/text-unscan-standardbold.svg" }}
+                {{/content}}
+            {{/embed}}
         </div>
-      </div>
     </div>
 </li>
 <li class="animated-section project-section section-unscan-imagery" data-section-id="unscan-imagery">

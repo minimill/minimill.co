@@ -108,20 +108,29 @@
     </div>
     <div class="content font-stacks">
       <div class="col-12">
-        {{> font-stack
+        {{#embed "font-stack"
           name="Playfair Display"
           weight="Regular"
-          src="/img/wac/text-wac-playfair.png"
           class="has-12px-descenders" }}
-        {{> font-stack
+            {{#content "svg"}}
+                {{> "typography/text-wac-playfair.svg" }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "font-stack"
           name="Roboto"
           weight="Regular"
-          src="/img/wac/text-wac-roboto.png"
           class="has-10px-descenders" }}
-        {{> font-stack
+            {{#content "svg"}}
+                {{> "typography/text-wac-roboto.svg" }}
+            {{/content}}
+        {{/embed}}
+        {{#embed "font-stack"
           name="Oswald"
-          weight="Light"
-          src="/img/wac/text-wac-oswald.png" }}
+          weight="Light"}}
+            {{#content "svg"}}
+                {{> "typography/text-wac-oswald.svg" }}
+            {{/content}}
+        {{/embed}}
       </div>
     </div>
     <div class="content">

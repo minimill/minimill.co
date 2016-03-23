@@ -200,6 +200,11 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   transition: $t-scroll-fill;
 }
 
+.sf-svg-text path, .sf-svg-text rect {
+  fill: $white;
+  transition: $t-scroll-fill;
+}
+
 // @mixin section-style
 //
 // Defines what will change about the content of a section. This mixin is
@@ -236,6 +241,10 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   // Scroll SVG fill color
   .sf-svg-accent path, .sf-svg-accent rect {
     fill: $accent;
+  }
+
+  .sf-svg-text path, .sf-svg-text rect {
+    fill: $text;
   }
 }
 
@@ -352,6 +361,9 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
   .sbg-text, .sbg-accent,
   .sbd-accent,
   .sf-svg-accent path,
+  .sf-svg-accent rect,
+  .sf-svg-text path,
+  .sf-svg-text rect,
   .backgrounds li {
     transition: none !important;
   }

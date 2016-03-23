@@ -87,17 +87,23 @@
         </div>
     </div>
     <div class="content font-stacks">
-      <div class="col-12">
-        {{> font-stack
-          name="Proxima Nova"
-          weight="Bold"
-          src="/img/upchannel/text-upchannel-proximabold.png"
-          class="has-16px-descenders" }}
-        {{> font-stack
-          name="Proxima Nova"
-          weight="Regular"
-          src="/img/upchannel/text-upchannel-proximaregular.png" }}
-      </div>
+        <div class="col-12">
+            {{#embed "font-stack"
+              name="Proxima Nova"
+              weight="Bold"
+              class="has-16px-descenders" }}
+                {{#content "svg"}}
+                    {{> "typography/text-upchannel-proximabold.svg" }}
+                {{/content}}
+            {{/embed}}
+            {{#embed "font-stack"
+              name="Proxima Nova"
+              weight="Regular"}}
+                {{#content "svg"}}
+                    {{> "typography/text-upchannel-proximaregular.svg" }}
+                {{/content}}
+            {{/embed}}
+        </div>
     </div>
 </li>
 <li class="animated-section project-section section-upchannel-web" data-section-id="upchannel-web">

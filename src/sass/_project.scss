@@ -92,7 +92,7 @@ $quote-height: 8.5rem;
     position: relative;
     width: 80%;
 
-    img {
+    svg {
       display: block;
     }
 
@@ -123,25 +123,25 @@ $quote-height: 8.5rem;
   }
 
   &.has-16px-descenders {
-    .font-img-wrapper img {
+    .font-img-wrapper svg {
       margin-bottom: -16px;
     }
   }
 
   &.has-10px-descenders {
-    .font-img-wrapper img {
+    .font-img-wrapper svg {
       margin-bottom: -10px;
     }
   }
 
   &.has-12px-descenders {
-    .font-img-wrapper img {
+    .font-img-wrapper svg {
       margin-bottom: -12px;
     }
   }
 
   &.has-8px-descenders {
-    .font-img-wrapper img {
+    .font-img-wrapper svg {
       margin-bottom: -8px;
     }
   }
