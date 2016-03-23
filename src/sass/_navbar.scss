@@ -38,12 +38,13 @@ nav {
   }
 
   &.fixed {
-    position: fixed;
-    top: 0;
     left: 0;
-    right: 0;
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate3d(0, -1rem, 0);
     transition: $t-page-opacity, $t-page-transform;
   }
 }

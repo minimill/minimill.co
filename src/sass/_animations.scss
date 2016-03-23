@@ -18,6 +18,12 @@ $semi-trans: 0.75;
   100% { opacity: 1; }
 }
 
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translate3d(0, 1rem, 0); }
+  #{$t1/$d1 * 100}% { opacity: 0; transform: translate3d(0, 1rem, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
 @keyframes fade-in-delay {
   0% { opacity: 0; }
   #{$t2/$d2 * 100}% { opacity: 0; }
@@ -42,6 +48,7 @@ $semi-trans: 0.75;
 }
 
 $a-fade-in: fade-in $d1 ease;
+$a-fade-in-up: fade-in-up $d1 ease;
 $a-slide-up: slide-up $d1 ease;
 $a-upchannel-shift: shift 15s linear infinite;
 $a-fade-in-delay: fade-in-delay $d2 ease;

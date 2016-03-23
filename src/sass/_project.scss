@@ -164,7 +164,7 @@ $quote-height: 8.5rem;
   .services {
     @extend %h3;
     @include column;
-    animation: $a-fade-in;
+    animation: $a-fade-in-up;
     display: inline-block;
     float: left;
     left: 0;
@@ -185,7 +185,7 @@ $quote-height: 8.5rem;
   blockquote {
     @extend %h2;
     @include column;
-    animation: $a-fade-in;
+    animation: $a-fade-in-up;
     border-bottom: 1px solid $white;
     border-left: 1px solid $white;
     float: right;

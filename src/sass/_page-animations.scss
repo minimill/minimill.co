@@ -29,9 +29,10 @@
 @each $project in $projects {
   .animating-to-#{$project}-project {
 
-    nav.fixed {
-      transform: none;
+    .fixed {
       opacity: 1;
+      pointer-events: auto;
+      transform: none;
     }
 
     .animated-section:not(.section-work-#{$project}) {
