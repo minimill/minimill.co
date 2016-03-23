@@ -15,6 +15,10 @@
     top: 0;
     z-index: $z-background-active;
   }
+
+  &.shift:before {
+    animation: $a-upchannel-shift;
+  }
 }
 
 .upchannel-icon-construction {

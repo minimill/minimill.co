@@ -12,6 +12,11 @@ $d2: $t2 + $page-speed;
 $slide-up-distance: 30rem;
 $semi-trans: 0.75;
 
+@keyframes shift {
+  0% { transform: 0; }
+  100% { transform: translate3d(12rem, 0, 0); }
+}
+
 @keyframes fade-in {
   0% { opacity: 0; }
   #{$t1/$d1 * 100}% { opacity: 0; }
@@ -44,8 +49,9 @@ $semi-trans: 0.75;
 
 $a-fade-in: fade-in $d1 ease;
 $a-fade-in-up: fade-in-up $d1 ease;
-$a-slide-up: slide-up $d1 ease;
 $a-fade-in-delay: fade-in-delay $d2 ease;
+$a-slide-up: slide-up $d1 ease;
+$a-upchannel-shift: shift 15s linear infinite;
 $a-bounce: bounce (2 * $page-speed) ease infinite;
 
 $t-page-opacity: $page-speed ease opacity;
