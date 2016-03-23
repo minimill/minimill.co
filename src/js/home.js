@@ -9,8 +9,10 @@ window.addEventListener('load', function() {
   }
 
   window.addEventListener('resize', function() {
-    workHero.style.height = '';
-    workHero.style.height = workHero.offsetHeight + 'px';
+    if (md.mobile() === null) {
+      workHero.style.height = '';
+      workHero.style.height = workHero.offsetHeight + 'px';
+    }
   });
 
   function onClickWorkLink(e) {
