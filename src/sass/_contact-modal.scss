@@ -69,5 +69,8 @@
 }
 
 .contact-modal-open {
+  height: 100%;
   overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
