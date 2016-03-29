@@ -73,3 +73,5 @@ $t-hover-ease-opacity: $slow-speed ease opacity;
 $t-hover-ease-transform: $slow-speed ease transform;
 
 $t-fade-opacity: $fade-speed ease opacity;
+$t-fade-opacity-with-delay: $t2 $fast-speed ease opacity;
+$t-fade-transform-with-delay: $t2 $fast-speed ease transform;

@@ -69,7 +69,7 @@ window.addEventListener('load', function() {
       .register(/^\/fin\/?$/, 'fixed', 'animating-to-fin-project')
       .register(/^\/upchannel\/?$/, 'fixed', 'animating-to-upchannel-project')
       .register(/^\/unscan\/?$/, 'fixed', 'animating-to-unscan-project')
-      .register(/^\/team\/?$/, 'fixed', 'animating-to-team-page')
+      .register(/^\/team\/?$/, 'work-hero', 'animating-to-team-page')
       .enable();
   } else {
     workHero.style.height = workHero.clientHeight + 'px';

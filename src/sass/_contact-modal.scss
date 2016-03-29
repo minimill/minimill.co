@@ -9,12 +9,23 @@
   width: 100%;
   z-index: 0;
 
+  nav {
+    opacity: 0;
+    transform: translate3d(0, -1rem, 0);
+    transition: $t-fade-opacity-with-delay, $t-fade-transform-with-delay;
+  }
+
   &.active {
     z-index: 1000;
   }
 
   &.visible {
     opacity: 1;
+
+    nav {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .centered-content {
