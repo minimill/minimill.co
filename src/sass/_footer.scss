@@ -136,7 +136,7 @@ footer .bottom:hover a:hover, .team-member:hover .icon:hover {
     display: block;
     padding: 0.5rem 0 2.5rem;
 
-    &:before {
+    &::before {
       background-color: $light-gray;
       content: ' ';
       display: block;

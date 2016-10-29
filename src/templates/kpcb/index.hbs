@@ -1,0 +1,103 @@
+{{#extend "project" }}
+{{#content "title" mode="append"}} - KPCB{{/content}}
+{{#content "body-class" mode="append"}} page-kpcb{{/content}}
+{{#content "backgrounds" mode="append"}}
+<li class="background-kpcb-hero"></li>
+<li class="background-kpcb-brand"></li>
+<li class="background-kpcb-print"></li>
+{{/content}}
+{{#content "sections" mode="prepend"}}
+<li class="animated-section project-hero section-kpcb-hero" data-section-id="kpcb-hero">
+    <div class="content">
+        <h1 class="project-title sc-text">KPCB</h1>
+        <div class="project-img-wrapper">
+            <img src="/img/kpcb/kpcb-macbook.png" alt="KPCB">
+            <ul class="services">
+                <li class="sc-text">Brand Identity</li>
+                <li class="sc-text">Print Design</li>
+            </ul>
+        </div>
+        <p class="project-summary sc-text">We built a brand, website, blog, and product with the KPCB team who make deployment tools and have since been acquired by CoreOS.</p>
+        <div class="blockquote-wrapper">
+          <blockquote class="sbd-accent sc-text">
+              <div class="quote-upper-line sbg-accent"></div>
+              <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
+              <div class="quote-lower-line sbg-accent"></div>
+
+              The Kleiner Perkins team and guests noticed the branding much more this year and it all came together nicely.
+              <cite>
+                  <span class="name sc-text">Ju-Djuin Csontos</span>
+                  <span class="title sc-text">Marketing Manager, KPCB</span>
+                  <span class="photo"><img src="/img/kpcb/head-jd.png" alt="Ju-Djuin Csontos"></span>
+              </cite>
+          </blockquote>
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-kpcb-brand" data-section-id="kpcb-brand">
+    <div class="content">
+          <h2 class="h1 sc-text">Marrying product and ambience</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">We worked closely with the illustrious Andrew Staub, Sam Lessin, and Andrew Kortina to design and develop a product that reflects the minimalism of the KPCB brand. Our site immediately puts users inside the app experience and funnels them towards waitlist signups. The dark theme creates a futuristic aesthetic, encouraging visitors to explore the capabilities of the product.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-8 col-centered">
+            <img class="project-screenshot padded" src="/img/kpcb/kpcb-logotype.svg" alt="KPCB CEO Workshop Logotype">
+        </div>
+    </div>
+    <img class="project-screenshot full-bleed" src="/img/kpcb/grid.png" alt="KPCB Grid">
+    <div class="content color-blocks">
+        <div class="col-12">
+            {{> color-block
+              name="Black"
+              hex="222222"
+              class="dark"}}
+            {{> color-block
+              name="Light Gray"
+              hex="EEEEEE"
+              class="light"}}
+            {{> color-block
+              name="Green"
+              hex="3BB780"
+              class="dark with-border"}}
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-kpcb-print" data-section-id="kpcb-print">
+    <div class="content">
+        <h2 class="h1 sc-text">End-to-end product development</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">KPCB brought our team into their product development workflow from the beginning. Together, we designed and implemented their entire application. We created user interface patterns that we extended across multiple pages, making a complex application feel simple.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/kpcb/posters-together.png" alt="KPCB Posters">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/kpcb/posters-together.png" alt="KPCB Posters">
+        </div>
+    </div>
+    <img class="project-screenshot full-bleed" src="/img/kpcb/sign.png" alt="KPCB Grid">
+    <div class="content">
+        <div class="col-6">
+            <img class="project-screenshot" src="/img/kpcb/photo-bags.jpg" alt="KPCB Poster">
+        </div>
+        <div class="col-6">
+            <img class="project-screenshot" src="/img/kpcb/photo-group.jpg" alrt="KPCB Poster">
+        </div>
+        <div class="col-6">
+            <img class="project-screenshot with-above" src="/img/kpcb/photo-panel.jpg" alrt="KPCB Poster">
+        </div>
+        <div class="col-6">
+            <img class="project-screenshot with-above" src="/img/kpcb/photo-sign.jpg" alrt="KPCB Poster">
+        </div>
+
+    </div>
+</li>
+{{> "footer" class="solid" id="kpcb-footer" }}
+{{/content}}
+{{/extend}}

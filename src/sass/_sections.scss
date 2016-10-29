@@ -30,14 +30,26 @@
   .#{$prefix}-work-footer,
   .#{$prefix}-work-identities { background-color: $light-gray; }
 
-  // Fin
-  .#{$prefix}-fin-footer,
-  .#{$prefix}-fin-related { background-color: $white;}
+  // Redspread
+  .#{$prefix}-redspread-hero,
+  .#{$prefix}-work-redspread { background-color: $redspread-red; }
 
-  .#{$prefix}-fin-hero,
-  .#{$prefix}-work-fin { background-color: $fin-blue; }
+  .#{$prefix}-redspread-brand { background-color: $redspread-white; }
 
-  .#{$prefix}-fin-goal { background-color: $fin-black; }
+  .#{$prefix}-redspread-product { background-color: $redspread-light-blue; }
+
+  .#{$prefix}-redspread-footer,
+  .#{$prefix}-redspread-web { background-color: $redspread-black; }
+
+  // KPCB
+
+  .#{$prefix}-kpcb-hero,
+  .#{$prefix}-work-kpcb { background-color: $kpcb-black; }
+
+  .#{$prefix}-kpcb-brand { background-color: $kpcb-green; }
+
+  .#{$prefix}-kpcb-print,
+  .#{$prefix}-kpcb-footer { background-color: $kpcb-light-gray; }
 
   // World After Capital
   .#{$prefix}-wac-hero,
@@ -48,6 +60,15 @@
   .#{$prefix}-wac-motion { background-color: $white; }
 
   .#{$prefix}-wac-brand { background-color: $wac-black; }
+
+  // Fin
+  .#{$prefix}-fin-footer,
+  .#{$prefix}-fin-related { background-color: $white;}
+
+  .#{$prefix}-fin-hero,
+  .#{$prefix}-work-fin { background-color: $fin-blue; }
+
+  .#{$prefix}-fin-goal { background-color: $fin-black; }
 
   // UpChannel
   .#{$prefix}-upchannel-hero,
@@ -69,9 +90,6 @@
   .#{$prefix}-unscan-imagery { background-color: $white; }
 
   .#{$prefix}-unscan-web { background-color: $unscan-blue; }
-
-  // Redspread
-  .#{$prefix}-work-redspread { background-color: $redspread-red; }
 }
 
 .backgrounds {
@@ -114,12 +132,20 @@ body {
   // Top
   background-color: $blue;
 
-  &.page-fin {
-    background-color: $fin-blue;
+  &.page-redspread {
+    background-color: $redspread-red;
+  }
+
+  &.page-kpcb {
+    background-color: $kpcb-black;
   }
 
   &.page-wac {
     background-color: $wac-yellow;
+  }
+
+  &.page-fin {
+    background-color: $fin-blue;
   }
 
   &.page-upchannel {
@@ -133,6 +159,10 @@ body {
   // Bottom
   &.in-section-work-identities,
   &.in-section-work-footer,
+  &.in-section-kpcb-print,
+  &.in-section-kpcb-footer,
+  &.in-section-redspread-web,
+  &.in-section-redspread-footer,
   &.in-section-wac-brand,
   &.in-section-wac-footer,
   &.in-section-fin-related,
@@ -150,10 +180,14 @@ body {
 //////////////
 
 // List of all existing projects
-$projects: 'wac', 'fin', 'upchannel', 'unscan';
+$projects: 'redspread', 'kpcb', 'fin', 'wac', 'upchannel', 'unscan';
 
 // List of sections on each page, IN ORDER
-$work-sections: 'work-hero', 'work-wac', 'work-fin', 'work-upchannel',
+
+$redspread-sections: 'redspread-hero', 'redspread-brand', 'redspread-product',
+                     'redspread-web', 'redspread-footer';
+$kpcb-sections: 'kpcb-hero', 'kpcb-brand', 'kpcb-print', 'kpcb-footer';
+$work-sections: 'work-hero', 'work-redspread', 'work-kpcb', 'work-wac', 'work-fin', 'work-upchannel',
                 'work-unscan', 'work-identities', 'work-footer';
 $wac-sections: 'wac-hero', 'wac-open-source', 'wac-motion', 'wac-brand',
                'wac-footer';
@@ -164,8 +198,8 @@ $unscan-sections: 'unscan-hero', 'unscan-brand', 'unscan-imagery',
                   'unscan-web', 'unscan-footer';
 
 // List of all sets of sections
-$sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
-           $unscan-sections;
+$sections: $work-sections, $redspread-sections, $kpcb-sections, $wac-sections,
+           $fin-sections, $upchannel-sections, $unscan-sections;
 
 .sections {
   position: relative;
@@ -258,6 +292,29 @@ $sections: $work-sections, $wac-sections, $fin-sections, $upchannel-sections,
 
   } @else if contains(('work-identities', 'work-footer'), $id) {
     @include section-style($dark-gray, $blue);
+
+  // Redspread
+  } @else if contains(('redspread-hero', 'work-redspread'), $id) {
+    @include section-style($redspread-white, $redspread-light-blue);
+
+  } @else if contains(('redspread-brand'), $id) {
+    @include section-style($redspread-dark-gray, $redspread-blue);
+
+  } @else if contains(('redspread-product'), $id) {
+    @include section-style($redspread-blue, $redspread-red);
+
+  } @else if contains(('redspread-web', 'redspread-footer'), $id) {
+    @include section-style($redspread-white, $redspread-red);
+
+  // KPCB
+  } @else if contains(('kpcb-hero', 'work-kpcb'), $id) {
+    @include section-style($kpcb-white, $kpcb-green);
+
+  } @else if contains(('kpcb-brand'), $id) {
+    @include section-style($kpcb-white, $kpcb-black);
+
+  } @else if contains(('kpcb-print', 'kpcb-footer'), $id) {
+    @include section-style($kpcb-black, $kpcb-green);
 
   // World After Capital
   } @else if contains(('wac-hero', 'work-wac'), $id) {

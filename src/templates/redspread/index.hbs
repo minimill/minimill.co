@@ -1,0 +1,154 @@
+{{#extend "project" }}
+{{#content "title" mode="append"}} - Redspread{{/content}}
+{{#content "body-class" mode="append"}} page-redspread{{/content}}
+{{#content "backgrounds" mode="append"}}
+<li class="background-redspread-hero"></li>
+<li class="background-redspread-brand"></li>
+<li class="background-redspread-product"></li>
+<li class="background-redspread-web"></li>
+{{/content}}
+{{#content "sections" mode="prepend"}}
+<li class="animated-section project-hero section-redspread-hero" data-section-id="redspread-hero">
+    <div class="content">
+        <h1 class="project-title sc-text">Redspread</h1>
+        <div class="project-img-wrapper">
+            <img src="/img/redspread/redspread-macbook.png" alt="Redspread">
+            <ul class="services">
+                <li class="sc-text">Product Naming</li>
+                <li class="sc-text">Brand Identity</li>
+                <li class="sc-text">UI/UX Design</li>
+                <li class="sc-text">Product Strategy</li>
+                <li class="sc-text">Web Development</li>
+            </ul>
+        </div>
+        <p class="project-summary sc-text">We built a brand, website, blog, and product with the Redspread team who make deployment tools and have since been acquired by CoreOS.</p>
+        <div class="blockquote-wrapper">
+          <blockquote class="sbd-accent sc-text">
+              <div class="quote-upper-line sbg-accent"></div>
+              <div class="quote-mark sf-svg-accent">{{> "icons/quote.svg"}}</div>
+              <div class="quote-lower-line sbg-accent"></div>
+
+              Minimill designed and developed a polished new website for us. As we started expanding our beta we were hoping to kick it up a notch and we definitely accomplished that.
+              <cite>
+                  <span class="name sc-text">Mackenzie Burnett</span>
+                  <span class="title sc-text">CEO, Redspread</span>
+                  <span class="photo"><img src="/img/redspread/head-mackenzie.png" alt="Mackenzie Burnett"></span>
+              </cite>
+          </blockquote>
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-redspread-brand" data-section-id="redspread-brand">
+    <div class="content">
+          <h2 class="h1 sc-text">Marrying product and ambience</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">We worked closely with the illustrious Andrew Staub, Sam Lessin, and Andrew Kortina to design and develop a product that reflects the minimalism of the Redspread brand. Our site immediately puts users inside the app experience and funnels them towards waitlist signups. The dark theme creates a futuristic aesthetic, encouraging visitors to explore the capabilities of the product.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-8 col-centered">
+            <img class="project-screenshot padded" src="/img/redspread/redspread-logotype.svg" alt="Unscan Logotype">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            {{#embed "external-link"
+                iconClass="quote"}}
+                {{#content "icon"}}{{> "icons/quote.svg" }}{{/content}}
+                {{#content "h2"}}Minimill's branding work with Unscan has meant more inbound sales interest and increased trust in our service.{{/content}}
+                {{#content "cite"}}
+                  <span class="photo"><img src="/img/redspread/head-mackenzie.png" alt="Mackenzie Burnett"></span>
+                  <span class="name sc-text">Mackenzie Burnett</span>
+                  <span class="title sc-text">CEO, Redspread</span>
+                {{/content}}
+            {{/embed}}
+        </div>
+    </div>
+    <div class="content color-blocks">
+        <div class="col-12">
+            {{> color-block
+              name="Red"
+              hex="FF351A"
+              class="dark"}}
+            {{> color-block
+              name="Blue"
+              hex="13ABBF"
+              class="dark"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="Light Red"
+              hex="FFF6F5"
+              class="light"}}
+        </div>
+        <div class="col-6">
+            {{> color-block
+              name="Light Blue"
+              hex="F0F9FA"
+              class="light"}}
+        </div>
+        <div class="col-12">
+            {{> color-block
+              name="Light Gray"
+              hex="F9F9F9"
+              class="light"}}
+        </div>
+    </div>
+    <div class="content font-stacks">
+        <div class="col-12">
+            {{#embed "font-stack"
+              name="Din Round"
+              weight="Medium"}}
+                {{#content "svg"}}
+                    {{> "typography/text-redspread-dinround.svg" }}
+                {{/content}}
+            {{/embed}}
+            {{#embed "font-stack"
+              name="Source Sans Pro"
+              weight="Medium"}}
+                {{#content "svg"}}
+                    {{> "typography/text-redspread-sourcesanspro.svg" }}
+                {{/content}}
+            {{/embed}}
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-redspread-product" data-section-id="redspread-product">
+    <div class="content">
+        <h2 class="h1 sc-text">End-to-end product development</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Redspread brought our team into their product development workflow from the beginning. Together, we designed and implemented their entire application. We created user interface patterns that we extended across multiple pages, making a complex application feel simple.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/redspread/redspread-monitor.png" alt="The Redspread app">
+        </div>
+    </div>
+</li>
+<li class="animated-section project-section section-redspread-web" data-section-id="redspread-web">
+    <div class="content">
+        <h2 class="h1 sc-text">Making deployment accessible</h2>
+        <div class="col-8 col-centered">
+            <p class="large sc-text">Creating a landing page for Redspread presented a unique challenge: making a back-end product appealing to developers and executives alike. We combined UI snippets from the Redspread app with a screen recording of the spread command line tool to convey Redspread's feature-set.</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-12">
+            <img class="project-screenshot" src="/img/redspread/redspread-web.png" alt="The Redspread marketing page and blog">
+        </div>
+    </div>
+    <div class="content">
+        <div class="col-8 col-centered">
+            {{#embed "external-link"
+                href="https://www.redspread.com/"
+                iconClass="link"}}
+                {{#content "icon"}}{{> "icons/link.svg" }}{{/content}}
+                {{#content "h2"}}redspread.com{{/content}}
+            {{/embed}}
+        </div>
+    </div>
+</li>
+{{> "footer" class="solid" id="redspread-footer" }}
+{{/content}}
+{{/extend}}

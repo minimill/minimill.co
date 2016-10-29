@@ -2,7 +2,7 @@
   overflow: hidden;
   position: relative;
 
-  &:before {
+  &::before {
     background-image: url('/img/upchannel/pattern-trans.png');
     background-repeat: repeat;
     background-size: 12rem 12rem;
@@ -16,7 +16,7 @@
     z-index: $z-background-active;
   }
 
-  &.shift:before {
+  &.shift::before {
     animation: $a-upchannel-shift;
   }
 }
@@ -43,7 +43,7 @@
 }
 
 @media screen and (max-width: $tablet-portrait-max) {
-  .full-bleed.pattern-trans > .content > div:first-child:after {
+  .full-bleed.pattern-trans > .content > div:first-child::after {
     background-color: $upchannel-light-tan;
     content: ' ';
     display: block;

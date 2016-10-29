@@ -16,7 +16,6 @@ $quote-height: 8.5rem;
 }
 
 // Components
-
 .project-img-wrapper {
   @include column;
   display: inline-block;
@@ -51,6 +50,10 @@ $quote-height: 8.5rem;
 
   &.with-shadow {
     box-shadow: 0 0 2rem rgba($true-black, 0.25);
+  }
+
+  &.with-above {
+    margin: 2.5rem 0;
   }
 
   &.padded {
@@ -175,7 +178,7 @@ $quote-height: 8.5rem;
     width: 37.5%;
 
     li {
-      &:after {
+      &::after {
         content: '+';
         display: inline;
         padding: 0 0.3rem 0 0.5rem;
@@ -286,7 +289,6 @@ blockquote cite, .quote .text cite {
 
 $small-quote-height: 15px;
 @media screen and (max-width: $tablet-landscape-max) {
-
   .full-bleed {
     margin-top: 4rem;
   }
@@ -379,7 +381,7 @@ $small-quote-height: 15px;
         transform: translateX(-50%);
       }
 
-      &:before {
+      &::before {
         display: none;
       }
     }
@@ -397,7 +399,7 @@ $small-quote-height: 15px;
       li {
         display: inline-block;
 
-        &:last-child:after {
+        &:last-child::after {
           display: none;
         }
       }
@@ -487,7 +489,7 @@ $small-quote-height: 15px;
       p {
         display: inline;
 
-        &:first-child:after {
+        &:first-child::after {
           content: ',';
         }
       }

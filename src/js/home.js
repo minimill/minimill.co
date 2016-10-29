@@ -65,7 +65,9 @@ window.addEventListener('load', function() {
       },
     }).register(/^\/$/, 'sections', 'animating-to-home', {
       scrollTiming: 'after',
-    }).register(/^\/worldaftercapital\/?$/, 'fixed', 'animating-to-wac-project')
+    }).register(/^\/redspread\/?$/, 'fixed', 'animating-to-redspread-project')
+      .register(/^\/kpcb\/?$/, 'fixed', 'animating-to-kpcb-project')
+      .register(/^\/worldaftercapital\/?$/, 'fixed', 'animating-to-wac-project')
       .register(/^\/fin\/?$/, 'fixed', 'animating-to-fin-project')
       .register(/^\/upchannel\/?$/, 'fixed', 'animating-to-upchannel-project')
       .register(/^\/unscan\/?$/, 'fixed', 'animating-to-unscan-project')

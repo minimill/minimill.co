@@ -97,6 +97,7 @@ nav {
 }
 
 $xl-logo-height: 55px;
+
 @media screen and (min-width: $xl-desktop-min) {
   .minimill-logo, .minimill-logo svg, nav .links {
     height: $xl-logo-height;
@@ -108,6 +109,7 @@ $xl-logo-height: 55px;
 }
 
 $tablet-logo-height: 33px;
+
 @media screen and (max-width: $tablet-landscape-max) {
   .minimill-logo, .minimill-logo svg, nav .links {
     height: $tablet-logo-height;
@@ -119,6 +121,7 @@ $tablet-logo-height: 33px;
 }
 
 $phone-logo-height: 22px;
+
 @media screen and (max-width: $phone-landscape-max) {
   .minimill-logo, .minimill-logo svg, nav .links {
     height: $phone-logo-height;
