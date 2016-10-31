@@ -132,15 +132,21 @@ $quote-height: 8.5rem;
     }
   }
 
-  &.has-10px-descenders {
+  &.has-15px-descenders {
     .font-img-wrapper svg {
-      margin-bottom: -10px;
+      margin-bottom: -15px;
     }
   }
 
   &.has-12px-descenders {
     .font-img-wrapper svg {
       margin-bottom: -12px;
+    }
+  }
+
+  &.has-10px-descenders {
+    .font-img-wrapper svg {
+      margin-bottom: -10px;
     }
   }
 
