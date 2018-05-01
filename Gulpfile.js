@@ -164,9 +164,9 @@ gulp.task('deploy', ['build:optimized'], function() {
 
 gulp.task('deploy:prod', ['build:optimized'], function() {
   gulp.src('')
-    .pipe(shell('scp -r dist/* root@minimill.co:/srv/minimill.co/public_html/'))
+    .pipe(shell('scp -r dist/* dan:/srv/minimill.co/public_html/'))
     .on('finish', function() {
-      process.stdout.write('Deployed to minimill.co');
+      process.stdout.write('Deployed to minimill.co\n');
     });
 });
 
